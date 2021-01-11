@@ -25,16 +25,62 @@ endfunction
 
 function! VimCmdLinePrintWord()
     :resize 0
+    call VimCmdLineSendCmd("import pandas as pd")
     call VimCmdLineSendCmd("pd.set_option('display.min_rows', 42)")
     call VimCmdLineSendCmd("import os")
     call VimCmdLineSendCmd("os.system('cls')")")
-    call VimCmdLineSendCmd("print(" . expand('<cword>') . ")")
-    call VimCmdLineSendCmd("pd.reset_option('^display')")
+    call VimCmdLineSendCmd("print(" . expand('<cWORD>') . ")")
+endfunction
+
+
+function! VimCmdLinePlot()
+    call VimCmdLineSendCmd("import matplotlib.pyplot as plt")
+    call VimCmdLineSendCmd("import seaborn as sns")
+    call VimCmdLineSendCmd("sns.displot(" . expand('<cWORD>') . ")")
+    call VimCmdLineSendCmd("plt.show()")
+endfunction
+
+
+function! VimCmdLinePlotOutlier()
+    call VimCmdLineSendCmd("import matplotlib.pyplot as plt")
+    call VimCmdLineSendCmd("import seaborn as sns")
+    call VimCmdLineSendCmd("x = " . expand('<cWORD>'))
+    call VimCmdLineSendCmd("x = x[x.between(x.quantile(.10), x.quantile(.90))]")
+    call VimCmdLineSendCmd("sns.displot(x, bins=30)")
+    call VimCmdLineSendCmd("plt.show()")
 endfunction
 
 
 function! VimCmdLinePrintLength()
     call VimCmdLineSendCmd("len(" . expand('<cword>') . ")")
+endfunction
+
+
+function! VimCmdLinePrintInfo()
+    call VimCmdLineSendCmd(expand('<cword>') . ".info()")
+endfunction
+
+
+function! VimCmdLinePrintTable()
+    call VimCmdLineSendCmd(expand('<cWORD>') . ".value_counts()")
+endfunction
+
+
+function! VimCmdLinePrintSummary()
+    call VimCmdLineSendCmd(expand('<cWORD>') . ".describe()")
+endfunction
+
+
+function! VimCmdLineSizeDown()
+    call VimCmdLineSendCmd("import pandas as pd")
+    call VimCmdLineSendCmd("pd.reset_option('^display')")
+    resize +38
+endfunction
+
+
+function! VimCmdLineClear()
+    call VimCmdLineSendCmd("import os")
+    call VimCmdLineSendCmd("os.system('cls')")")
 endfunction
 
 
@@ -81,9 +127,22 @@ let b:cmdline_send_empty = 1
 let b:cmdline_filetype = "python"
 
 nmap <F10> :call VimCmdLineSendFile()<CR>
+
 nmap <LocalLeader>rl :call VimCmdLinePrintLength()<CR>
 nmap <LocalLeader>rp :call VimCmdLinePrintWord()<CR>
+nmap<LocalLeader>ri :call VimCmdLinePrintInfo()<CR>
+nmap<LocalLeader>rs :call VimCmdLinePrintSummary()<CR>
+nmap<LocalLeader>rt :call VimCmdLinePrintTable()<CR>
+nmap<LocalLeader>rr :call VimCmdLineClear()<CR>
+nmap<LocalLeader>rg :call VimCmdLinePlot()<CR>
+nmap<LocalLeader>rG :call VimCmdLinePlotOutlier()<CR>
+
+
+noremap <LocalLeader>= :resize -38<CR>
+noremap <LocalLeader>- :call VimCmdLineSizeDown()<CR>
 
 exe 'nmap <buffer><silent> ' . g:cmdline_map_start . ' :call VimCmdLineStartApp()<CR>'
 
 call VimCmdLineSetApp("python")
+call VimCmdLineStartApp()
+:resize 40
