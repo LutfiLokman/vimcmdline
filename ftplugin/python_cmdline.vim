@@ -16,14 +16,20 @@ endfunction
 
 function! VimCmdLineSendFile()
     saveas %:t
-    call VimCmdLineSendCmd("import importlib")
-    call VimCmdLineSendCmd("import" . " " . expand('%:r'))
-    call VimCmdLineSendCmd("importlib.reload(" . expand('%:r') . ")")
-    call VimCmdLineSendCmd("from" . " " . expand('%:r') . " " . "import *")
+    call VimCmdLineSendCmd("exec(open(" . "'" . expand('%:t') . "'" . ").read())")
+endfunction
+
+
+function! VimCmdLinePrintWORD()
+    call VimCmdLineSendCmd("print(" . expand('<cWORD>') . ")")
 endfunction
 
 
 function! VimCmdLinePrintWord()
+    call VimCmdLineSendCmd("print(" . expand('<cword>') . ")")
+endfunction
+
+function! VimCmdLinePrintWORDFullScreen()
     :resize 0
     call VimCmdLineSendCmd("import pandas as pd")
     call VimCmdLineSendCmd("pd.set_option('display.min_rows', 42)")
@@ -32,6 +38,15 @@ function! VimCmdLinePrintWord()
     call VimCmdLineSendCmd("print(" . expand('<cWORD>') . ")")
 endfunction
 
+
+function! VimCmdLinePrintWordFullScreen()
+    :resize 0
+    call VimCmdLineSendCmd("import pandas as pd")
+    call VimCmdLineSendCmd("pd.set_option('display.min_rows', 42)")
+    call VimCmdLineSendCmd("import os")
+    call VimCmdLineSendCmd("os.system('cls')")")
+    call VimCmdLineSendCmd("print(" . expand('<cword>') . ")")
+endfunction
 
 function! VimCmdLinePlot()
     call VimCmdLineSendCmd("import matplotlib.pyplot as plt")
@@ -127,9 +142,11 @@ let b:cmdline_send_empty = 1
 let b:cmdline_filetype = "python"
 
 nmap <F10> :call VimCmdLineSendFile()<CR>
-
 nmap <LocalLeader>rl :call VimCmdLinePrintLength()<CR>
 nmap <LocalLeader>rp :call VimCmdLinePrintWord()<CR>
+nmap <LocalLeader>rP :call VimCmdLinePrintWORD()<CR>
+nmap <LocalLeader>rv :call VimCmdLinePrintWordFullScreen()<CR>
+nmap <LocalLeader>rV :call VimCmdLinePrintWORDFullScreen()<CR>
 nmap<LocalLeader>ri :call VimCmdLinePrintInfo()<CR>
 nmap<LocalLeader>rs :call VimCmdLinePrintSummary()<CR>
 nmap<LocalLeader>rt :call VimCmdLinePrintTable()<CR>
