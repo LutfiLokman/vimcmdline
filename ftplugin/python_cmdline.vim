@@ -39,7 +39,8 @@ function! VimCmdLinePrintWORDFullScreen()
 endfunction
 
 
-function! VimCmdLinePrintWordFullScreen()
+function! s:VimCmdLinePrintWordFullScreen()
+    let b:cmdline_fullscreen = 1
     :resize 0
     call VimCmdLineSendCmd("import pandas as pd")
     call VimCmdLineSendCmd("pd.set_option('display.min_rows', 42)")
@@ -82,11 +83,17 @@ endfunction
 
 
 function! VimCmdLinePrintSummary()
+    call VimCmdLineSendCmd(expand('<cword>') . ".describe()")
+endfunction
+
+
+function! VimCmdLinePrintSUMMARY()
     call VimCmdLineSendCmd(expand('<cWORD>') . ".describe()")
 endfunction
 
 
-function! VimCmdLineSizeDown()
+function! s:VimCmdLineSizeDown()
+    unlet b:cmdline_fullscreen
     call VimCmdLineSendCmd("import pandas as pd")
     call VimCmdLineSendCmd("pd.reset_option('^display')")
     resize +38
@@ -96,6 +103,11 @@ endfunction
 function! VimCmdLineClear()
     call VimCmdLineSendCmd("import os")
     call VimCmdLineSendCmd("os.system('cls')")")
+endfunction
+
+
+function! s:ToggleFullScreen()
+    if !exists('b:cmdline_fullscreen') | cal s:VimCmdLinePrintWordFullScreen() | el | cal s:VimCmdLineSizeDown() | en  
 endfunction
 
 
@@ -145,18 +157,19 @@ nmap <F10> :call VimCmdLineSendFile()<CR>
 nmap <LocalLeader>rl :call VimCmdLinePrintLength()<CR>
 nmap <LocalLeader>rp :call VimCmdLinePrintWord()<CR>
 nmap <LocalLeader>rP :call VimCmdLinePrintWORD()<CR>
-nmap <LocalLeader>rv :call VimCmdLinePrintWordFullScreen()<CR>
+nmap <LocalLeader>rv :call <SID>ToggleFullScreen()<CR>
 nmap <LocalLeader>rV :call VimCmdLinePrintWORDFullScreen()<CR>
 nmap<LocalLeader>ri :call VimCmdLinePrintInfo()<CR>
 nmap<LocalLeader>rs :call VimCmdLinePrintSummary()<CR>
+nmap<LocalLeader>rS :call VimCmdLinePrintSUMMARY()<CR>
 nmap<LocalLeader>rt :call VimCmdLinePrintTable()<CR>
 nmap<LocalLeader>rr :call VimCmdLineClear()<CR>
 nmap<LocalLeader>rg :call VimCmdLinePlot()<CR>
 nmap<LocalLeader>rG :call VimCmdLinePlotOutlier()<CR>
 
 
-noremap <LocalLeader>= :resize -38<CR>
-noremap <LocalLeader>- :call VimCmdLineSizeDown()<CR>
+"noremap <LocalLeader>= :resize -38<CR>
+"noremap <LocalLeader>- :call VimCmdLineSizeDown()<CR>
 
 exe 'nmap <buffer><silent> ' . g:cmdline_map_start . ' :call VimCmdLineStartApp()<CR>'
 
