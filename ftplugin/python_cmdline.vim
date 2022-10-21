@@ -15,8 +15,8 @@ endfunction
 
 
 function! VimCmdLineSendFile()
-    saveas %:t
-    call VimCmdLineSendCmd("exec(open(" . "'" . expand('%:t') . "'" . ").read())")
+    saveas %:p
+    call VimCmdLineSendCmd("exec(open(" . "r'" . expand('%:p') . "'" . ").read())")
 endfunction
 
 
@@ -29,7 +29,8 @@ function! VimCmdLinePrintWord()
     call VimCmdLineSendCmd("print(" . expand('<cword>') . ")")
 endfunction
 
-function! VimCmdLinePrintWORDFullScreen()
+function! s:VimCmdLinePrintWORDFullScreen()
+    let b:cmdline_fullscreen = 1
     :resize 0
     call VimCmdLineSendCmd("import pandas as pd")
     call VimCmdLineSendCmd("pd.set_option('display.min_rows', 42)")
@@ -48,6 +49,29 @@ function! s:VimCmdLinePrintWordFullScreen()
     call VimCmdLineSendCmd("os.system('cls')")")
     call VimCmdLineSendCmd("print(" . expand('<cword>') . ")")
 endfunction
+
+
+function! s:VimCmdLinePrintHEADFullScreen()
+    let b:cmdline_fullscreen = 1
+    :resize 0
+    call VimCmdLineSendCmd("import pandas as pd")
+    call VimCmdLineSendCmd("pd.set_option('display.max_rows', None)")
+    call VimCmdLineSendCmd("import os")
+    call VimCmdLineSendCmd("os.system('cls')")")
+    call VimCmdLineSendCmd("print(" . expand('<cWORD>') . ".head().transpose())")
+endfunction
+
+
+function! s:VimCmdLinePrintHeadFullScreen()
+    let b:cmdline_fullscreen = 1
+    :resize 0
+    call VimCmdLineSendCmd("import pandas as pd")
+    call VimCmdLineSendCmd("pd.set_option('display.max_rows', None)")
+    call VimCmdLineSendCmd("import os")
+    call VimCmdLineSendCmd("os.system('cls')")")
+    call VimCmdLineSendCmd("print(" . expand('<cword>') . ".head().transpose())")
+endfunction
+
 
 function! VimCmdLinePlot()
     call VimCmdLineSendCmd("import matplotlib.pyplot as plt")
@@ -106,10 +130,14 @@ function! VimCmdLineClear()
 endfunction
 
 
-function! s:ToggleFullScreen()
+function! s:TogglePrintWordFullScreen()
     if !exists('b:cmdline_fullscreen') | cal s:VimCmdLinePrintWordFullScreen() | el | cal s:VimCmdLineSizeDown() | en  
 endfunction
 
+
+function! s:TogglePrintHeadFullScreen()
+    if !exists('b:cmdline_fullscreen') | cal s:VimCmdLinePrintHeadFullScreen() | el | cal s:VimCmdLineSizeDown() | en  
+endfunction
 
 function! PythonSendLine()
     let line = getline(".")
@@ -157,8 +185,10 @@ nmap <F10> :call VimCmdLineSendFile()<CR>
 nmap <LocalLeader>rl :call VimCmdLinePrintLength()<CR>
 nmap <LocalLeader>rp :call VimCmdLinePrintWord()<CR>
 nmap <LocalLeader>rP :call VimCmdLinePrintWORD()<CR>
-nmap <LocalLeader>rv :call <SID>ToggleFullScreen()<CR>
+nmap <LocalLeader>rv :call <SID>TogglePrintWordFullScreen()<CR>
 nmap <LocalLeader>rV :call VimCmdLinePrintWORDFullScreen()<CR>
+nmap <LocalLeader>rh :call <SID>TogglePrintHeadFullScreen()<CR>
+nmap <LocalLeader>rH :call VimCmdLinePrintHEADFullScreen()<CR>
 nmap<LocalLeader>ri :call VimCmdLinePrintInfo()<CR>
 nmap<LocalLeader>rs :call VimCmdLinePrintSummary()<CR>
 nmap<LocalLeader>rS :call VimCmdLinePrintSUMMARY()<CR>
@@ -167,12 +197,8 @@ nmap<LocalLeader>rr :call VimCmdLineClear()<CR>
 nmap<LocalLeader>rg :call VimCmdLinePlot()<CR>
 nmap<LocalLeader>rG :call VimCmdLinePlotOutlier()<CR>
 
-
-"noremap <LocalLeader>= :resize -38<CR>
-"noremap <LocalLeader>- :call VimCmdLineSizeDown()<CR>
-
 exe 'nmap <buffer><silent> ' . g:cmdline_map_start . ' :call VimCmdLineStartApp()<CR>'
 
 call VimCmdLineSetApp("python")
-call VimCmdLineStartApp()
-:resize 40
+"call VimCmdLineStartApp()
+":resize 40
