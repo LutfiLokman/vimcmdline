@@ -135,6 +135,11 @@ function! s:TogglePrintWordFullScreen()
 endfunction
 
 
+function! s:TogglePrintWORDFullScreen()
+    if !exists('b:cmdline_fullscreen') | cal s:VimCmdLinePrintWORDFullScreen() | el | cal s:VimCmdLineSizeDown() | en  
+endfunction
+
+
 function! s:TogglePrintHeadFullScreen()
     if !exists('b:cmdline_fullscreen') | cal s:VimCmdLinePrintHeadFullScreen() | el | cal s:VimCmdLineSizeDown() | en  
 endfunction
@@ -186,7 +191,7 @@ nmap <LocalLeader>rl :call VimCmdLinePrintLength()<CR>
 nmap <LocalLeader>rp :call VimCmdLinePrintWord()<CR>
 nmap <LocalLeader>rP :call VimCmdLinePrintWORD()<CR>
 nmap <LocalLeader>rv :call <SID>TogglePrintWordFullScreen()<CR>
-nmap <LocalLeader>rV :call VimCmdLinePrintWORDFullScreen()<CR>
+nmap <LocalLeader>rV :call <SID>TogglePrintWORDFullScreen()<CR>
 nmap <LocalLeader>rh :call <SID>TogglePrintHeadFullScreen()<CR>
 nmap <LocalLeader>rH :call VimCmdLinePrintHEADFullScreen()<CR>
 nmap<LocalLeader>ri :call VimCmdLinePrintInfo()<CR>
@@ -200,5 +205,3 @@ nmap<LocalLeader>rG :call VimCmdLinePlotOutlier()<CR>
 exe 'nmap <buffer><silent> ' . g:cmdline_map_start . ' :call VimCmdLineStartApp()<CR>'
 
 call VimCmdLineSetApp("python")
-"call VimCmdLineStartApp()
-":resize 40
