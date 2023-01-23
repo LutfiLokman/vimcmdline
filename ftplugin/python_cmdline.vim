@@ -1,16 +1,32 @@
-" skip if filetype is sage.python
-if match(&ft, '\v<sage>') != -1
-    finish
-endif
-
-" Ensure that plugin/vimcmdline.vim was sourced
-if !exists("g:cmdline_job")
-    runtime plugin/vimcmdline.vim
-endif
-
-
 function! PythonSourceLines(lines)
     call VimCmdLineSendCmd(join(add(a:lines, ''), b:cmdline_nl))
+endfunction
+
+
+function! PythonSendLine()
+    let line = getline(".")
+    if line =~ '^class ' || line =~ '^def '
+        let lines = []
+        let idx = line('.')
+        while idx <= line('$')
+            if line != ''
+                let lines += [line]
+            endif
+            let idx += 1
+            let line = getline(idx)
+            if line =~ '^\S'
+                break
+            endif
+        endwhile
+        let lines += ['']
+        call PythonSourceLines(lines)
+        exe idx
+        return
+    endif
+    if strlen(line) > 0 || b:cmdline_send_empty
+        call VimCmdLineSendCmd(line)
+    endif
+    call VimCmdLineDown()
 endfunction
 
 
@@ -116,19 +132,23 @@ function! VimCmdLinePrintSUMMARY()
 endfunction
 
 
-function! s:VimCmdLineSizeDown()
-    unlet b:cmdline_fullscreen
-    call VimCmdLineSendCmd("import pandas as pd")
-    call VimCmdLineSendCmd("pd.reset_option('^display')")
-    resize +38
-endfunction
-
-
-function! VimCmdLineClear()
+function! VimCmdLinePrintBrowser()
+    call VimCmdLineSendCmd("import webbrowser")
     call VimCmdLineSendCmd("import os")
-    call VimCmdLineSendCmd("os.system('cls')")")
+    call VimCmdLineSendCmd("import time")
+    call VimCmdLineSendCmd("html = " . expand('<cWORD>') . ".to_html()")
+    call VimCmdLineSendCmd("text_file = open('index.html', 'w')")
+    call VimCmdLineSendCmd("text_file.write(html)")
+    call VimCmdLineSendCmd("text_file.close()") 
+    call VimCmdLineSendCmd("webbrowser.open(" . "'file://'" . "+ os.path.realpath('index.html')" .")") 
+    call VimCmdLineSendCmd("time.sleep(5)")
+    call VimCmdLineSendCmd("os.remove('index.html')")
 endfunction
 
+
+function! VimCmdLineToCSV()
+    call VimCmdLineSendCmd(expand('<cWORD>') . ".to_csv('~/OneDrive/Desktop/df.csv')")
+endfunction
 
 function! s:TogglePrintWordFullScreen()
     if !exists('b:cmdline_fullscreen') | cal s:VimCmdLinePrintWordFullScreen() | el | cal s:VimCmdLineSizeDown() | en  
@@ -144,31 +164,6 @@ function! s:TogglePrintHeadFullScreen()
     if !exists('b:cmdline_fullscreen') | cal s:VimCmdLinePrintHeadFullScreen() | el | cal s:VimCmdLineSizeDown() | en  
 endfunction
 
-function! PythonSendLine()
-    let line = getline(".")
-    if line =~ '^class ' || line =~ '^def '
-        let lines = []
-        let idx = line('.')
-        while idx <= line('$')
-            if line != ''
-                let lines += [line]
-            endif
-            let idx += 1
-            let line = getline(idx)
-            if line =~ '^\S'
-                break
-            endif
-        endwhile
-        let lines += ['']
-        call PythonSourceLines(lines)
-        exe idx
-        return
-    endif
-    if strlen(line) > 0 || b:cmdline_send_empty
-        call VimCmdLineSendCmd(line)
-    endif
-    call VimCmdLineDown()
-endfunction
 
 if has("win32")
     let b:cmdline_nl = "\r\n"
@@ -201,6 +196,8 @@ nmap<LocalLeader>rt :call VimCmdLinePrintTable()<CR>
 nmap<LocalLeader>rr :call VimCmdLineClear()<CR>
 nmap<LocalLeader>rg :call VimCmdLinePlot()<CR>
 nmap<LocalLeader>rG :call VimCmdLinePlotOutlier()<CR>
+nmap<LocalLeader>rb :call VimCmdLinePrintBrowser()<CR>
+nmap<LocalLeader>rc :call VimCmdLineToCSV()<CR>
 
 exe 'nmap <buffer><silent> ' . g:cmdline_map_start . ' :call VimCmdLineStartApp()<CR>'
 
