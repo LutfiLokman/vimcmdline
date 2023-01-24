@@ -283,6 +283,7 @@ function VimCmdLineSendLineAndStay()
     let line = getline(".")
     if strlen(line) > 0 || b:cmdline_send_empty
         call VimCmdLineSendCmd(line)
+        call VimCmdLineSendCmd("")
     endif
 endfunction
 

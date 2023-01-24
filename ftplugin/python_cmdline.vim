@@ -1,5 +1,6 @@
 function! PythonSourceLines(lines)
     call VimCmdLineSendCmd(join(add(a:lines, ''), b:cmdline_nl))
+    call VimCmdLineSendCmd("")
 endfunction
 
 
@@ -25,6 +26,7 @@ function! PythonSendLine()
     endif
     if strlen(line) > 0 || b:cmdline_send_empty
         call VimCmdLineSendCmd(line)
+        call VimCmdLineSendCmd("")
     endif
     call VimCmdLineDown()
 endfunction
@@ -33,17 +35,21 @@ endfunction
 function! VimCmdLineSendFile()
     saveas %:p
     call VimCmdLineSendCmd("exec(open(" . "r'" . expand('%:p') . "'" . ").read())")
+    call VimCmdLineSendCmd("")
 endfunction
 
 
 function! VimCmdLinePrintWORD()
     call VimCmdLineSendCmd("print(" . expand('<cWORD>') . ")")
+    call VimCmdLineSendCmd("")
 endfunction
 
 
 function! VimCmdLinePrintWord()
     call VimCmdLineSendCmd("print(" . expand('<cword>') . ")")
+    call VimCmdLineSendCmd("")
 endfunction
+
 
 function! s:VimCmdLinePrintWORDFullScreen()
     let b:cmdline_fullscreen = 1
@@ -53,6 +59,7 @@ function! s:VimCmdLinePrintWORDFullScreen()
     call VimCmdLineSendCmd("import os")
     call VimCmdLineSendCmd("os.system('cls')")")
     call VimCmdLineSendCmd("print(" . expand('<cWORD>') . ")")
+    call VimCmdLineSendCmd("")
 endfunction
 
 
@@ -64,28 +71,25 @@ function! s:VimCmdLinePrintWordFullScreen()
     call VimCmdLineSendCmd("import os")
     call VimCmdLineSendCmd("os.system('cls')")")
     call VimCmdLineSendCmd("print(" . expand('<cword>') . ")")
+    call VimCmdLineSendCmd("")
 endfunction
 
 
 function! s:VimCmdLinePrintHEADFullScreen()
     let b:cmdline_fullscreen = 1
     :resize 0
-    call VimCmdLineSendCmd("import pandas as pd")
     call VimCmdLineSendCmd("pd.set_option('display.max_rows', None)")
-    call VimCmdLineSendCmd("import os")
-    call VimCmdLineSendCmd("os.system('cls')")")
     call VimCmdLineSendCmd("print(" . expand('<cWORD>') . ".head().transpose())")
+    call VimCmdLineSendCmd("")
 endfunction
 
 
 function! s:VimCmdLinePrintHeadFullScreen()
     let b:cmdline_fullscreen = 1
     :resize 0
-    call VimCmdLineSendCmd("import pandas as pd")
     call VimCmdLineSendCmd("pd.set_option('display.max_rows', None)")
-    call VimCmdLineSendCmd("import os")
-    call VimCmdLineSendCmd("os.system('cls')")")
     call VimCmdLineSendCmd("print(" . expand('<cword>') . ".head().transpose())")
+    call VimCmdLineSendCmd("")
 endfunction
 
 
@@ -94,6 +98,7 @@ function! VimCmdLinePlot()
     call VimCmdLineSendCmd("import seaborn as sns")
     call VimCmdLineSendCmd("sns.displot(" . expand('<cWORD>') . ")")
     call VimCmdLineSendCmd("plt.show()")
+    call VimCmdLineSendCmd("")
 endfunction
 
 
@@ -104,31 +109,37 @@ function! VimCmdLinePlotOutlier()
     call VimCmdLineSendCmd("x = x[x.between(x.quantile(.10), x.quantile(.90))]")
     call VimCmdLineSendCmd("sns.displot(x, bins=30)")
     call VimCmdLineSendCmd("plt.show()")
+    call VimCmdLineSendCmd("")
 endfunction
 
 
 function! VimCmdLinePrintLength()
     call VimCmdLineSendCmd("len(" . expand('<cword>') . ")")
+    call VimCmdLineSendCmd("")
 endfunction
 
 
 function! VimCmdLinePrintInfo()
     call VimCmdLineSendCmd(expand('<cword>') . ".info()")
+    call VimCmdLineSendCmd("")
 endfunction
 
 
 function! VimCmdLinePrintTable()
     call VimCmdLineSendCmd(expand('<cWORD>') . ".value_counts()")
+    call VimCmdLineSendCmd("")
 endfunction
 
 
 function! VimCmdLinePrintSummary()
     call VimCmdLineSendCmd(expand('<cword>') . ".describe()")
+    call VimCmdLineSendCmd("")
 endfunction
 
 
 function! VimCmdLinePrintSUMMARY()
     call VimCmdLineSendCmd(expand('<cWORD>') . ".describe()")
+    call VimCmdLineSendCmd("")
 endfunction
 
 
@@ -143,12 +154,30 @@ function! VimCmdLinePrintBrowser()
     call VimCmdLineSendCmd("webbrowser.open(" . "'file://'" . "+ os.path.realpath('index.html')" .")") 
     call VimCmdLineSendCmd("time.sleep(5)")
     call VimCmdLineSendCmd("os.remove('index.html')")
+    call VimCmdLineSendCmd("")
 endfunction
 
 
 function! VimCmdLineToCSV()
     call VimCmdLineSendCmd(expand('<cWORD>') . ".to_csv('~/OneDrive/Desktop/df.csv')")
+    call VimCmdLineSendCmd("")
 endfunction
+
+
+function! s:VimCmdLineSizeDown()
+    unlet b:cmdline_fullscreen
+    call VimCmdLineSendCmd("import pandas as pd")
+    call VimCmdLineSendCmd("pd.reset_option('^display')")
+    call VimCmdLineSendCmd("")
+    resize +38
+endfunction
+
+
+function! VimCmdLineClear()
+    call VimCmdLineSendCmd("cls")
+    call VimCmdLineSendCmd("")
+endfunction
+
 
 function! s:TogglePrintWordFullScreen()
     if !exists('b:cmdline_fullscreen') | cal s:VimCmdLinePrintWordFullScreen() | el | cal s:VimCmdLineSizeDown() | en  
