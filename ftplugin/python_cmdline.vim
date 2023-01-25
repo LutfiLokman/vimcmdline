@@ -166,7 +166,6 @@ function! VimCmdLinePrintBrowserLimit()
     call VimCmdLineSendCmd("text_file.write(html)")
     call VimCmdLineSendCmd("text_file.close()") 
     call VimCmdLineSendCmd("webbrowser.open(" . "r'" . stdpath('data') . "/plugged/vimcmdline/site/index.html', 'w')") 
-    call VimCmdLineSendCmd("time.sleep(10)")
     sleep 50m
     call VimCmdLineSendCmd("")
 endfunction
