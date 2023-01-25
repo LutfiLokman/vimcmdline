@@ -161,13 +161,13 @@ endfunction
 
 
 function! VimCmdLinePrintBrowserLimit()
-    call VimCmdLineSendCmd("html = " . expand('<cWORD>') . ".head(10).to_html()")
-    call VimCmdLineSendCmd("text_file = open('index.html', 'w')")
+    call VimCmdLineSendCmd("string = " . expand('<cWORD>') . ".head().to_html()")
+    call VimCmdLineSendCmd("html = '<head><link rel=\"stylesheet\" href=\"styles.css\"></head>' + string")
+    call VimCmdLineSendCmd("text_file = open(" . "r'" . stdpath('data') . "/plugged/vimcmdline/site/index.html', 'w')")
     call VimCmdLineSendCmd("text_file.write(html)")
     call VimCmdLineSendCmd("text_file.close()") 
-    call VimCmdLineSendCmd("webbrowser.open(" . "'file://'" . "+ os.path.realpath('index.html')" .")") 
+    call VimCmdLineSendCmd("webbrowser.open(" . "r'" . stdpath('data') . "/plugged/vimcmdline/site/index.html', 'w')") 
     call VimCmdLineSendCmd("time.sleep(10)")
-    call VimCmdLineSendCmd("os.remove('index.html')")
     sleep 50m
     call VimCmdLineSendCmd("")
 endfunction
