@@ -154,7 +154,6 @@ function! VimCmdLinePrintBrowser()
     call VimCmdLineSendCmd("text_file.write(html)")
     call VimCmdLineSendCmd("text_file.close()") 
     call VimCmdLineSendCmd("webbrowser.open(" . "r'" . stdpath('data') . "/plugged/vimcmdline/site/index.html', 'w')") 
-    call VimCmdLineSendCmd("time.sleep(10)")
     sleep 50m
     call VimCmdLineSendCmd("")
 endfunction
@@ -167,7 +166,6 @@ function! VimCmdLinePrintBrowserLimit()
     call VimCmdLineSendCmd("text_file.write(html)")
     call VimCmdLineSendCmd("text_file.close()") 
     call VimCmdLineSendCmd("webbrowser.open(" . "r'" . stdpath('data') . "/plugged/vimcmdline/site/index.html', 'w')") 
-    call VimCmdLineSendCmd("time.sleep(10)")
     sleep 50m
     call VimCmdLineSendCmd("")
 endfunction
@@ -201,8 +199,6 @@ endfunction
 function! VimCmdLineDeleteVariables()
     :resize +100
     call VimCmdLineSendCmd('%reset -f')
-    call VimCmdLineSendCmd("import os")
-    call VimCmdLineSendCmd("import sys")
     call VimCmdLineSendCmd("import pandas as pd")
     call VimCmdLineSendCmd("import matplotlib.pyplot as plt")
     call VimCmdLineSendCmd("import seaborn as sns")
