@@ -1,0 +1,39 @@
+:root {
+  color-scheme: dark;
+}
+
+@font-face {
+  font-family: 'VimFont';
+  src: url('Inconsolata-Regular.ttf');
+}
+
+body {
+  background-color: #1F1F28;
+  font-family: 'VimFont'
+}
+
+table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 1em;
+    font-family: 'VimFont';
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    border-color: 1F1F28;
+}
+
+thead th {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 999;
+    padding: 10px 5px;
+    background-color: #000;
+    color: #fff;
+    font-weight: normal;
+}
+
+td {  
+    padding: 10px;
+    font-weight: normal;
+}
