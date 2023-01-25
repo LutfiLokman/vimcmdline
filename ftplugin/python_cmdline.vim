@@ -1,4 +1,5 @@
 function! PythonSourceLines(lines)
+
     call VimCmdLineSendCmd(join(add(a:lines, ''), b:cmdline_nl))
     call VimCmdLineSendCmd("")
 endfunction
@@ -56,9 +57,8 @@ function! s:VimCmdLinePrintWORDFullScreen()
     :resize 0
     call VimCmdLineSendCmd("import pandas as pd")
     call VimCmdLineSendCmd("pd.set_option('display.min_rows', 42)")
-    call VimCmdLineSendCmd("import os")
-    call VimCmdLineSendCmd("os.system('cls')")")
     call VimCmdLineSendCmd("print(" . expand('<cWORD>') . ")")
+    sleep 50m
     call VimCmdLineSendCmd("")
 endfunction
 
@@ -68,9 +68,8 @@ function! s:VimCmdLinePrintWordFullScreen()
     :resize 0
     call VimCmdLineSendCmd("import pandas as pd")
     call VimCmdLineSendCmd("pd.set_option('display.min_rows', 42)")
-    call VimCmdLineSendCmd("import os")
-    call VimCmdLineSendCmd("os.system('cls')")")
     call VimCmdLineSendCmd("print(" . expand('<cword>') . ")")
+    sleep 50m
     call VimCmdLineSendCmd("")
 endfunction
 
@@ -80,6 +79,7 @@ function! s:VimCmdLinePrintHEADFullScreen()
     :resize 0
     call VimCmdLineSendCmd("pd.set_option('display.max_rows', None)")
     call VimCmdLineSendCmd("print(" . expand('<cWORD>') . ".head().transpose())")
+    sleep 50m
     call VimCmdLineSendCmd("")
 endfunction
 
@@ -89,6 +89,7 @@ function! s:VimCmdLinePrintHeadFullScreen()
     :resize 0
     call VimCmdLineSendCmd("pd.set_option('display.max_rows', None)")
     call VimCmdLineSendCmd("print(" . expand('<cword>') . ".head().transpose())")
+    sleep 50m
     call VimCmdLineSendCmd("")
 endfunction
 
@@ -98,6 +99,7 @@ function! VimCmdLinePlot()
     call VimCmdLineSendCmd("import seaborn as sns")
     call VimCmdLineSendCmd("sns.displot(" . expand('<cWORD>') . ")")
     call VimCmdLineSendCmd("plt.show()")
+    sleep 50m
     call VimCmdLineSendCmd("")
 endfunction
 
@@ -109,6 +111,7 @@ function! VimCmdLinePlotOutlier()
     call VimCmdLineSendCmd("x = x[x.between(x.quantile(.10), x.quantile(.90))]")
     call VimCmdLineSendCmd("sns.displot(x, bins=30)")
     call VimCmdLineSendCmd("plt.show()")
+    sleep 50m
     call VimCmdLineSendCmd("")
 endfunction
 
@@ -120,7 +123,7 @@ endfunction
 
 
 function! VimCmdLinePrintInfo()
-    call VimCmdLineSendCmd(expand('<cword>') . ".info()")
+    call VimCmdLineSendCmd(expand('<cWORD>') . ".info()")
     call VimCmdLineSendCmd("")
 endfunction
 
@@ -132,7 +135,7 @@ endfunction
 
 
 function! VimCmdLinePrintSummary()
-    call VimCmdLineSendCmd(expand('<cword>') . ".describe()")
+    call VimCmdLineSendCmd(expand('<cWORD>') . ".describe()")
     call VimCmdLineSendCmd("")
 endfunction
 
@@ -164,6 +167,11 @@ function! VimCmdLineToCSV()
 endfunction
 
 
+function! VimCmdLineToExcel()
+    call VimCmdLineSendCmd(expand('<cWORD>') . ".to_excel('~/OneDrive/Desktop/df.xlsx')")
+    call VimCmdLineSendCmd("")
+endfunction
+
 function! s:VimCmdLineSizeDown()
     unlet b:cmdline_fullscreen
     call VimCmdLineSendCmd("import pandas as pd")
@@ -173,9 +181,23 @@ function! s:VimCmdLineSizeDown()
 endfunction
 
 
-function! VimCmdLineClear()
-    call VimCmdLineSendCmd("cls")
+function! VimCmdLineShowVariables()
+    call VimCmdLineSendCmd('%who_ls')
     call VimCmdLineSendCmd("")
+endfunction
+
+
+function! VimCmdLineResetSize()
+    :resize -9
+endfunction
+
+
+function! VimCmdLineDeleteVariables()
+    :resize +52
+    call VimCmdLineSendCmd('%reset -f')
+    call VimCmdLineSendCmd("")
+    sleep 50m
+    call VimCmdLineResetSize()
 endfunction
 
 
@@ -193,6 +215,10 @@ function! s:TogglePrintHeadFullScreen()
     if !exists('b:cmdline_fullscreen') | cal s:VimCmdLinePrintHeadFullScreen() | el | cal s:VimCmdLineSizeDown() | en  
 endfunction
 
+
+function! s:TogglePrintHEADFullScreen()
+    if !exists('b:cmdline_fullscreen') | cal s:VimCmdLinePrintHEADFullScreen() | el | cal s:VimCmdLineSizeDown() | en  
+endfunction
 
 if has("win32")
     let b:cmdline_nl = "\r\n"
@@ -212,21 +238,23 @@ let b:cmdline_filetype = "python"
 
 nmap <F10> :call VimCmdLineSendFile()<CR>
 nmap <LocalLeader>rl :call VimCmdLinePrintLength()<CR>
-nmap <LocalLeader>rp :call VimCmdLinePrintWord()<CR>
-nmap <LocalLeader>rP :call VimCmdLinePrintWORD()<CR>
-nmap <LocalLeader>rv :call <SID>TogglePrintWordFullScreen()<CR>
-nmap <LocalLeader>rV :call <SID>TogglePrintWORDFullScreen()<CR>
-nmap <LocalLeader>rh :call <SID>TogglePrintHeadFullScreen()<CR>
-nmap <LocalLeader>rH :call VimCmdLinePrintHEADFullScreen()<CR>
+nmap <LocalLeader>rP :call VimCmdLinePrintWord()<CR>
+nmap <LocalLeader>rp :call VimCmdLinePrintWORD()<CR>
+nmap <LocalLeader>rV :call <SID>TogglePrintWordFullScreen()<CR>
+nmap <LocalLeader>rv :call <SID>TogglePrintWORDFullScreen()<CR>
+nmap <LocalLeader>rH :call <SID>TogglePrintHeadFullScreen()<CR>
+nmap <LocalLeader>rh :call <SID>TogglePrintHEADFullScreen()<CR>
 nmap<LocalLeader>ri :call VimCmdLinePrintInfo()<CR>
 nmap<LocalLeader>rs :call VimCmdLinePrintSummary()<CR>
 nmap<LocalLeader>rS :call VimCmdLinePrintSUMMARY()<CR>
 nmap<LocalLeader>rt :call VimCmdLinePrintTable()<CR>
-nmap<LocalLeader>rr :call VimCmdLineClear()<CR>
 nmap<LocalLeader>rg :call VimCmdLinePlot()<CR>
 nmap<LocalLeader>rG :call VimCmdLinePlotOutlier()<CR>
 nmap<LocalLeader>rb :call VimCmdLinePrintBrowser()<CR>
 nmap<LocalLeader>rc :call VimCmdLineToCSV()<CR>
+nmap<LocalLeader>rC :call VimCmdLineToExcel()<CR>
+nmap<LocalLeader>rw :call VimCmdLineShowVariables()<CR>
+nmap<LocalLeader>rW :call VimCmdLineDeleteVariables()<CR>
 
 exe 'nmap <buffer><silent> ' . g:cmdline_map_start . ' :call VimCmdLineStartApp()<CR>'
 
