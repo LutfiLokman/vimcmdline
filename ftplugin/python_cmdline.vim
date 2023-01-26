@@ -40,7 +40,7 @@ endfunction
 
 
 function! VimCmdLinePrintWORD()
-    call VimCmdLineSendCmd("pd.set_option('display.max_rows', 5)")
+    call VimCmdLineSendCmd("pd.set_option('display.max_rows', 7)")
     call VimCmdLineSendCmd("print(" . expand('<cWORD>') . ")")
     sleep 50m
     call VimCmdLineSendCmd("")
@@ -48,7 +48,7 @@ endfunction
 
 
 function! VimCmdLinePrintWord()
-    call VimCmdLineSendCmd("pd.set_option('display.max_rows', 5)")
+    call VimCmdLineSendCmd("pd.set_option('display.max_rows', 7)")
     call VimCmdLineSendCmd("print(" . expand('<cword>') . ")")
     sleep 50m
     call VimCmdLineSendCmd("")
@@ -211,7 +211,7 @@ endfunction
 
 
 if has("win32")
-    let b:cmdline_nl = "\r\n"
+    let b:cmdline_nl = "\r"
 else
     let b:cmdline_nl = "\n"
 endif
