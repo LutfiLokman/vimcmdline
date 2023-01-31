@@ -160,7 +160,7 @@ endfunction
 
 
 function! VimCmdLinePrintBrowserLimit()
-    call VimCmdLineSendCmd("string = " . expand('<cWORD>') . ".head().to_html()")
+    call VimCmdLineSendCmd("string = " . expand('<cWORD>') . ".head(100).to_html()")
     call VimCmdLineSendCmd("html = '<head><link rel=\"stylesheet\" href=\"styles.css\"></head>' + string")
     call VimCmdLineSendCmd("text_file = open(" . "r'" . stdpath('data') . "/plugged/vimcmdline/site/index.html', 'w')")
     call VimCmdLineSendCmd("text_file.write(html)")
@@ -206,7 +206,7 @@ function! VimCmdLineDeleteVariables()
     call VimCmdLineSendCmd("import time")
     call VimCmdLineSendCmd("")
     sleep 100m
-    :resize -11
+    :resize -9
 endfunction
 
 

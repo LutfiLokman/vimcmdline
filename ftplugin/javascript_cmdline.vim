@@ -12,7 +12,7 @@ function! JavaScriptSourceLines(lines)
     call VimCmdLineSendCmd(clear_cache_command . source_file_command)
 endfunction
 
-let b:cmdline_nl = "\n"
+let b:cmdline_nl = "\r"
 let b:cmdline_app = "node"
 let b:cmdline_quit_cmd = ".exit"
 let b:cmdline_source_fun = function("JavaScriptSourceLines")
