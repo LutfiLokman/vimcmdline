@@ -149,7 +149,7 @@ endfunction
 
 function! VimCmdLinePrintBrowser()
     call VimCmdLineSendCmd("string = " . expand('<cWORD>') . ".to_html()")
-    call VimCmdLineSendCmd("html = '<head><link rel=\"stylesheet\" href=\"styles.css\"></head>' + string")
+    call VimCmdLineSendCmd("html = '<head><link rel=\"stylesheet\" href=\"styles.css\"></head><script src=\"sorttable.js\"></script>' + string")
     call VimCmdLineSendCmd("text_file = open(" . "r'" . stdpath('data') . "/plugged/vimcmdline/site/index.html', 'w')")
     call VimCmdLineSendCmd("text_file.write(html)")
     call VimCmdLineSendCmd("text_file.close()") 
