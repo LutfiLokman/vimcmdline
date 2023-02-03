@@ -40,7 +40,7 @@ endfunction
 
 
 function! VimCmdLinePrintWORD()
-    call VimCmdLineSendCmd("pd.set_option('display.max_rows', 5)")
+    call VimCmdLineSendCmd("pd.set_option('display.max_rows', 8)")
     call VimCmdLineSendCmd("print(" . expand('<cWORD>') . ")")
     sleep 50m
     call VimCmdLineSendCmd("")
@@ -48,7 +48,7 @@ endfunction
 
 
 function! VimCmdLinePrintWord()
-    call VimCmdLineSendCmd("pd.set_option('display.max_rows', 5)")
+    call VimCmdLineSendCmd("pd.set_option('display.max_rows', 8)")
     call VimCmdLineSendCmd("print(" . expand('<cword>') . ")")
     sleep 50m
     call VimCmdLineSendCmd("")
@@ -192,7 +192,7 @@ endfunction
 function! VimCmdLineResetSize()
     :resize +100
     sleep 100m
-    :resize -9
+    :resize -13
 endfunction
 
 
@@ -206,7 +206,7 @@ function! VimCmdLineDeleteVariables()
     call VimCmdLineSendCmd("import time")
     call VimCmdLineSendCmd("")
     sleep 100m
-    :resize -9
+    :resize -13
 endfunction
 
 
