@@ -148,37 +148,39 @@ endfunction
 
 
 function! VimCmdLinePrintBrowser()
+    call VimCmdLineSendCmd("import webbrowser")
     call VimCmdLineSendCmd("string = " . expand('<cWORD>') . ".to_html()")
     call VimCmdLineSendCmd("html = '<head><link rel=\"stylesheet\" href=\"styles.css\"></head><script src=\"sorttable.js\"></script>' + string")
-    call VimCmdLineSendCmd("text_file = open(" . "r'" . stdpath('data') . "/plugged/vimcmdline/site/index.html', 'w')")
+    call VimCmdLineSendCmd("text_file = open(" . "r'" . g:home_dir . "/AppData/local/nvim-data/plugged/vimcmdline/site/index.html', 'w')")
     call VimCmdLineSendCmd("text_file.write(html)")
     call VimCmdLineSendCmd("text_file.close()") 
-    call VimCmdLineSendCmd("webbrowser.open(" . "r'" . stdpath('data') . "/plugged/vimcmdline/site/index.html', 'w')") 
+    call VimCmdLineSendCmd("webbrowser.open(" . "r'" . g:home_dir . "/AppData/local/nvim-data/plugged/vimcmdline/site/index.html')") 
     sleep 50m
     call VimCmdLineSendCmd("")
 endfunction
 
 
 function! VimCmdLinePrintBrowserLimit()
+    call VimCmdLineSendCmd("import webbrowser")
     call VimCmdLineSendCmd("string = " . expand('<cWORD>') . ".head(100).to_html()")
     call VimCmdLineSendCmd("html = '<head><link rel=\"stylesheet\" href=\"styles.css\"></head>' + string")
-    call VimCmdLineSendCmd("text_file = open(" . "r'" . stdpath('data') . "/plugged/vimcmdline/site/index.html', 'w')")
+    call VimCmdLineSendCmd("text_file = open(" . "r'" . g:home_dir . "/AppData/local/nvim-data/plugged/vimcmdline/site/index.html', 'w')")
     call VimCmdLineSendCmd("text_file.write(html)")
     call VimCmdLineSendCmd("text_file.close()") 
-    call VimCmdLineSendCmd("webbrowser.open(" . "r'" . stdpath('data') . "/plugged/vimcmdline/site/index.html', 'w')") 
+    call VimCmdLineSendCmd("webbrowser.open(" . "r'" . g:home_dir . "/AppData/local/nvim-data/plugged/vimcmdline/site/index.html')") 
     sleep 50m
     call VimCmdLineSendCmd("")
 endfunction
 
 
 function! VimCmdLineToCSV()
-    call VimCmdLineSendCmd(expand('<cWORD>') . ".to_csv('~/OneDrive/Desktop/df.csv')")
+    call VimCmdLineSendCmd(expand('<cWORD>') . ".to_csv('" . g:home_dir . "/OneDrive/Desktop/df.csv')")
     call VimCmdLineSendCmd("")
 endfunction
 
 
 function! VimCmdLineToExcel()
-    call VimCmdLineSendCmd(expand('<cWORD>') . ".to_excel('~/OneDrive/Desktop/df.xlsx')")
+    call VimCmdLineSendCmd(expand('<cWORD>') . ".to_excel('" . g:home_dir . "/OneDrive/Desktop/df.xlsx')")
     call VimCmdLineSendCmd("")
 endfunction
 
