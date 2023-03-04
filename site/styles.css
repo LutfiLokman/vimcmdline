@@ -9,13 +9,15 @@
 
 body {
   background-color: #1F1F28;
-  font-family: 'VimFont'
+  font-family: 'VimFont';
+  color: #FFFACA;
 }
 
 table {
     border-collapse: collapse;
     margin: 25px 0;
     font-size: 1em;
+    color: #FFFACA;
     font-family: 'VimFont';
     min-width: 400px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
@@ -36,5 +38,6 @@ thead th {
 
 td {  
     padding: 10px;
+    color: #FFFACA;
     font-weight: normal;
 }

@@ -211,6 +211,9 @@ function! VimCmdLineDeleteVariables()
     :resize -13
 endfunction
 
+function! VimCmdLineExitPdb()
+    call VimCmdLineSendCmd('exit')
+endfunction
 
 if has("win32")
     let b:cmdline_nl = "\r"
@@ -250,6 +253,7 @@ nmap<LocalLeader>rc :call VimCmdLineToCSV()<CR>
 nmap<LocalLeader>rC :call VimCmdLineToExcel()<CR>
 nmap<LocalLeader>rw :call VimCmdLineShowVariables()<CR>
 nmap<LocalLeader>rW :call VimCmdLineDeleteVariables()<CR>
+nmap <F7> :call VimCmdLineExitPdb()<CR>
 
 exe 'nmap <buffer><silent> ' . g:cmdline_map_start . ' :call VimCmdLineStartApp()<CR>'
 
