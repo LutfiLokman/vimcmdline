@@ -1,4 +1,5 @@
 function! PythonSourceLines(lines)
+.sort_values(0, ascending=False)
     call VimCmdLineSendCmd(join(add(a:lines, ''), b:cmdline_nl))
     call VimCmdLineSendCmd("")
 endfunction
@@ -211,8 +212,21 @@ function! VimCmdLineDeleteVariables()
     :resize -13
 endfunction
 
-function! VimCmdLineExitPdb()
-    call VimCmdLineSendCmd('exit')
+function! VimCmdLinePdbQuit()
+    call VimCmdLineSendCmd('quit')
+    :%s/breakpoint()\n//g
+endfunction
+
+function! VimCmdLinePdbStep()
+    call VimCmdLineSendCmd('s')
+endfunction
+
+function! VimCmdLinePdbNext()
+    call VimCmdLineSendCmd('n')
+endfunction
+
+function! VimCmdLinePdbContinue()
+    call VimCmdLineSendCmd('c')
 endfunction
 
 if has("win32")
@@ -253,7 +267,11 @@ nmap<LocalLeader>rc :call VimCmdLineToCSV()<CR>
 nmap<LocalLeader>rC :call VimCmdLineToExcel()<CR>
 nmap<LocalLeader>rw :call VimCmdLineShowVariables()<CR>
 nmap<LocalLeader>rW :call VimCmdLineDeleteVariables()<CR>
-nmap <F7> :call VimCmdLineExitPdb()<CR>
+nmap<LocalLeader>pq :call VimCmdLinePdbQuit()<CR>
+nmap<LocalLeader>pc :call VimCmdLinePdbContinue()<CR>
+nmap<LocalLeader>ps :call VimCmdLinePdbStept()<CR>
+nmap<LocalLeader>pn :call VimCmdLinePdbNext()<CR>
+
 
 exe 'nmap <buffer><silent> ' . g:cmdline_map_start . ' :call VimCmdLineStartApp()<CR>'
 
