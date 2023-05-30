@@ -1,6 +1,7 @@
 function! PythonSourceLines(lines)
 .sort_values(0, ascending=False)
     call VimCmdLineSendCmd(join(add(a:lines, ''), b:cmdline_nl))
+    sleep 50m
     call VimCmdLineSendCmd("")
 endfunction
 
@@ -29,6 +30,7 @@ function! PythonSendLine()
         call VimCmdLineSendCmd(line)
         call VimCmdLineSendCmd("")
     endif
+    sleep 50m
     call VimCmdLineDown()
 endfunction
 
@@ -36,6 +38,7 @@ endfunction
 function! VimCmdLineSendFile()
     saveas %:p
     call VimCmdLineSendCmd("exec(open(" . "r'" . expand('%:p') . "'" . ").read())")
+    sleep 50m
     call VimCmdLineSendCmd("")
 endfunction
 
@@ -195,7 +198,7 @@ endfunction
 function! VimCmdLineResetSize()
     :resize +100
     sleep 100m
-    :resize -13
+    :resize -17
 endfunction
 
 
@@ -209,7 +212,7 @@ function! VimCmdLineDeleteVariables()
     call VimCmdLineSendCmd("import time")
     call VimCmdLineSendCmd("")
     sleep 100m
-    :resize -13
+    :resize -17
 endfunction
 
 function! VimCmdLinePdbQuit()
@@ -245,7 +248,7 @@ let b:cmdline_source_fun = function("PythonSourceLines")
 let b:cmdline_send_empty = 1
 let b:cmdline_filetype = "python"
 
-nmap <F10> :call VimCmdLineSendFile()<CR>
+nmap <F8> :call VimCmdLineSendFile()<CR>
 nmap <F5> :call VimCmdLineResetSize()<CR>
 nmap <LocalLeader>rl :call VimCmdLinePrintLength()<CR>
 nmap <LocalLeader>rP :call VimCmdLinePrintWord()<CR>
