@@ -178,13 +178,15 @@ endfunction
 
 
 function! VimCmdLineToCSV()
-    call VimCmdLineSendCmd(expand('<cWORD>') . ".to_csv('" . g:home_dir . "/OneDrive/Desktop/df.csv')")
+    call VimCmdLineSendCmd(expand('<cWORD>') . ".to_csv('" . g:home_dir . "/OneDrive/Desktop/df.csv', index=False)")
+    sleep 50m
     call VimCmdLineSendCmd("")
 endfunction
 
 
 function! VimCmdLineToExcel()
     call VimCmdLineSendCmd(expand('<cWORD>') . ".to_excel('" . g:home_dir . "/OneDrive/Desktop/df.xlsx')")
+    sleep 50m
     call VimCmdLineSendCmd("")
 endfunction
 

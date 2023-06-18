@@ -2,914 +2,1625 @@
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>EPISODE NO</th>
-      <th>level_1</th>
-      <th>code</th>
-      <th>CODE</th>
-      <th>DESCRIPTION</th>
-      <th>AMOUNT (MAX)</th>
+      <th>id_x</th>
+      <th>hospital_supply_name</th>
+      <th>generic_name_id</th>
+      <th>Unnamed: 0</th>
+      <th>prod_id</th>
+      <th>supply_category</th>
+      <th>og_hospital_supply_name</th>
+      <th>text</th>
+      <th>manufacturer_name</th>
+      <th>base_manufacturer_name</th>
+      <th>cost</th>
+      <th>Cluster</th>
+      <th>Score</th>
+      <th>Intra_cluster_score</th>
+      <th>generic_name</th>
+      <th>id_y</th>
+      <th>name</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>IP0197149</td>
-      <td>0</td>
-      <td>20022</td>
-      <td>20022</td>
-      <td>Complex After Office Hours</td>
-      <td>350.0</td>
+      <td>220439</td>
+      <td>NUVASIVE SET CAPS</td>
+      <td>NaN</td>
+      <td>20</td>
+      <td>220439</td>
+      <td>Set Screw</td>
+      <td>NUVASIVE SET CAPS</td>
+      <td>caps</td>
+      <td>NUVASIVE INC</td>
+      <td>Nuvasive</td>
+      <td>50</td>
+      <td>7</td>
+      <td>0.922767</td>
+      <td>0.897020</td>
+      <td>Caps Cap Nuvasvie</td>
+      <td>243</td>
+      <td>Caps Cap Nuvasvie</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>IP0197149</td>
-      <td>1</td>
-      <td>H0210S</td>
-      <td>H0210S</td>
-      <td>Appendicectomy (Surgeon)</td>
-      <td>1565.0</td>
+      <td>292247</td>
+      <td>NUVASIVE SET CAPS</td>
+      <td>NaN</td>
+      <td>27</td>
+      <td>292247</td>
+      <td>Set Screw</td>
+      <td>NUVASIVE SET CAPS</td>
+      <td>caps</td>
+      <td>NUVASIVE INC</td>
+      <td>Nuvasive</td>
+      <td>50</td>
+      <td>7</td>
+      <td>0.927652</td>
+      <td>0.897020</td>
+      <td>Caps Cap Nuvasvie</td>
+      <td>243</td>
+      <td>Caps Cap Nuvasvie</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>IP0197149</td>
-      <td>2</td>
-      <td>T4300S</td>
-      <td>T4300S</td>
-      <td>Laparoscopy including biopsy and adhesiolysis (Surgeon)</td>
-      <td>1160.0</td>
+      <td>383992</td>
+      <td>NUVASIVE SET CAPS</td>
+      <td>NaN</td>
+      <td>21</td>
+      <td>383992</td>
+      <td>Set Screw</td>
+      <td>NUVASIVE SET CAPS</td>
+      <td>caps</td>
+      <td>NUVASIVE INC</td>
+      <td>Nuvasive</td>
+      <td>50</td>
+      <td>7</td>
+      <td>0.922767</td>
+      <td>0.897020</td>
+      <td>Caps Cap Nuvasvie</td>
+      <td>243</td>
+      <td>Caps Cap Nuvasvie</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>IP0197149</td>
-      <td>3</td>
-      <td>T4300A</td>
-      <td>T4300A</td>
-      <td>Laparoscopy including biopsy and adhesiolysis (Anaesthetist)</td>
-      <td>435.0</td>
+      <td>388943</td>
+      <td>NUVASIVE SET CAPS</td>
+      <td>NaN</td>
+      <td>28</td>
+      <td>388943</td>
+      <td>Set Screw</td>
+      <td>NUVASIVE SET CAPS</td>
+      <td>caps</td>
+      <td>NUVASIVE INC</td>
+      <td>Nuvasive</td>
+      <td>50</td>
+      <td>7</td>
+      <td>0.927652</td>
+      <td>0.897020</td>
+      <td>Caps Cap Nuvasvie</td>
+      <td>243</td>
+      <td>Caps Cap Nuvasvie</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>IP0197149</td>
-      <td>4</td>
-      <td>H0210A</td>
-      <td>H0210A</td>
-      <td>Appendicectomy (Anaesthetist)</td>
-      <td>570.0</td>
+      <td>486566</td>
+      <td>NUVASIVE SET CAP</td>
+      <td>NaN</td>
+      <td>12</td>
+      <td>486566</td>
+      <td>Set Screw</td>
+      <td>NUVASIVE SET CAP</td>
+      <td>cap</td>
+      <td>NUVASIVE INC</td>
+      <td>Nuvasive</td>
+      <td>50</td>
+      <td>7</td>
+      <td>0.928501</td>
+      <td>0.897020</td>
+      <td>Caps Cap Nuvasvie</td>
+      <td>243</td>
+      <td>Caps Cap Nuvasvie</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>IP0197149</td>
-      <td>5</td>
-      <td>20012</td>
-      <td>20012</td>
-      <td>Complex Office Hours</td>
-      <td>235.0</td>
+      <td>648092</td>
+      <td>NUVASIVE SET CAP</td>
+      <td>NaN</td>
+      <td>13</td>
+      <td>648092</td>
+      <td>Set Screw</td>
+      <td>NUVASIVE SET CAP</td>
+      <td>cap</td>
+      <td>NUVASIVE INC</td>
+      <td>Nuvasive</td>
+      <td>50</td>
+      <td>7</td>
+      <td>0.928501</td>
+      <td>0.897020</td>
+      <td>Caps Cap Nuvasvie</td>
+      <td>243</td>
+      <td>Caps Cap Nuvasvie</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>IP0197149</td>
-      <td>6</td>
-      <td>20032</td>
-      <td>20032</td>
-      <td>Complex Office Hours</td>
-      <td>105.0</td>
+      <td>665927</td>
+      <td>NUVASIVE SET CAPS</td>
+      <td>NaN</td>
+      <td>22</td>
+      <td>665927</td>
+      <td>Set Screw</td>
+      <td>NUVASIVE SET CAPS</td>
+      <td>caps</td>
+      <td>NUVASIVE INC</td>
+      <td>Nuvasive</td>
+      <td>50</td>
+      <td>7</td>
+      <td>0.922767</td>
+      <td>0.897020</td>
+      <td>Caps Cap Nuvasvie</td>
+      <td>243</td>
+      <td>Caps Cap Nuvasvie</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>IP0197149</td>
+      <td>672530</td>
+      <td>NUVASIVE SET CAPS</td>
+      <td>NaN</td>
+      <td>23</td>
+      <td>672530</td>
+      <td>Set Screw</td>
+      <td>NUVASIVE SET CAPS</td>
+      <td>caps</td>
+      <td>NUVASIVE INC</td>
+      <td>Nuvasive</td>
+      <td>50</td>
       <td>7</td>
-      <td>20032</td>
-      <td>20032</td>
-      <td>Complex Office Hours</td>
-      <td>105.0</td>
+      <td>0.922767</td>
+      <td>0.897020</td>
+      <td>Caps Cap Nuvasvie</td>
+      <td>243</td>
+      <td>Caps Cap Nuvasvie</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>IP0197149</td>
-      <td>8</td>
-      <td>20032</td>
-      <td>20032</td>
-      <td>Complex Office Hours</td>
-      <td>105.0</td>
+      <td>810928</td>
+      <td>NUVASIVE SET CAP</td>
+      <td>NaN</td>
+      <td>14</td>
+      <td>810928</td>
+      <td>Set Screw</td>
+      <td>NUVASIVE SET CAP</td>
+      <td>cap</td>
+      <td>NUVASIVE INC</td>
+      <td>Nuvasive</td>
+      <td>50</td>
+      <td>7</td>
+      <td>0.928501</td>
+      <td>0.897020</td>
+      <td>Caps Cap Nuvasvie</td>
+      <td>243</td>
+      <td>Caps Cap Nuvasvie</td>
     </tr>
     <tr>
       <th>9</th>
-      <td>IP0197149</td>
-      <td>9</td>
-      <td>20032</td>
-      <td>20032</td>
-      <td>Complex Office Hours</td>
-      <td>105.0</td>
+      <td>812030</td>
+      <td>NUVASVIE SET CAP</td>
+      <td>NaN</td>
+      <td>29</td>
+      <td>812030</td>
+      <td>Set Screw</td>
+      <td>NUVASVIE SET CAP</td>
+      <td>nuvasvie cap</td>
+      <td>NUVASIVE INC</td>
+      <td>Nuvasive</td>
+      <td>50</td>
+      <td>7</td>
+      <td>0.858659</td>
+      <td>0.897020</td>
+      <td>Caps Cap Nuvasvie</td>
+      <td>243</td>
+      <td>Caps Cap Nuvasvie</td>
     </tr>
     <tr>
       <th>10</th>
-      <td>IP0197149</td>
-      <td>0</td>
-      <td>20022</td>
-      <td>20022</td>
-      <td>Complex After Office Hours</td>
-      <td>350.0</td>
+      <td>813345</td>
+      <td>NUVASIVE SET CAPS</td>
+      <td>NaN</td>
+      <td>24</td>
+      <td>813345</td>
+      <td>Set Screw</td>
+      <td>NUVASIVE SET CAPS</td>
+      <td>caps</td>
+      <td>NUVASIVE INC</td>
+      <td>Nuvasive</td>
+      <td>50</td>
+      <td>7</td>
+      <td>0.922767</td>
+      <td>0.897020</td>
+      <td>Caps Cap Nuvasvie</td>
+      <td>243</td>
+      <td>Caps Cap Nuvasvie</td>
     </tr>
     <tr>
       <th>11</th>
-      <td>IP0197149</td>
-      <td>1</td>
-      <td>H0210S</td>
-      <td>H0210S</td>
-      <td>Appendicectomy (Surgeon)</td>
-      <td>1565.0</td>
+      <td>834810</td>
+      <td>NUVASICE SET CAPS</td>
+      <td>NaN</td>
+      <td>10</td>
+      <td>834810</td>
+      <td>Set Screw</td>
+      <td>NUVASICE SET CAPS</td>
+      <td>nuvasice caps</td>
+      <td>NUVASIVE INC</td>
+      <td>Nuvasive</td>
+      <td>50</td>
+      <td>7</td>
+      <td>0.847523</td>
+      <td>0.897020</td>
+      <td>Caps Cap Nuvasvie</td>
+      <td>243</td>
+      <td>Caps Cap Nuvasvie</td>
     </tr>
     <tr>
       <th>12</th>
-      <td>IP0197149</td>
-      <td>2</td>
-      <td>T4300S</td>
-      <td>T4300S</td>
-      <td>Laparoscopy including biopsy and adhesiolysis (Surgeon)</td>
-      <td>1160.0</td>
+      <td>897771</td>
+      <td>NUVASIVE SET CAP</td>
+      <td>NaN</td>
+      <td>15</td>
+      <td>897771</td>
+      <td>Set Screw</td>
+      <td>NUVASIVE SET CAP</td>
+      <td>cap</td>
+      <td>NUVASIVE INC</td>
+      <td>Nuvasive</td>
+      <td>50</td>
+      <td>7</td>
+      <td>0.928501</td>
+      <td>0.897020</td>
+      <td>Caps Cap Nuvasvie</td>
+      <td>243</td>
+      <td>Caps Cap Nuvasvie</td>
     </tr>
     <tr>
       <th>13</th>
-      <td>IP0197149</td>
-      <td>3</td>
-      <td>T4300A</td>
-      <td>T4300A</td>
-      <td>Laparoscopy including biopsy and adhesiolysis (Anaesthetist)</td>
-      <td>435.0</td>
+      <td>903550</td>
+      <td>NUVASVIE SET CAP</td>
+      <td>NaN</td>
+      <td>30</td>
+      <td>903550</td>
+      <td>Set Screw</td>
+      <td>NUVASVIE SET CAP</td>
+      <td>nuvasvie cap</td>
+      <td>NUVASIVE INC</td>
+      <td>Nuvasive</td>
+      <td>50</td>
+      <td>7</td>
+      <td>0.858659</td>
+      <td>0.897020</td>
+      <td>Caps Cap Nuvasvie</td>
+      <td>243</td>
+      <td>Caps Cap Nuvasvie</td>
     </tr>
     <tr>
       <th>14</th>
-      <td>IP0197149</td>
-      <td>4</td>
-      <td>H0210A</td>
-      <td>H0210A</td>
-      <td>Appendicectomy (Anaesthetist)</td>
-      <td>570.0</td>
+      <td>904735</td>
+      <td>NUVASIVE SET CAP</td>
+      <td>NaN</td>
+      <td>16</td>
+      <td>904735</td>
+      <td>Set Screw</td>
+      <td>NUVASIVE SET CAP</td>
+      <td>cap</td>
+      <td>NUVASIVE INC</td>
+      <td>Nuvasive</td>
+      <td>50</td>
+      <td>7</td>
+      <td>0.928501</td>
+      <td>0.897020</td>
+      <td>Caps Cap Nuvasvie</td>
+      <td>243</td>
+      <td>Caps Cap Nuvasvie</td>
     </tr>
     <tr>
       <th>15</th>
-      <td>IP0197149</td>
-      <td>5</td>
-      <td>20012</td>
-      <td>20012</td>
-      <td>Complex Office Hours</td>
-      <td>235.0</td>
+      <td>908291</td>
+      <td>NUVASICE SET CAPS</td>
+      <td>NaN</td>
+      <td>11</td>
+      <td>908291</td>
+      <td>Set Screw</td>
+      <td>NUVASICE SET CAPS</td>
+      <td>nuvasice caps</td>
+      <td>NUVASIVE INC</td>
+      <td>Nuvasive</td>
+      <td>50</td>
+      <td>7</td>
+      <td>0.847523</td>
+      <td>0.897020</td>
+      <td>Caps Cap Nuvasvie</td>
+      <td>243</td>
+      <td>Caps Cap Nuvasvie</td>
     </tr>
     <tr>
       <th>16</th>
-      <td>IP0197149</td>
-      <td>6</td>
-      <td>20032</td>
-      <td>20032</td>
-      <td>Complex Office Hours</td>
-      <td>105.0</td>
+      <td>912274</td>
+      <td>NUVASIVE SET CAPS</td>
+      <td>NaN</td>
+      <td>25</td>
+      <td>912274</td>
+      <td>Set Screw</td>
+      <td>NUVASIVE SET CAPS</td>
+      <td>caps</td>
+      <td>NUVASIVE INC</td>
+      <td>Nuvasive</td>
+      <td>50</td>
+      <td>7</td>
+      <td>0.922767</td>
+      <td>0.897020</td>
+      <td>Caps Cap Nuvasvie</td>
+      <td>243</td>
+      <td>Caps Cap Nuvasvie</td>
     </tr>
     <tr>
       <th>17</th>
-      <td>IP0197149</td>
+      <td>1167638</td>
+      <td>NUVASIVE SET CAP</td>
+      <td>NaN</td>
+      <td>17</td>
+      <td>1167638</td>
+      <td>Set Screw</td>
+      <td>NUVASIVE SET CAP</td>
+      <td>cap</td>
+      <td>NUVASIVE INC</td>
+      <td>Nuvasive</td>
+      <td>50</td>
       <td>7</td>
-      <td>20032</td>
-      <td>20032</td>
-      <td>Complex Office Hours</td>
-      <td>105.0</td>
+      <td>0.928501</td>
+      <td>0.897020</td>
+      <td>Caps Cap Nuvasvie</td>
+      <td>243</td>
+      <td>Caps Cap Nuvasvie</td>
     </tr>
     <tr>
       <th>18</th>
-      <td>IP0197149</td>
-      <td>8</td>
-      <td>20032</td>
-      <td>20032</td>
-      <td>Complex Office Hours</td>
-      <td>105.0</td>
+      <td>1173534</td>
+      <td>NUVASVIE SET CAP</td>
+      <td>NaN</td>
+      <td>31</td>
+      <td>1173534</td>
+      <td>Set Screw</td>
+      <td>NUVASVIE SET CAP</td>
+      <td>nuvasvie cap</td>
+      <td>NUVASIVE INC</td>
+      <td>Nuvasive</td>
+      <td>50</td>
+      <td>7</td>
+      <td>0.858659</td>
+      <td>0.897020</td>
+      <td>Caps Cap Nuvasvie</td>
+      <td>243</td>
+      <td>Caps Cap Nuvasvie</td>
     </tr>
     <tr>
       <th>19</th>
-      <td>IP0197149</td>
-      <td>9</td>
-      <td>20032</td>
-      <td>20032</td>
-      <td>Complex Office Hours</td>
-      <td>105.0</td>
+      <td>1182609</td>
+      <td>NUVASIVE SET CAPS</td>
+      <td>NaN</td>
+      <td>26</td>
+      <td>1182609</td>
+      <td>Set Screw</td>
+      <td>NUVASIVE SET CAPS</td>
+      <td>caps</td>
+      <td>NUVASIVE INC</td>
+      <td>Nuvasive</td>
+      <td>50</td>
+      <td>7</td>
+      <td>0.922767</td>
+      <td>0.897020</td>
+      <td>Caps Cap Nuvasvie</td>
+      <td>243</td>
+      <td>Caps Cap Nuvasvie</td>
     </tr>
     <tr>
       <th>20</th>
-      <td>IP0197149</td>
-      <td>0</td>
-      <td>20022</td>
-      <td>20022</td>
-      <td>Complex After Office Hours</td>
-      <td>350.0</td>
+      <td>1430187</td>
+      <td>NUVASIVE SET CAP</td>
+      <td>NaN</td>
+      <td>18</td>
+      <td>1430187</td>
+      <td>Set Screw</td>
+      <td>NUVASIVE SET CAP</td>
+      <td>cap</td>
+      <td>NUVASIVE INC</td>
+      <td>Nuvasive</td>
+      <td>45</td>
+      <td>7</td>
+      <td>0.928501</td>
+      <td>0.897020</td>
+      <td>Caps Cap Nuvasvie</td>
+      <td>243</td>
+      <td>Caps Cap Nuvasvie</td>
     </tr>
     <tr>
       <th>21</th>
-      <td>IP0197149</td>
-      <td>1</td>
-      <td>H0210S</td>
-      <td>H0210S</td>
-      <td>Appendicectomy (Surgeon)</td>
-      <td>1565.0</td>
+      <td>1520680</td>
+      <td>NUVASIVE SET CAP</td>
+      <td>NaN</td>
+      <td>19</td>
+      <td>1520680</td>
+      <td>Set Screw</td>
+      <td>NUVASIVE SET CAP</td>
+      <td>cap</td>
+      <td>NUVASIVE INC</td>
+      <td>Nuvasive</td>
+      <td>45</td>
+      <td>7</td>
+      <td>0.928501</td>
+      <td>0.897020</td>
+      <td>Caps Cap Nuvasvie</td>
+      <td>243</td>
+      <td>Caps Cap Nuvasvie</td>
     </tr>
     <tr>
       <th>22</th>
-      <td>IP0197149</td>
-      <td>2</td>
-      <td>T4300S</td>
-      <td>T4300S</td>
-      <td>Laparoscopy including biopsy and adhesiolysis (Surgeon)</td>
-      <td>1160.0</td>
+      <td>240371</td>
+      <td>SCREW INNER SET</td>
+      <td>NaN</td>
+      <td>15</td>
+      <td>240371</td>
+      <td>Set Screw</td>
+      <td>SCREW INNER SET</td>
+      <td>inner</td>
+      <td>DEPUY</td>
+      <td>DEPUY SYNTHES</td>
+      <td>150</td>
+      <td>5</td>
+      <td>0.829259</td>
+      <td>0.906182</td>
+      <td>Inner Single</td>
+      <td>245</td>
+      <td>Inner Single</td>
     </tr>
     <tr>
       <th>23</th>
-      <td>IP0197149</td>
-      <td>3</td>
-      <td>T4300A</td>
-      <td>T4300A</td>
-      <td>Laparoscopy including biopsy and adhesiolysis (Anaesthetist)</td>
-      <td>435.0</td>
+      <td>240398</td>
+      <td>SCREW INNER SET</td>
+      <td>NaN</td>
+      <td>16</td>
+      <td>240398</td>
+      <td>Set Screw</td>
+      <td>SCREW INNER SET</td>
+      <td>inner</td>
+      <td>DEPUY</td>
+      <td>DEPUY SYNTHES</td>
+      <td>150</td>
+      <td>5</td>
+      <td>0.829259</td>
+      <td>0.906182</td>
+      <td>Inner Single</td>
+      <td>245</td>
+      <td>Inner Single</td>
     </tr>
     <tr>
       <th>24</th>
-      <td>IP0197149</td>
-      <td>4</td>
-      <td>H0210A</td>
-      <td>H0210A</td>
-      <td>Appendicectomy (Anaesthetist)</td>
-      <td>570.0</td>
+      <td>752433</td>
+      <td>SET SCREW SINGLE-INNER (94944)</td>
+      <td>NaN</td>
+      <td>32</td>
+      <td>752433</td>
+      <td>Set Screw</td>
+      <td>SET SCREW SINGLE-INNER (94944)</td>
+      <td>single inner</td>
+      <td>DEPUY ORTHOPAEDICS INC - A JOH</td>
+      <td>DEPUY SYNTHES</td>
+      <td>75</td>
+      <td>5</td>
+      <td>0.910245</td>
+      <td>0.906182</td>
+      <td>Inner Single</td>
+      <td>245</td>
+      <td>Inner Single</td>
     </tr>
     <tr>
       <th>25</th>
-      <td>IP0197149</td>
+      <td>778705</td>
+      <td>SET SCREW SINGLE INNER</td>
+      <td>NaN</td>
+      <td>17</td>
+      <td>778705</td>
+      <td>Set Screw</td>
+      <td>SET SCREW SINGLE INNER</td>
+      <td>single inner</td>
+      <td>DEPUY</td>
+      <td>DEPUY SYNTHES</td>
+      <td>75</td>
       <td>5</td>
-      <td>20012</td>
-      <td>20012</td>
-      <td>Complex Office Hours</td>
-      <td>235.0</td>
+      <td>0.979043</td>
+      <td>0.906182</td>
+      <td>Inner Single</td>
+      <td>245</td>
+      <td>Inner Single</td>
     </tr>
     <tr>
       <th>26</th>
-      <td>IP0197149</td>
-      <td>6</td>
-      <td>20032</td>
-      <td>20032</td>
-      <td>Complex Office Hours</td>
-      <td>105.0</td>
+      <td>784607</td>
+      <td>SET SCREW SINGLE INNER</td>
+      <td>NaN</td>
+      <td>18</td>
+      <td>784607</td>
+      <td>Set Screw</td>
+      <td>SET SCREW SINGLE INNER</td>
+      <td>single inner</td>
+      <td>DEPUY</td>
+      <td>DEPUY SYNTHES</td>
+      <td>75</td>
+      <td>5</td>
+      <td>0.979043</td>
+      <td>0.906182</td>
+      <td>Inner Single</td>
+      <td>245</td>
+      <td>Inner Single</td>
     </tr>
     <tr>
       <th>27</th>
-      <td>IP0197149</td>
-      <td>7</td>
-      <td>20032</td>
-      <td>20032</td>
-      <td>Complex Office Hours</td>
-      <td>105.0</td>
+      <td>790285</td>
+      <td>SET SCREW SINGLE-INNER (94944)</td>
+      <td>NaN</td>
+      <td>33</td>
+      <td>790285</td>
+      <td>Set Screw</td>
+      <td>SET SCREW SINGLE-INNER (94944)</td>
+      <td>single inner</td>
+      <td>DEPUY ORTHOPAEDICS INC - A JOH</td>
+      <td>DEPUY SYNTHES</td>
+      <td>75</td>
+      <td>5</td>
+      <td>0.910245</td>
+      <td>0.906182</td>
+      <td>Inner Single</td>
+      <td>245</td>
+      <td>Inner Single</td>
     </tr>
     <tr>
       <th>28</th>
-      <td>IP0197149</td>
-      <td>8</td>
-      <td>20032</td>
-      <td>20032</td>
-      <td>Complex Office Hours</td>
-      <td>105.0</td>
+      <td>844602</td>
+      <td>SET SCREW SINGLE INNER</td>
+      <td>NaN</td>
+      <td>19</td>
+      <td>844602</td>
+      <td>Set Screw</td>
+      <td>SET SCREW SINGLE INNER</td>
+      <td>single inner</td>
+      <td>DEPUY</td>
+      <td>DEPUY SYNTHES</td>
+      <td>75</td>
+      <td>5</td>
+      <td>0.979043</td>
+      <td>0.906182</td>
+      <td>Inner Single</td>
+      <td>245</td>
+      <td>Inner Single</td>
     </tr>
     <tr>
       <th>29</th>
-      <td>IP0197149</td>
-      <td>9</td>
-      <td>20032</td>
-      <td>20032</td>
-      <td>Complex Office Hours</td>
-      <td>105.0</td>
+      <td>917891</td>
+      <td>SET SCREW SINGLE INNER</td>
+      <td>NaN</td>
+      <td>20</td>
+      <td>917891</td>
+      <td>Set Screw</td>
+      <td>SET SCREW SINGLE INNER</td>
+      <td>single inner</td>
+      <td>J&amp;JHEALTH</td>
+      <td>DEPUY SYNTHES</td>
+      <td>75</td>
+      <td>5</td>
+      <td>0.979043</td>
+      <td>0.906182</td>
+      <td>Inner Single</td>
+      <td>245</td>
+      <td>Inner Single</td>
     </tr>
     <tr>
       <th>30</th>
-      <td>IP0197149</td>
-      <td>0</td>
-      <td>20022</td>
-      <td>20022</td>
-      <td>Complex After Office Hours</td>
-      <td>350.0</td>
+      <td>955181</td>
+      <td>SET SCREW SINGLE INNER</td>
+      <td>NaN</td>
+      <td>21</td>
+      <td>955181</td>
+      <td>Set Screw</td>
+      <td>SET SCREW SINGLE INNER</td>
+      <td>single inner</td>
+      <td>J&amp;JHEALTH</td>
+      <td>DEPUY SYNTHES</td>
+      <td>75</td>
+      <td>5</td>
+      <td>0.979043</td>
+      <td>0.906182</td>
+      <td>Inner Single</td>
+      <td>245</td>
+      <td>Inner Single</td>
     </tr>
     <tr>
       <th>31</th>
-      <td>IP0197149</td>
-      <td>1</td>
-      <td>H0210S</td>
-      <td>H0210S</td>
-      <td>Appendicectomy (Surgeon)</td>
-      <td>1565.0</td>
+      <td>956713</td>
+      <td>SET SCREW SINGLE INNER</td>
+      <td>NaN</td>
+      <td>22</td>
+      <td>956713</td>
+      <td>Set Screw</td>
+      <td>SET SCREW SINGLE INNER</td>
+      <td>single inner</td>
+      <td>DEPUY</td>
+      <td>DEPUY SYNTHES</td>
+      <td>75</td>
+      <td>5</td>
+      <td>0.979043</td>
+      <td>0.906182</td>
+      <td>Inner Single</td>
+      <td>245</td>
+      <td>Inner Single</td>
     </tr>
     <tr>
       <th>32</th>
-      <td>IP0197149</td>
-      <td>2</td>
-      <td>T4300S</td>
-      <td>T4300S</td>
-      <td>Laparoscopy including biopsy and adhesiolysis (Surgeon)</td>
-      <td>1160.0</td>
+      <td>1009050</td>
+      <td>SET SCREW SINGLE INNER</td>
+      <td>NaN</td>
+      <td>23</td>
+      <td>1009050</td>
+      <td>Set Screw</td>
+      <td>SET SCREW SINGLE INNER</td>
+      <td>single inner</td>
+      <td>J&amp;JHEALTH</td>
+      <td>DEPUY SYNTHES</td>
+      <td>75</td>
+      <td>5</td>
+      <td>0.979043</td>
+      <td>0.906182</td>
+      <td>Inner Single</td>
+      <td>245</td>
+      <td>Inner Single</td>
     </tr>
     <tr>
       <th>33</th>
-      <td>IP0197149</td>
-      <td>3</td>
-      <td>T4300A</td>
-      <td>T4300A</td>
-      <td>Laparoscopy including biopsy and adhesiolysis (Anaesthetist)</td>
-      <td>435.0</td>
+      <td>1062740</td>
+      <td>SET SCREW SINGLE INNER</td>
+      <td>NaN</td>
+      <td>24</td>
+      <td>1062740</td>
+      <td>Set Screw</td>
+      <td>SET SCREW SINGLE INNER</td>
+      <td>single inner</td>
+      <td>J&amp;JHEALTH</td>
+      <td>DEPUY SYNTHES</td>
+      <td>75</td>
+      <td>5</td>
+      <td>0.979043</td>
+      <td>0.906182</td>
+      <td>Inner Single</td>
+      <td>245</td>
+      <td>Inner Single</td>
     </tr>
     <tr>
       <th>34</th>
-      <td>IP0197149</td>
-      <td>4</td>
-      <td>H0210A</td>
-      <td>H0210A</td>
-      <td>Appendicectomy (Anaesthetist)</td>
-      <td>570.0</td>
+      <td>1068922</td>
+      <td>SET SCREW SINGLE INNER</td>
+      <td>NaN</td>
+      <td>25</td>
+      <td>1068922</td>
+      <td>Set Screw</td>
+      <td>SET SCREW SINGLE INNER</td>
+      <td>single inner</td>
+      <td>DEPUY</td>
+      <td>DEPUY SYNTHES</td>
+      <td>75</td>
+      <td>5</td>
+      <td>0.979043</td>
+      <td>0.906182</td>
+      <td>Inner Single</td>
+      <td>245</td>
+      <td>Inner Single</td>
     </tr>
     <tr>
       <th>35</th>
-      <td>IP0197149</td>
+      <td>1098048</td>
+      <td>SET SCREW SINGLE INNER</td>
+      <td>NaN</td>
+      <td>26</td>
+      <td>1098048</td>
+      <td>Set Screw</td>
+      <td>SET SCREW SINGLE INNER</td>
+      <td>single inner</td>
+      <td>J&amp;JHEALTH</td>
+      <td>DEPUY SYNTHES</td>
+      <td>75</td>
       <td>5</td>
-      <td>20012</td>
-      <td>20012</td>
-      <td>Complex Office Hours</td>
-      <td>235.0</td>
+      <td>0.979043</td>
+      <td>0.906182</td>
+      <td>Inner Single</td>
+      <td>245</td>
+      <td>Inner Single</td>
     </tr>
     <tr>
       <th>36</th>
-      <td>IP0197149</td>
-      <td>6</td>
-      <td>20032</td>
-      <td>20032</td>
-      <td>Complex Office Hours</td>
-      <td>105.0</td>
+      <td>1099406</td>
+      <td>SET SCREW SINGLE INNER</td>
+      <td>NaN</td>
+      <td>27</td>
+      <td>1099406</td>
+      <td>Set Screw</td>
+      <td>SET SCREW SINGLE INNER</td>
+      <td>single inner</td>
+      <td>DEPUY</td>
+      <td>DEPUY SYNTHES</td>
+      <td>75</td>
+      <td>5</td>
+      <td>0.979043</td>
+      <td>0.906182</td>
+      <td>Inner Single</td>
+      <td>245</td>
+      <td>Inner Single</td>
     </tr>
     <tr>
       <th>37</th>
-      <td>IP0197149</td>
-      <td>7</td>
-      <td>20032</td>
-      <td>20032</td>
-      <td>Complex Office Hours</td>
-      <td>105.0</td>
+      <td>1106340</td>
+      <td>SET SCREW SINGLE INNER</td>
+      <td>NaN</td>
+      <td>28</td>
+      <td>1106340</td>
+      <td>Set Screw</td>
+      <td>SET SCREW SINGLE INNER</td>
+      <td>single inner</td>
+      <td>DEPUY</td>
+      <td>DEPUY SYNTHES</td>
+      <td>75</td>
+      <td>5</td>
+      <td>0.979043</td>
+      <td>0.906182</td>
+      <td>Inner Single</td>
+      <td>245</td>
+      <td>Inner Single</td>
     </tr>
     <tr>
       <th>38</th>
-      <td>IP0197149</td>
-      <td>8</td>
-      <td>20032</td>
-      <td>20032</td>
-      <td>Complex Office Hours</td>
-      <td>105.0</td>
+      <td>1292652</td>
+      <td>SET SCREW SINGLE-INNER (94944)</td>
+      <td>NaN</td>
+      <td>34</td>
+      <td>1292652</td>
+      <td>Set Screw</td>
+      <td>SET SCREW SINGLE-INNER (94944)</td>
+      <td>single inner</td>
+      <td>DEPUY ORTHOPAEDICS INC - A JOH</td>
+      <td>DEPUY SYNTHES</td>
+      <td>75</td>
+      <td>5</td>
+      <td>0.910245</td>
+      <td>0.906182</td>
+      <td>Inner Single</td>
+      <td>245</td>
+      <td>Inner Single</td>
     </tr>
     <tr>
       <th>39</th>
-      <td>IP0197149</td>
-      <td>9</td>
-      <td>20032</td>
-      <td>20032</td>
-      <td>Complex Office Hours</td>
-      <td>105.0</td>
+      <td>1296367</td>
+      <td>SET SCREW SINGLE-INNER (94944)</td>
+      <td>NaN</td>
+      <td>35</td>
+      <td>1296367</td>
+      <td>Set Screw</td>
+      <td>SET SCREW SINGLE-INNER (94944)</td>
+      <td>single inner</td>
+      <td>DEPUY ORTHOPAEDICS INC - A JOH</td>
+      <td>DEPUY SYNTHES</td>
+      <td>75</td>
+      <td>5</td>
+      <td>0.910245</td>
+      <td>0.906182</td>
+      <td>Inner Single</td>
+      <td>245</td>
+      <td>Inner Single</td>
     </tr>
     <tr>
       <th>40</th>
-      <td>IP0197149</td>
-      <td>0</td>
-      <td>20022</td>
-      <td>20022</td>
-      <td>Complex After Office Hours</td>
-      <td>350.0</td>
+      <td>1304951</td>
+      <td>SET SCREW SINGLE INNER</td>
+      <td>NaN</td>
+      <td>29</td>
+      <td>1304951</td>
+      <td>Set Screw</td>
+      <td>SET SCREW SINGLE INNER</td>
+      <td>single inner</td>
+      <td>J&amp;JHEALTH</td>
+      <td>DEPUY SYNTHES</td>
+      <td>50</td>
+      <td>5</td>
+      <td>0.979043</td>
+      <td>0.906182</td>
+      <td>Inner Single</td>
+      <td>245</td>
+      <td>Inner Single</td>
     </tr>
     <tr>
       <th>41</th>
-      <td>IP0197149</td>
-      <td>1</td>
-      <td>H0210S</td>
-      <td>H0210S</td>
-      <td>Appendicectomy (Surgeon)</td>
-      <td>1565.0</td>
+      <td>1311967</td>
+      <td>SET SCREW SINGLE INNER</td>
+      <td>NaN</td>
+      <td>30</td>
+      <td>1311967</td>
+      <td>Set Screw</td>
+      <td>SET SCREW SINGLE INNER</td>
+      <td>single inner</td>
+      <td>DEPUY</td>
+      <td>DEPUY SYNTHES</td>
+      <td>75</td>
+      <td>5</td>
+      <td>0.979043</td>
+      <td>0.906182</td>
+      <td>Inner Single</td>
+      <td>245</td>
+      <td>Inner Single</td>
     </tr>
     <tr>
       <th>42</th>
-      <td>IP0197149</td>
-      <td>2</td>
-      <td>T4300S</td>
-      <td>T4300S</td>
-      <td>Laparoscopy including biopsy and adhesiolysis (Surgeon)</td>
-      <td>1160.0</td>
+      <td>1314593</td>
+      <td>SET SCREW SINGLE INNER</td>
+      <td>NaN</td>
+      <td>31</td>
+      <td>1314593</td>
+      <td>Set Screw</td>
+      <td>SET SCREW SINGLE INNER</td>
+      <td>single inner</td>
+      <td>DEPUY</td>
+      <td>DEPUY SYNTHES</td>
+      <td>75</td>
+      <td>5</td>
+      <td>0.979043</td>
+      <td>0.906182</td>
+      <td>Inner Single</td>
+      <td>245</td>
+      <td>Inner Single</td>
     </tr>
     <tr>
       <th>43</th>
-      <td>IP0197149</td>
-      <td>3</td>
-      <td>T4300A</td>
-      <td>T4300A</td>
-      <td>Laparoscopy including biopsy and adhesiolysis (Anaesthetist)</td>
-      <td>435.0</td>
+      <td>458737</td>
+      <td>ALPHATEC SPINE SET SCREWS</td>
+      <td>NaN</td>
+      <td>13</td>
+      <td>458737</td>
+      <td>Set Screw</td>
+      <td>ALPHATEC SPINE SET SCREWS</td>
+      <td>alphatec spine</td>
+      <td>UNKNOWN</td>
+      <td>UNKNOWN</td>
+      <td>50</td>
+      <td>7</td>
+      <td>0.869215</td>
+      <td>0.913379</td>
+      <td>Alphatec Spine Closed</td>
+      <td>242</td>
+      <td>Alphatec Spine Closed</td>
     </tr>
     <tr>
       <th>44</th>
-      <td>IP0197149</td>
-      <td>4</td>
-      <td>H0210A</td>
-      <td>H0210A</td>
-      <td>Appendicectomy (Anaesthetist)</td>
-      <td>570.0</td>
+      <td>459104</td>
+      <td>ALPHATEC SET SCREWS</td>
+      <td>NaN</td>
+      <td>6</td>
+      <td>459104</td>
+      <td>Set Screw</td>
+      <td>ALPHATEC SET SCREWS</td>
+      <td>alphatec</td>
+      <td>UNKNOWN</td>
+      <td>UNKNOWN</td>
+      <td>50</td>
+      <td>7</td>
+      <td>0.948892</td>
+      <td>0.913379</td>
+      <td>Alphatec Spine Closed</td>
+      <td>242</td>
+      <td>Alphatec Spine Closed</td>
     </tr>
     <tr>
       <th>45</th>
-      <td>IP0197149</td>
-      <td>5</td>
-      <td>20012</td>
-      <td>20012</td>
-      <td>Complex Office Hours</td>
-      <td>235.0</td>
+      <td>501372</td>
+      <td>ALPHATEC SET SCREW</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>501372</td>
+      <td>Set Screw</td>
+      <td>ALPHATEC SET SCREW</td>
+      <td>alphatec</td>
+      <td>UNKNOWN</td>
+      <td>UNKNOWN</td>
+      <td>50</td>
+      <td>7</td>
+      <td>0.935237</td>
+      <td>0.913379</td>
+      <td>Alphatec Spine Closed</td>
+      <td>242</td>
+      <td>Alphatec Spine Closed</td>
     </tr>
     <tr>
       <th>46</th>
-      <td>IP0197149</td>
-      <td>6</td>
-      <td>20032</td>
-      <td>20032</td>
-      <td>Complex Office Hours</td>
-      <td>105.0</td>
+      <td>538393</td>
+      <td>SET SCREWS ALPHATEC</td>
+      <td>NaN</td>
+      <td>18</td>
+      <td>538393</td>
+      <td>Set Screw</td>
+      <td>SET SCREWS ALPHATEC</td>
+      <td>alphatec</td>
+      <td>UNKNOWN</td>
+      <td>UNKNOWN</td>
+      <td>50</td>
+      <td>7</td>
+      <td>0.932917</td>
+      <td>0.913379</td>
+      <td>Alphatec Spine Closed</td>
+      <td>242</td>
+      <td>Alphatec Spine Closed</td>
     </tr>
     <tr>
       <th>47</th>
-      <td>IP0197149</td>
+      <td>647698</td>
+      <td>ALPHATEC SET SCREW</td>
+      <td>NaN</td>
+      <td>3</td>
+      <td>647698</td>
+      <td>Set Screw</td>
+      <td>ALPHATEC SET SCREW</td>
+      <td>alphatec</td>
+      <td>UNKNOWN</td>
+      <td>UNKNOWN</td>
+      <td>50</td>
       <td>7</td>
-      <td>20032</td>
-      <td>20032</td>
-      <td>Complex Office Hours</td>
-      <td>105.0</td>
+      <td>0.935237</td>
+      <td>0.913379</td>
+      <td>Alphatec Spine Closed</td>
+      <td>242</td>
+      <td>Alphatec Spine Closed</td>
     </tr>
     <tr>
       <th>48</th>
-      <td>IP0197149</td>
-      <td>8</td>
-      <td>20032</td>
-      <td>20032</td>
-      <td>Complex Office Hours</td>
-      <td>105.0</td>
+      <td>648749</td>
+      <td>ALPHATEC SET SCREWS</td>
+      <td>NaN</td>
+      <td>7</td>
+      <td>648749</td>
+      <td>Set Screw</td>
+      <td>ALPHATEC SET SCREWS</td>
+      <td>alphatec</td>
+      <td>UNKNOWN</td>
+      <td>UNKNOWN</td>
+      <td>50</td>
+      <td>7</td>
+      <td>0.948892</td>
+      <td>0.913379</td>
+      <td>Alphatec Spine Closed</td>
+      <td>242</td>
+      <td>Alphatec Spine Closed</td>
     </tr>
     <tr>
       <th>49</th>
-      <td>IP0197149</td>
-      <td>9</td>
-      <td>20032</td>
-      <td>20032</td>
-      <td>Complex Office Hours</td>
-      <td>105.0</td>
+      <td>648808</td>
+      <td>SET SCREWS ALPHATEC</td>
+      <td>NaN</td>
+      <td>19</td>
+      <td>648808</td>
+      <td>Set Screw</td>
+      <td>SET SCREWS ALPHATEC</td>
+      <td>alphatec</td>
+      <td>UNKNOWN</td>
+      <td>UNKNOWN</td>
+      <td>50</td>
+      <td>7</td>
+      <td>0.932917</td>
+      <td>0.913379</td>
+      <td>Alphatec Spine Closed</td>
+      <td>242</td>
+      <td>Alphatec Spine Closed</td>
     </tr>
     <tr>
       <th>50</th>
-      <td>IP0197149</td>
-      <td>0</td>
-      <td>20022</td>
-      <td>20022</td>
-      <td>Complex After Office Hours</td>
-      <td>350.0</td>
+      <td>651613</td>
+      <td>ALPHATEC SPINE SET SCREWS</td>
+      <td>NaN</td>
+      <td>14</td>
+      <td>651613</td>
+      <td>Set Screw</td>
+      <td>ALPHATEC SPINE SET SCREWS</td>
+      <td>alphatec spine</td>
+      <td>UNKNOWN</td>
+      <td>UNKNOWN</td>
+      <td>50</td>
+      <td>7</td>
+      <td>0.869215</td>
+      <td>0.913379</td>
+      <td>Alphatec Spine Closed</td>
+      <td>242</td>
+      <td>Alphatec Spine Closed</td>
     </tr>
     <tr>
       <th>51</th>
-      <td>IP0197149</td>
-      <td>1</td>
-      <td>H0210S</td>
-      <td>H0210S</td>
-      <td>Appendicectomy (Surgeon)</td>
-      <td>1565.0</td>
+      <td>681192</td>
+      <td>SET SCREW  (ALPHATEC)</td>
+      <td>NaN</td>
+      <td>17</td>
+      <td>681192</td>
+      <td>Set Screw</td>
+      <td>SET SCREW  (ALPHATEC)</td>
+      <td>alphatec</td>
+      <td>UNKNOWN</td>
+      <td>UNKNOWN</td>
+      <td>50</td>
+      <td>7</td>
+      <td>0.903461</td>
+      <td>0.913379</td>
+      <td>Alphatec Spine Closed</td>
+      <td>242</td>
+      <td>Alphatec Spine Closed</td>
     </tr>
     <tr>
       <th>52</th>
-      <td>IP0197149</td>
-      <td>2</td>
-      <td>T4300S</td>
-      <td>T4300S</td>
-      <td>Laparoscopy including biopsy and adhesiolysis (Surgeon)</td>
-      <td>1160.0</td>
+      <td>710691</td>
+      <td>ALPHATEC SET SCREWS</td>
+      <td>NaN</td>
+      <td>8</td>
+      <td>710691</td>
+      <td>Set Screw</td>
+      <td>ALPHATEC SET SCREWS</td>
+      <td>alphatec</td>
+      <td>UNKNOWN</td>
+      <td>UNKNOWN</td>
+      <td>50</td>
+      <td>7</td>
+      <td>0.948892</td>
+      <td>0.913379</td>
+      <td>Alphatec Spine Closed</td>
+      <td>242</td>
+      <td>Alphatec Spine Closed</td>
     </tr>
     <tr>
       <th>53</th>
-      <td>IP0197149</td>
-      <td>3</td>
-      <td>T4300A</td>
-      <td>T4300A</td>
-      <td>Laparoscopy including biopsy and adhesiolysis (Anaesthetist)</td>
-      <td>435.0</td>
+      <td>812087</td>
+      <td>ALPHATEC SET SCREWS</td>
+      <td>NaN</td>
+      <td>9</td>
+      <td>812087</td>
+      <td>Set Screw</td>
+      <td>ALPHATEC SET SCREWS</td>
+      <td>alphatec</td>
+      <td>UNKNOWN</td>
+      <td>UNKNOWN</td>
+      <td>50</td>
+      <td>7</td>
+      <td>0.948892</td>
+      <td>0.913379</td>
+      <td>Alphatec Spine Closed</td>
+      <td>242</td>
+      <td>Alphatec Spine Closed</td>
     </tr>
     <tr>
       <th>54</th>
-      <td>IP0197149</td>
-      <td>4</td>
-      <td>H0210A</td>
-      <td>H0210A</td>
-      <td>Appendicectomy (Anaesthetist)</td>
-      <td>570.0</td>
+      <td>884300</td>
+      <td>ALPHATEC SET SCREWS</td>
+      <td>NaN</td>
+      <td>10</td>
+      <td>884300</td>
+      <td>Set Screw</td>
+      <td>ALPHATEC SET SCREWS</td>
+      <td>alphatec</td>
+      <td>UNKNOWN</td>
+      <td>UNKNOWN</td>
+      <td>50</td>
+      <td>7</td>
+      <td>0.948892</td>
+      <td>0.913379</td>
+      <td>Alphatec Spine Closed</td>
+      <td>242</td>
+      <td>Alphatec Spine Closed</td>
     </tr>
     <tr>
       <th>55</th>
-      <td>IP0197149</td>
-      <td>5</td>
-      <td>20012</td>
-      <td>20012</td>
-      <td>Complex Office Hours</td>
-      <td>235.0</td>
+      <td>909386</td>
+      <td>ALPHATEC SPINE SET SCREWS</td>
+      <td>NaN</td>
+      <td>15</td>
+      <td>909386</td>
+      <td>Set Screw</td>
+      <td>ALPHATEC SPINE SET SCREWS</td>
+      <td>alphatec spine</td>
+      <td>UNKNOWN</td>
+      <td>UNKNOWN</td>
+      <td>50</td>
+      <td>7</td>
+      <td>0.869215</td>
+      <td>0.913379</td>
+      <td>Alphatec Spine Closed</td>
+      <td>242</td>
+      <td>Alphatec Spine Closed</td>
     </tr>
     <tr>
       <th>56</th>
-      <td>IP0197149</td>
-      <td>6</td>
-      <td>20032</td>
-      <td>20032</td>
-      <td>Complex Office Hours</td>
-      <td>105.0</td>
+      <td>909596</td>
+      <td>ALPHATEC SET SCREW</td>
+      <td>NaN</td>
+      <td>4</td>
+      <td>909596</td>
+      <td>Set Screw</td>
+      <td>ALPHATEC SET SCREW</td>
+      <td>alphatec</td>
+      <td>UNKNOWN</td>
+      <td>UNKNOWN</td>
+      <td>50</td>
+      <td>7</td>
+      <td>0.935237</td>
+      <td>0.913379</td>
+      <td>Alphatec Spine Closed</td>
+      <td>242</td>
+      <td>Alphatec Spine Closed</td>
     </tr>
     <tr>
       <th>57</th>
-      <td>IP0197149</td>
+      <td>913882</td>
+      <td>SET SCREWS ALPHATEC</td>
+      <td>NaN</td>
+      <td>20</td>
+      <td>913882</td>
+      <td>Set Screw</td>
+      <td>SET SCREWS ALPHATEC</td>
+      <td>alphatec</td>
+      <td>UNKNOWN</td>
+      <td>UNKNOWN</td>
+      <td>50</td>
       <td>7</td>
-      <td>20032</td>
-      <td>20032</td>
-      <td>Complex Office Hours</td>
-      <td>105.0</td>
+      <td>0.932917</td>
+      <td>0.913379</td>
+      <td>Alphatec Spine Closed</td>
+      <td>242</td>
+      <td>Alphatec Spine Closed</td>
     </tr>
     <tr>
       <th>58</th>
-      <td>IP0197149</td>
-      <td>8</td>
-      <td>20032</td>
-      <td>20032</td>
-      <td>Complex Office Hours</td>
-      <td>105.0</td>
+      <td>1076035</td>
+      <td>ALPHATEC CLOSED SET SCREWS</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>1076035</td>
+      <td>Set Screw</td>
+      <td>ALPHATEC CLOSED SET SCREWS</td>
+      <td>alphatec closed</td>
+      <td>UNKNOWN</td>
+      <td>UNKNOWN</td>
+      <td>50</td>
+      <td>7</td>
+      <td>0.890554</td>
+      <td>0.913379</td>
+      <td>Alphatec Spine Closed</td>
+      <td>242</td>
+      <td>Alphatec Spine Closed</td>
     </tr>
     <tr>
       <th>59</th>
-      <td>IP0197149</td>
-      <td>9</td>
-      <td>20032</td>
-      <td>20032</td>
-      <td>Complex Office Hours</td>
-      <td>105.0</td>
+      <td>1153836</td>
+      <td>ALPHATEC SET SCREWS</td>
+      <td>NaN</td>
+      <td>11</td>
+      <td>1153836</td>
+      <td>Set Screw</td>
+      <td>ALPHATEC SET SCREWS</td>
+      <td>alphatec</td>
+      <td>UNKNOWN</td>
+      <td>UNKNOWN</td>
+      <td>50</td>
+      <td>7</td>
+      <td>0.948892</td>
+      <td>0.913379</td>
+      <td>Alphatec Spine Closed</td>
+      <td>242</td>
+      <td>Alphatec Spine Closed</td>
     </tr>
     <tr>
       <th>60</th>
-      <td>IP0197149</td>
-      <td>0</td>
-      <td>20022</td>
-      <td>20022</td>
-      <td>Complex After Office Hours</td>
-      <td>350.0</td>
+      <td>1179759</td>
+      <td>ALPHATEC SPINE SET SCREWS</td>
+      <td>NaN</td>
+      <td>16</td>
+      <td>1179759</td>
+      <td>Set Screw</td>
+      <td>ALPHATEC SPINE SET SCREWS</td>
+      <td>alphatec spine</td>
+      <td>UNKNOWN</td>
+      <td>UNKNOWN</td>
+      <td>50</td>
+      <td>7</td>
+      <td>0.869215</td>
+      <td>0.913379</td>
+      <td>Alphatec Spine Closed</td>
+      <td>242</td>
+      <td>Alphatec Spine Closed</td>
     </tr>
     <tr>
       <th>61</th>
-      <td>IP0197149</td>
-      <td>1</td>
-      <td>H0210S</td>
-      <td>H0210S</td>
-      <td>Appendicectomy (Surgeon)</td>
-      <td>1565.0</td>
+      <td>1179966</td>
+      <td>ALPHATEC SET SCREW</td>
+      <td>NaN</td>
+      <td>5</td>
+      <td>1179966</td>
+      <td>Set Screw</td>
+      <td>ALPHATEC SET SCREW</td>
+      <td>alphatec</td>
+      <td>UNKNOWN</td>
+      <td>UNKNOWN</td>
+      <td>50</td>
+      <td>7</td>
+      <td>0.935237</td>
+      <td>0.913379</td>
+      <td>Alphatec Spine Closed</td>
+      <td>242</td>
+      <td>Alphatec Spine Closed</td>
     </tr>
     <tr>
       <th>62</th>
-      <td>IP0197149</td>
-      <td>2</td>
-      <td>T4300S</td>
-      <td>T4300S</td>
-      <td>Laparoscopy including biopsy and adhesiolysis (Surgeon)</td>
-      <td>1160.0</td>
+      <td>1200904</td>
+      <td>ALPHATEC CLOSED SET SCREWS</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>1200904</td>
+      <td>Set Screw</td>
+      <td>ALPHATEC CLOSED SET SCREWS</td>
+      <td>alphatec closed</td>
+      <td>UNKNOWN</td>
+      <td>UNKNOWN</td>
+      <td>50</td>
+      <td>7</td>
+      <td>0.890554</td>
+      <td>0.913379</td>
+      <td>Alphatec Spine Closed</td>
+      <td>242</td>
+      <td>Alphatec Spine Closed</td>
     </tr>
     <tr>
       <th>63</th>
-      <td>IP0197149</td>
-      <td>3</td>
-      <td>T4300A</td>
-      <td>T4300A</td>
-      <td>Laparoscopy including biopsy and adhesiolysis (Anaesthetist)</td>
-      <td>435.0</td>
+      <td>1221388</td>
+      <td>SET SCREWS ALPHATEC</td>
+      <td>NaN</td>
+      <td>21</td>
+      <td>1221388</td>
+      <td>Set Screw</td>
+      <td>SET SCREWS ALPHATEC</td>
+      <td>alphatec</td>
+      <td>UNKNOWN</td>
+      <td>UNKNOWN</td>
+      <td>50</td>
+      <td>7</td>
+      <td>0.932917</td>
+      <td>0.913379</td>
+      <td>Alphatec Spine Closed</td>
+      <td>242</td>
+      <td>Alphatec Spine Closed</td>
     </tr>
     <tr>
       <th>64</th>
-      <td>IP0197149</td>
-      <td>4</td>
-      <td>H0210A</td>
-      <td>H0210A</td>
-      <td>Appendicectomy (Anaesthetist)</td>
-      <td>570.0</td>
+      <td>1520175</td>
+      <td>ALPHATEC SET SCREWS</td>
+      <td>NaN</td>
+      <td>12</td>
+      <td>1520175</td>
+      <td>Set Screw</td>
+      <td>ALPHATEC SET SCREWS</td>
+      <td>alphatec</td>
+      <td>UNKNOWN</td>
+      <td>UNKNOWN</td>
+      <td>45</td>
+      <td>7</td>
+      <td>0.948892</td>
+      <td>0.913379</td>
+      <td>Alphatec Spine Closed</td>
+      <td>242</td>
+      <td>Alphatec Spine Closed</td>
     </tr>
     <tr>
       <th>65</th>
-      <td>IP0197149</td>
-      <td>5</td>
-      <td>20012</td>
-      <td>20012</td>
-      <td>Complex Office Hours</td>
-      <td>235.0</td>
+      <td>856923</td>
+      <td>SCREW SET SYMPHONY</td>
+      <td>NaN</td>
+      <td>10</td>
+      <td>856923</td>
+      <td>Set Screw</td>
+      <td>SCREW SET SYMPHONY</td>
+      <td>symphony</td>
+      <td>DEPUY</td>
+      <td>DEPUY SYNTHES</td>
+      <td>75</td>
+      <td>6</td>
+      <td>0.967603</td>
+      <td>0.908523</td>
+      <td>Symphony</td>
+      <td>244</td>
+      <td>Symphony</td>
     </tr>
     <tr>
       <th>66</th>
-      <td>IP0197149</td>
+      <td>856943</td>
+      <td>symphony set screw</td>
+      <td>NaN</td>
+      <td>13</td>
+      <td>856943</td>
+      <td>Set Screw</td>
+      <td>symphony set screw</td>
+      <td>symphony</td>
+      <td>DEPUY SYNTHES</td>
+      <td>DEPUY SYNTHES</td>
+      <td>75</td>
       <td>6</td>
-      <td>20032</td>
-      <td>20032</td>
-      <td>Complex Office Hours</td>
-      <td>105.0</td>
+      <td>0.905466</td>
+      <td>0.908523</td>
+      <td>Symphony</td>
+      <td>244</td>
+      <td>Symphony</td>
     </tr>
     <tr>
       <th>67</th>
-      <td>IP0197149</td>
-      <td>7</td>
-      <td>20032</td>
-      <td>20032</td>
-      <td>Complex Office Hours</td>
-      <td>105.0</td>
+      <td>857087</td>
+      <td>SCREW SET SYMPHONY</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>857087</td>
+      <td>Set Screw</td>
+      <td>SCREW SET SYMPHONY</td>
+      <td>symphony</td>
+      <td>DEPUY</td>
+      <td>DEPUY SYNTHES</td>
+      <td>75</td>
+      <td>6</td>
+      <td>0.961654</td>
+      <td>0.908523</td>
+      <td>Symphony</td>
+      <td>244</td>
+      <td>Symphony</td>
     </tr>
     <tr>
       <th>68</th>
-      <td>IP0197149</td>
-      <td>8</td>
-      <td>20032</td>
-      <td>20032</td>
-      <td>Complex Office Hours</td>
-      <td>105.0</td>
+      <td>857115</td>
+      <td>SCREW SET SYMPHONY</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>857115</td>
+      <td>Set Screw</td>
+      <td>SCREW SET SYMPHONY</td>
+      <td>symphony</td>
+      <td>DEPUY SYNTHES</td>
+      <td>DEPUY SYNTHES</td>
+      <td>75</td>
+      <td>6</td>
+      <td>0.961654</td>
+      <td>0.908523</td>
+      <td>Symphony</td>
+      <td>244</td>
+      <td>Symphony</td>
     </tr>
     <tr>
       <th>69</th>
-      <td>IP0197149</td>
-      <td>9</td>
-      <td>20032</td>
-      <td>20032</td>
-      <td>Complex Office Hours</td>
-      <td>105.0</td>
+      <td>857220</td>
+      <td>SCREW SET SYMPHONY</td>
+      <td>NaN</td>
+      <td>3</td>
+      <td>857220</td>
+      <td>Set Screw</td>
+      <td>SCREW SET SYMPHONY</td>
+      <td>symphony</td>
+      <td>DEPUY</td>
+      <td>DEPUY SYNTHES</td>
+      <td>75</td>
+      <td>6</td>
+      <td>0.961654</td>
+      <td>0.908523</td>
+      <td>Symphony</td>
+      <td>244</td>
+      <td>Symphony</td>
     </tr>
     <tr>
       <th>70</th>
-      <td>IP0197149</td>
-      <td>0</td>
-      <td>20022</td>
-      <td>20022</td>
-      <td>Complex After Office Hours</td>
-      <td>350.0</td>
+      <td>859746</td>
+      <td>SCREW SET SYMPHONY</td>
+      <td>NaN</td>
+      <td>4</td>
+      <td>859746</td>
+      <td>Set Screw</td>
+      <td>SCREW SET SYMPHONY</td>
+      <td>symphony</td>
+      <td>DEPUY</td>
+      <td>DEPUY SYNTHES</td>
+      <td>75</td>
+      <td>6</td>
+      <td>0.961654</td>
+      <td>0.908523</td>
+      <td>Symphony</td>
+      <td>244</td>
+      <td>Symphony</td>
     </tr>
     <tr>
       <th>71</th>
-      <td>IP0197149</td>
-      <td>1</td>
-      <td>H0210S</td>
-      <td>H0210S</td>
-      <td>Appendicectomy (Surgeon)</td>
-      <td>1565.0</td>
+      <td>952563</td>
+      <td>DEPUY SYMPHONY SET SCREW</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>952563</td>
+      <td>Set Screw</td>
+      <td>DEPUY SYMPHONY SET SCREW</td>
+      <td>symphony</td>
+      <td>DEPU</td>
+      <td>DEPUY SYNTHES</td>
+      <td>75</td>
+      <td>6</td>
+      <td>0.818976</td>
+      <td>0.908523</td>
+      <td>Symphony</td>
+      <td>244</td>
+      <td>Symphony</td>
     </tr>
     <tr>
       <th>72</th>
-      <td>IP0197149</td>
-      <td>2</td>
-      <td>T4300S</td>
-      <td>T4300S</td>
-      <td>Laparoscopy including biopsy and adhesiolysis (Surgeon)</td>
-      <td>1160.0</td>
+      <td>1279611</td>
+      <td>symphony set screw</td>
+      <td>NaN</td>
+      <td>14</td>
+      <td>1279611</td>
+      <td>Set Screw</td>
+      <td>symphony set screw</td>
+      <td>symphony</td>
+      <td>DEPUY SYNTHES</td>
+      <td>DEPUY SYNTHES</td>
+      <td>75</td>
+      <td>6</td>
+      <td>0.905466</td>
+      <td>0.908523</td>
+      <td>Symphony</td>
+      <td>244</td>
+      <td>Symphony</td>
     </tr>
     <tr>
       <th>73</th>
-      <td>IP0197149</td>
-      <td>3</td>
-      <td>T4300A</td>
-      <td>T4300A</td>
-      <td>Laparoscopy including biopsy and adhesiolysis (Anaesthetist)</td>
-      <td>435.0</td>
+      <td>1281221</td>
+      <td>SCREW SET SYMPHONY</td>
+      <td>NaN</td>
+      <td>11</td>
+      <td>1281221</td>
+      <td>Set Screw</td>
+      <td>SCREW SET SYMPHONY</td>
+      <td>symphony</td>
+      <td>DEPUY</td>
+      <td>DEPUY SYNTHES</td>
+      <td>75</td>
+      <td>6</td>
+      <td>0.967603</td>
+      <td>0.908523</td>
+      <td>Symphony</td>
+      <td>244</td>
+      <td>Symphony</td>
     </tr>
     <tr>
       <th>74</th>
-      <td>IP0197149</td>
-      <td>4</td>
-      <td>H0210A</td>
-      <td>H0210A</td>
-      <td>Appendicectomy (Anaesthetist)</td>
-      <td>570.0</td>
+      <td>1284548</td>
+      <td>SCREW SET SYMPHONY</td>
+      <td>NaN</td>
+      <td>5</td>
+      <td>1284548</td>
+      <td>Set Screw</td>
+      <td>SCREW SET SYMPHONY</td>
+      <td>symphony</td>
+      <td>DEPUY</td>
+      <td>DEPUY SYNTHES</td>
+      <td>75</td>
+      <td>6</td>
+      <td>0.961654</td>
+      <td>0.908523</td>
+      <td>Symphony</td>
+      <td>244</td>
+      <td>Symphony</td>
     </tr>
     <tr>
       <th>75</th>
-      <td>IP0197149</td>
-      <td>5</td>
-      <td>20012</td>
-      <td>20012</td>
-      <td>Complex Office Hours</td>
-      <td>235.0</td>
+      <td>1285108</td>
+      <td>SCREW SET SYMPHONY</td>
+      <td>NaN</td>
+      <td>6</td>
+      <td>1285108</td>
+      <td>Set Screw</td>
+      <td>SCREW SET SYMPHONY</td>
+      <td>symphony</td>
+      <td>DEPUY</td>
+      <td>DEPUY SYNTHES</td>
+      <td>75</td>
+      <td>6</td>
+      <td>0.961654</td>
+      <td>0.908523</td>
+      <td>Symphony</td>
+      <td>244</td>
+      <td>Symphony</td>
     </tr>
     <tr>
       <th>76</th>
-      <td>IP0197149</td>
+      <td>1285109</td>
+      <td>SCREW SET SYMPHONY</td>
+      <td>NaN</td>
+      <td>7</td>
+      <td>1285109</td>
+      <td>Set Screw</td>
+      <td>SCREW SET SYMPHONY</td>
+      <td>symphony</td>
+      <td>DEPUY SYNTHES</td>
+      <td>DEPUY SYNTHES</td>
+      <td>75</td>
       <td>6</td>
-      <td>20032</td>
-      <td>20032</td>
-      <td>Complex Office Hours</td>
-      <td>105.0</td>
+      <td>0.961654</td>
+      <td>0.908523</td>
+      <td>Symphony</td>
+      <td>244</td>
+      <td>Symphony</td>
     </tr>
     <tr>
       <th>77</th>
-      <td>IP0197149</td>
-      <td>7</td>
-      <td>20032</td>
-      <td>20032</td>
-      <td>Complex Office Hours</td>
-      <td>105.0</td>
+      <td>1285741</td>
+      <td>SCREW SET SYMPHONY</td>
+      <td>NaN</td>
+      <td>8</td>
+      <td>1285741</td>
+      <td>Set Screw</td>
+      <td>SCREW SET SYMPHONY</td>
+      <td>symphony</td>
+      <td>DEPUY</td>
+      <td>DEPUY SYNTHES</td>
+      <td>75</td>
+      <td>6</td>
+      <td>0.961654</td>
+      <td>0.908523</td>
+      <td>Symphony</td>
+      <td>244</td>
+      <td>Symphony</td>
     </tr>
     <tr>
       <th>78</th>
-      <td>IP0197149</td>
-      <td>8</td>
-      <td>20032</td>
-      <td>20032</td>
-      <td>Complex Office Hours</td>
-      <td>105.0</td>
+      <td>1322101</td>
+      <td>Symphony Set Screw</td>
+      <td>NaN</td>
+      <td>12</td>
+      <td>1322101</td>
+      <td>Set Screw</td>
+      <td>Symphony Set Screw</td>
+      <td>symphony</td>
+      <td>DEPUY SYNTHES</td>
+      <td>DEPUY SYNTHES</td>
+      <td>75</td>
+      <td>6</td>
+      <td>0.888915</td>
+      <td>0.908523</td>
+      <td>Symphony</td>
+      <td>244</td>
+      <td>Symphony</td>
     </tr>
     <tr>
       <th>79</th>
-      <td>IP0197149</td>
+      <td>1326938</td>
+      <td>SCREW SET SYMPHONY</td>
+      <td>NaN</td>
       <td>9</td>
-      <td>20032</td>
-      <td>20032</td>
-      <td>Complex Office Hours</td>
-      <td>105.0</td>
-    </tr>
-    <tr>
-      <th>80</th>
-      <td>IP0197149</td>
-      <td>0</td>
-      <td>20022</td>
-      <td>20022</td>
-      <td>Complex After Office Hours</td>
-      <td>350.0</td>
-    </tr>
-    <tr>
-      <th>81</th>
-      <td>IP0197149</td>
-      <td>1</td>
-      <td>H0210S</td>
-      <td>H0210S</td>
-      <td>Appendicectomy (Surgeon)</td>
-      <td>1565.0</td>
-    </tr>
-    <tr>
-      <th>82</th>
-      <td>IP0197149</td>
-      <td>2</td>
-      <td>T4300S</td>
-      <td>T4300S</td>
-      <td>Laparoscopy including biopsy and adhesiolysis (Surgeon)</td>
-      <td>1160.0</td>
-    </tr>
-    <tr>
-      <th>83</th>
-      <td>IP0197149</td>
-      <td>3</td>
-      <td>T4300A</td>
-      <td>T4300A</td>
-      <td>Laparoscopy including biopsy and adhesiolysis (Anaesthetist)</td>
-      <td>435.0</td>
-    </tr>
-    <tr>
-      <th>84</th>
-      <td>IP0197149</td>
-      <td>4</td>
-      <td>H0210A</td>
-      <td>H0210A</td>
-      <td>Appendicectomy (Anaesthetist)</td>
-      <td>570.0</td>
-    </tr>
-    <tr>
-      <th>85</th>
-      <td>IP0197149</td>
-      <td>5</td>
-      <td>20012</td>
-      <td>20012</td>
-      <td>Complex Office Hours</td>
-      <td>235.0</td>
-    </tr>
-    <tr>
-      <th>86</th>
-      <td>IP0197149</td>
+      <td>1326938</td>
+      <td>Set Screw</td>
+      <td>SCREW SET SYMPHONY</td>
+      <td>symphony</td>
+      <td>DEPUY SYNTHES</td>
+      <td>DEPUY SYNTHES</td>
+      <td>75</td>
       <td>6</td>
-      <td>20032</td>
-      <td>20032</td>
-      <td>Complex Office Hours</td>
-      <td>105.0</td>
-    </tr>
-    <tr>
-      <th>87</th>
-      <td>IP0197149</td>
-      <td>7</td>
-      <td>20032</td>
-      <td>20032</td>
-      <td>Complex Office Hours</td>
-      <td>105.0</td>
-    </tr>
-    <tr>
-      <th>88</th>
-      <td>IP0197149</td>
-      <td>8</td>
-      <td>20032</td>
-      <td>20032</td>
-      <td>Complex Office Hours</td>
-      <td>105.0</td>
-    </tr>
-    <tr>
-      <th>89</th>
-      <td>IP0197149</td>
-      <td>9</td>
-      <td>20032</td>
-      <td>20032</td>
-      <td>Complex Office Hours</td>
-      <td>105.0</td>
-    </tr>
-    <tr>
-      <th>90</th>
-      <td>IP0197149</td>
-      <td>0</td>
-      <td>20022</td>
-      <td>20022</td>
-      <td>Complex After Office Hours</td>
-      <td>350.0</td>
-    </tr>
-    <tr>
-      <th>91</th>
-      <td>IP0197149</td>
-      <td>1</td>
-      <td>H0210S</td>
-      <td>H0210S</td>
-      <td>Appendicectomy (Surgeon)</td>
-      <td>1565.0</td>
-    </tr>
-    <tr>
-      <th>92</th>
-      <td>IP0197149</td>
-      <td>2</td>
-      <td>T4300S</td>
-      <td>T4300S</td>
-      <td>Laparoscopy including biopsy and adhesiolysis (Surgeon)</td>
-      <td>1160.0</td>
-    </tr>
-    <tr>
-      <th>93</th>
-      <td>IP0197149</td>
-      <td>3</td>
-      <td>T4300A</td>
-      <td>T4300A</td>
-      <td>Laparoscopy including biopsy and adhesiolysis (Anaesthetist)</td>
-      <td>435.0</td>
-    </tr>
-    <tr>
-      <th>94</th>
-      <td>IP0197149</td>
-      <td>4</td>
-      <td>H0210A</td>
-      <td>H0210A</td>
-      <td>Appendicectomy (Anaesthetist)</td>
-      <td>570.0</td>
-    </tr>
-    <tr>
-      <th>95</th>
-      <td>IP0197149</td>
-      <td>5</td>
-      <td>20012</td>
-      <td>20012</td>
-      <td>Complex Office Hours</td>
-      <td>235.0</td>
-    </tr>
-    <tr>
-      <th>96</th>
-      <td>IP0197149</td>
-      <td>6</td>
-      <td>20032</td>
-      <td>20032</td>
-      <td>Complex Office Hours</td>
-      <td>105.0</td>
-    </tr>
-    <tr>
-      <th>97</th>
-      <td>IP0197149</td>
-      <td>7</td>
-      <td>20032</td>
-      <td>20032</td>
-      <td>Complex Office Hours</td>
-      <td>105.0</td>
-    </tr>
-    <tr>
-      <th>98</th>
-      <td>IP0197149</td>
-      <td>8</td>
-      <td>20032</td>
-      <td>20032</td>
-      <td>Complex Office Hours</td>
-      <td>105.0</td>
-    </tr>
-    <tr>
-      <th>99</th>
-      <td>IP0197149</td>
-      <td>9</td>
-      <td>20032</td>
-      <td>20032</td>
-      <td>Complex Office Hours</td>
-      <td>105.0</td>
+      <td>0.961654</td>
+      <td>0.908523</td>
+      <td>Symphony</td>
+      <td>244</td>
+      <td>Symphony</td>
     </tr>
   </tbody>
 </table>
