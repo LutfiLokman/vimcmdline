@@ -28,9 +28,9 @@ function! PythonSendLine()
     endif
     if strlen(line) > 0 || b:cmdline_send_empty
         call VimCmdLineSendCmd(line)
+        sleep 50m
         call VimCmdLineSendCmd("")
     endif
-    sleep 50m
     call VimCmdLineDown()
 endfunction
 
@@ -178,7 +178,7 @@ endfunction
 
 
 function! VimCmdLineToCSV()
-    call VimCmdLineSendCmd(expand('<cWORD>') . ".to_csv('" . g:home_dir . "/OneDrive/Desktop/df.csv', index=False)")
+    call VimCmdLineSendCmd(expand('<cWORD>') . ".to_csv('" . g:home_dir . "/OneDrive/Desktop/" . expand('<cWORD>') . ".csv', index=False)")
     sleep 50m
     call VimCmdLineSendCmd("")
 endfunction
