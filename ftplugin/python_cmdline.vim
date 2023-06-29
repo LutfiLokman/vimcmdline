@@ -47,6 +47,7 @@ function! VimCmdLinePrintWORD()
     call VimCmdLineSendCmd("pd.set_option('display.max_rows', 8)")
     call VimCmdLineSendCmd("print(" . expand('<cWORD>') . ")")
     sleep 50m
+    sleep 50m
     call VimCmdLineSendCmd("")
 endfunction
 
