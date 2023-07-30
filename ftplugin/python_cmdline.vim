@@ -118,35 +118,41 @@ endfunction
 
 function! VimCmdLinePrintLength()
     call VimCmdLineSendCmd("len(" . expand('<cword>') . ")")
+    sleep 50m
     call VimCmdLineSendCmd("")
 endfunction
 
 
 function! VimCmdLinePrintColumns()
     call VimCmdLineSendCmd(expand('<cword>') . ".columns")
+    sleep 50m
     call VimCmdLineSendCmd("")
 endfunction
 
 function! VimCmdLinePrintInfo()
     call VimCmdLineSendCmd(expand('<cword>') . ".info()")
+    sleep 50m
     call VimCmdLineSendCmd("")
 endfunction
 
 
 function! VimCmdLinePrintTable()
     call VimCmdLineSendCmd(expand('<cWORD>') . ".value_counts()")
+    sleep 50m
     call VimCmdLineSendCmd("")
 endfunction
 
 
 function! VimCmdLinePrintSummary()
     call VimCmdLineSendCmd(expand('<cWORD>') . ".describe()")
+    sleep 50m
     call VimCmdLineSendCmd("")
 endfunction
 
 
 function! VimCmdLinePrintSUMMARY()
     call VimCmdLineSendCmd(expand('<cWORD>') . ".describe()")
+    sleep 50m
     call VimCmdLineSendCmd("")
 endfunction
 
@@ -193,6 +199,7 @@ endfunction
 
 function! VimCmdLineShowVariables()
     call VimCmdLineSendCmd('%who_ls')
+    sleep 50m
     call VimCmdLineSendCmd("")
 endfunction
 
