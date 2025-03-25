@@ -1,814 +1,1110 @@
-<head><link rel="stylesheet" href="styles.css"></head><table border="1" class="dataframe">
+<head><link rel="stylesheet" href="styles.css"></head><script src="sorttable.js"></script><table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
       <th>id</th>
-      <th>code</th>
-      <th>description</th>
-      <th>date_added</th>
-      <th>date_modified</th>
+      <th>text</th>
+      <th>procedure_id</th>
+      <th>price_total</th>
+      <th>upper_bound</th>
+      <th>lower_bound</th>
+      <th>is_price_within_bounds</th>
+      <th>procedure_score</th>
+      <th>name</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
-      <td>a9ca1a793deee808660a4d9d4c5ea3dd</td>
-      <td>A00.0</td>
-      <td>CHOLERA DUE TO VIBRIO CHOLERAE 01, BIOVAR CHOLERAE</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>a48369f6ffb19fae3e423d8b32139640</td>
-      <td>A00.1</td>
-      <td>CHOLERA DUE TO VIBRIO CHOLERAE 01, BIOVAR ELTOR</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>cd6e7cbab8cbc1274ccfdf7d181274e3</td>
-      <td>A00.9</td>
-      <td>CHOLERA, UNSPECIFIED</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>a512285120990353778a76c68e08706b</td>
-      <td>A01.0</td>
-      <td>TYPHOID FEVER</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>b1036371e5ecc571929c6f6bcfbd48f3</td>
-      <td>A01.1</td>
-      <td>PARATYPHOID FEVER A</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>77461229bf752b7147b36cd1d28d27c3</td>
-      <td>A01.2</td>
-      <td>PARATYPHOID FEVER B</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
       <th>6</th>
-      <td>88d4babfecf8cc93304021e4b6b61da4</td>
-      <td>A01.3</td>
-      <td>PARATYPHOID FEVER C</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>24db60d9a627ea50bc249cab97d1d1db</td>
-      <td>A01.4</td>
-      <td>PARATYPHOID FEVER, UNSPECIFIED</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>b7c2226102c3fa3754a00339c21c5085</td>
-      <td>A02.0</td>
-      <td>SALMONELLA ENTERITIS</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>d636f8ee15f42cf5651fd224fa857eb6</td>
-      <td>A02.1</td>
-      <td>SALMONELLA SEPTICAEMIA</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>8d1b31846d1fccc74b17e204d4f6e2a0</td>
-      <td>A02.2</td>
-      <td>LOCALIZED SALMONELLA INFECTIONS</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>c728ed422e0bdbee7d2ad340497423f3</td>
-      <td>A02.8</td>
-      <td>OTHER SPECIFIED SALMONELLA INFECTIONS</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>a55a1a27e54942d94128b6f5ece7645a</td>
-      <td>A02.9</td>
-      <td>SALMONELLA INFECTION, UNSPECIFIED</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>1ccca058280b940154b8c059a82a35a6</td>
-      <td>A03.0</td>
-      <td>SHIGELLOSIS DUE TO SHIGELLA DYSENTERIAE</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>7209b9f791294b607600835f7b7b2cd9</td>
-      <td>A03.1</td>
-      <td>SHIGELLOSIS DUE TO SHIGELLA FLEXNERI</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>6021474a3c811afc80c7fa3a365733ef</td>
-      <td>A03.2</td>
-      <td>SHIGELLOSIS DUE TO SHIGELLA BOYDII</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>6bf597452fb7dda57991468db959f161</td>
-      <td>A03.3</td>
-      <td>SHIGELLOSIS DUE TO SHIGELLA SONNEI</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>199975d535d06533d018dba46d70c1e8</td>
-      <td>A03.8</td>
-      <td>OTHER SHIGELLOSIS</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>4578ad2d016246fb1fb7efd3f753b1fa</td>
-      <td>A03.9</td>
-      <td>SHIGELLOSIS, UNSPECIFIED</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>3d612ed1c65795e10490843378c0459a</td>
-      <td>A04.0</td>
-      <td>ENTEROPATHOGENIC ESCHERICHIA COLI INFECTION</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>20</th>
-      <td>1b2ded023311b4fd5151088d6fc55a00</td>
-      <td>A04.1</td>
-      <td>ENTEROTOXIGENIC ESCHERICHIA COLI INFECTION</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>21</th>
-      <td>d50f990f95c4db528e6cf45428062097</td>
-      <td>A04.2</td>
-      <td>ENTEROINVASIVE ESCHERICHIA COLI INFECTION</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>22</th>
-      <td>9ab009640627772da7083be0f8a73e8a</td>
-      <td>A04.3</td>
-      <td>ENTEROHAEMORRHAGIC ESCHERICHIA COLI INFECTION</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>23</th>
-      <td>630222c9635403e229f272bb18074ca2</td>
-      <td>A04.4</td>
-      <td>OTHER INTESTINAL ESCHERICHIA COLI INFECTIONS</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>24</th>
-      <td>acb8f948074cc2edb58168756ad6a668</td>
-      <td>A04.5</td>
-      <td>CAMPYLOBACTER ENTERITIS</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>25</th>
-      <td>2440a8aea3dba8d226d782f009b99aec</td>
-      <td>A04.6</td>
-      <td>ENTERITIS DUE TO YERSINIA ENTEROCOLITICA</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>26</th>
-      <td>5228b368f4d4209aec5a5994d168a059</td>
-      <td>A04.7</td>
-      <td>ENTEROCOLITIS DUE TO CLOSTRIDIUM DIFFICILE</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>27</th>
-      <td>e4ed3d3425e3740ce1e59d7d997a7e7d</td>
-      <td>A04.8</td>
-      <td>OTHER SPECIFIED BACTERIAL INTESTINAL INFECTIONS</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>28</th>
-      <td>7bddf09dfb707b82b8089b1ac3171c72</td>
-      <td>A04.9</td>
-      <td>BACTERIAL INTESTINAL INFECTION, UNSPECIFIED</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>29</th>
-      <td>f4607fc971ff871302f4bb129141aa6b</td>
-      <td>A05.0</td>
-      <td>FOODBORNE STAPHYLOCOCCAL INTOXICATION</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>30</th>
-      <td>6735775225717ecb52facf5f848e8ac5</td>
-      <td>A05.1</td>
-      <td>BOTULISM</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>31</th>
-      <td>9b5665c6a2c04d25655648e6570890d8</td>
-      <td>A05.2</td>
-      <td>FOODBORNE CLOSTRIDIUM PERFRINGENS [CLOSTRIDIUM WELCHII] INTOXICATION</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>32</th>
-      <td>1a67f9b170b6ce24acb137438b8fac41</td>
-      <td>A05.3</td>
-      <td>FOODBORNE VIBRIO PARAHAEMOLYTICUS INTOXICATION</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>33</th>
-      <td>33f0b9874fe60ebaecd289adc32dfd12</td>
-      <td>A05.4</td>
-      <td>FOODBORNE BACILLUS CEREUS INTOXICATION</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>34</th>
-      <td>78b298d5370cc3ae92060081446c3946</td>
-      <td>A05.8</td>
-      <td>OTHER SPECIFIED BACTERIAL FOODBORNE INTOXICATIONS</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>35</th>
-      <td>45aa4ab3d39d3b801a684c0aab19d2e6</td>
-      <td>A05.9</td>
-      <td>BACTERIAL FOODBORNE INTOXICATION, UNSPECIFIED</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>36</th>
-      <td>ae8a44280a978d383c531ec1f6e6669c</td>
-      <td>A06.0</td>
-      <td>ACUTE AMOEBIC DYSENTERY</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>37</th>
-      <td>3081866a9c6ee4c098767f99f32524e2</td>
-      <td>A06.1</td>
-      <td>CHRONIC INTESTINAL AMOEBIASIS</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>38</th>
-      <td>dc21e03846f80e4d65b96a38aa9bacfe</td>
-      <td>A06.2</td>
-      <td>AMOEBIC NONDYSENTERIC COLITIS</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>39</th>
-      <td>4c7beb9e2b6f5659ff1e5a63ed3ba329</td>
-      <td>A06.3</td>
-      <td>AMOEBOMA OF INTESTINE</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>40</th>
-      <td>77bed1b599f18d132fa7aa61f5c61c66</td>
-      <td>A06.4</td>
-      <td>AMOEBIC LIVER ABSCESS</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>41</th>
-      <td>09cfc617e990fdff2fd367b4a10a1132</td>
-      <td>A06.5</td>
-      <td>AMOEBIC LUNG ABSCESS (J99.8*)</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>42</th>
-      <td>0effdf2455985e0e6c8d37ea1e9bae86</td>
-      <td>A06.6</td>
-      <td>AMOEBIC BRAIN ABSCESS (G07*)</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>43</th>
-      <td>1882b39992fbad2b3440422eeed9c218</td>
-      <td>A06.7</td>
-      <td>CUTANEOUS AMOEBIASIS</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>44</th>
-      <td>7a8855e63e213e5b5ea74b4c30559be4</td>
-      <td>A06.8</td>
-      <td>AMOEBIC INFECTION OF OTHER SITES</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>45</th>
-      <td>dfdefe402cb4d9ca6ca20bc530f86e59</td>
-      <td>A06.9</td>
-      <td>AMOEBIASIS, UNSPECIFIED</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>46</th>
-      <td>7b58002d29a6795da236f30a1fb51da6</td>
-      <td>A07.0</td>
-      <td>BALANTIDIASIS</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>47</th>
-      <td>d46fbab94be486a8480bd02b30fdc730</td>
-      <td>A07.1</td>
-      <td>GIARDIASIS [LAMBLIASIS]</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
+      <td>2d2c98c6-b6d1-5da1-a273-b596ecd1ec62</td>
+      <td>Cholelithiasis Lap chole LAPAROSCOPIC CHOLECYSTECTOMY UNDER GA LAPAROSCOPIC CHOLECYSTECTOMY Laparoscopic cholecystectomy, Laparoscopy including biopsy and adhesiolysis</td>
+      <td>2384b98d-168c-476d-9bf4-1149df6ddb8c</td>
+      <td>19399.90</td>
+      <td>41009.500170</td>
+      <td>10041.443492</td>
+      <td>True</td>
+      <td>0.79</td>
+      <td>Cholecystectomy</td>
     </tr>
     <tr>
       <th>48</th>
-      <td>5b966fdfd40a0467e5f85fbb5cbdd367</td>
-      <td>A07.2</td>
-      <td>CRYPTOSPORIDIOSIS</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>49</th>
-      <td>14a3039388e8f459c433133d09434906</td>
-      <td>A07.3</td>
-      <td>ISOSPORIASIS</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>50</th>
-      <td>638f39fdf22a6eaa920a86a81689b6fa</td>
-      <td>A07.8</td>
-      <td>OTHER SPECIFIED PROTOZOAL INTESTINAL DISEASES</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>51</th>
-      <td>65a45fac7313ece73f1e469f5b3ba4b0</td>
-      <td>A07.9</td>
-      <td>PROTOZOAL INTESTINAL DISEASE, UNSPECIFIED</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>52</th>
-      <td>a18b8dc6218bb99480eab36f76f23f88</td>
-      <td>A08.0</td>
-      <td>ROTAVIRAL ENTERITIS</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>53</th>
-      <td>8b4ddc1283c2dc5416f5a53f5053ac6b</td>
-      <td>A08.1</td>
-      <td>ACUTE GASTROENTEROPATHY DUE TO NORWALK AGENT</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>54</th>
-      <td>e67466759aab884e9383e489b9769172</td>
-      <td>A08.2</td>
-      <td>ADENOVIRAL ENTERITIS</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>55</th>
-      <td>a214e6c015e7e5791d69430ce55fa6f7</td>
-      <td>A08.3</td>
-      <td>OTHER VIRAL ENTERITIS</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
+      <td>9085e666-2e5c-5e25-b049-562ea6522414</td>
+      <td>Multiple right fibroadenomas as above WLE riight breast at 10 OC and ex biopsy at 9 OC ( periareolar) WIDE LOCAL EXCISION RIGHT BREAST WIDE LOCAL EXCISION OF LESION OF BREAST Wide local excision of lesion of breast, Excision of lesion of breast</td>
+      <td>473cfab1-3ce6-4050-bf04-ab1728152f0f</td>
+      <td>9913.40</td>
+      <td>15699.278060</td>
+      <td>7568.426384</td>
+      <td>True</td>
+      <td>0.89</td>
+      <td>Lumpectomy/Partial Mastectomy</td>
     </tr>
     <tr>
       <th>56</th>
-      <td>b1fa69feb5f2878d441370bf4f5bf35a</td>
-      <td>A08.4</td>
-      <td>VIRAL INTESTINAL INFECTION, UNSPECIFIED</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>57</th>
-      <td>873433698306f3f0cfcebf4ec91fda1b</td>
-      <td>A08.5</td>
-      <td>OTHER SPECIFIED INTESTINAL INFECTIONS</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>58</th>
-      <td>e4a508d4d16fe612e5f0f33bb77378d2</td>
-      <td>A09</td>
-      <td>DIARRHOEA AND GASTROENTERITIS OF PRESUMED INFECTIOUS ORIGIN</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>59</th>
-      <td>90e29e2178690a94409c8ca165d9a4d5</td>
-      <td>A15.0</td>
-      <td>TUBERCULOSIS OF LUNG, CONFIRMED BY SPUTUM MICROSCOPY WITH OR WITHOUT CULTURE</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>60</th>
-      <td>af4b7bb167a41b0a40d1f7904e5f88e1</td>
-      <td>A15.1</td>
-      <td>TUBERCULOSIS OF LUNG, CONFIRMED BY CULTURE ONLY</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>61</th>
-      <td>144f57dab0b33209c8270f14faedb5b9</td>
-      <td>A15.2</td>
-      <td>TUBERCULOSIS OF LUNG, CONFIRMED HISTOLOGICALLY</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
+      <td>9253b66c-c0a3-5a91-ade8-189850d02878</td>
+      <td>multiple right fibroadenomas as above WLE right breast at 2-3 OC and 11 OC WIDE LOCAL EXCISION RIGHT BREAST WIDE LOCAL EXCISION OF LESION OF BREAST Wide local excision of lesion of breast</td>
+      <td>473cfab1-3ce6-4050-bf04-ab1728152f0f</td>
+      <td>9137.15</td>
+      <td>15699.278060</td>
+      <td>7568.426384</td>
+      <td>True</td>
+      <td>0.92</td>
+      <td>Lumpectomy/Partial Mastectomy</td>
     </tr>
     <tr>
       <th>62</th>
-      <td>a638a00ad0fb9502e51159a9cd82ebcd</td>
-      <td>A15.3</td>
-      <td>TUBERCULOSIS OF LUNG, CONFIRMED BY UNSPECIFIED MEANS</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>63</th>
-      <td>98d74eae4a29ee319579309310ecb7b7</td>
-      <td>A15.4</td>
-      <td>TUBERCULOSIS OF INTRATHORACIC LYMPH NODES, CONFIRMED BACTERIOLOGICALLY AND HISTOLOGICALLY</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
-    </tr>
-    <tr>
-      <th>64</th>
-      <td>4400c93f5b3cf80bbcd10a418cae9677</td>
-      <td>A15.5</td>
-      <td>TUBERCULOSIS OF LARYNX, TRACHEA AND BRONCHUS, CONFIRMED BACTERIOLOGICALLY AND HISTOLOGICALLY</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
+      <td>87f42ede-e1b7-5c5c-8fd1-3eccff3ece9a</td>
+      <td>Impalpable atypical lesion on right breast 6OC retroareolar as above Hook wire wide local excision right breast HOOK WIRE WIDE LOCAL EXCISION RIGHT BREAST WIDE LOCAL EXCISION OF LESION OF BREAST Stereotactic/guidewire excision of lesion of breast</td>
+      <td>473cfab1-3ce6-4050-bf04-ab1728152f0f</td>
+      <td>12255.40</td>
+      <td>15699.278060</td>
+      <td>7568.426384</td>
+      <td>True</td>
+      <td>0.81</td>
+      <td>Lumpectomy/Partial Mastectomy</td>
     </tr>
     <tr>
       <th>65</th>
-      <td>7a8679e2c166af771761bf4b943d57a6</td>
-      <td>A15.6</td>
-      <td>TUBERCULOUS PLEURISY, CONFIRMED BACTERIOLOGICALLY AND HISTOLOGICALLY</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
+      <td>497355fc-f7c6-5748-bd89-edd70f492709</td>
+      <td>Huge left fibroadenomas as above WLe left breast at 9-10 OC and ex biopsy left at 12 OC WIDE LOCAL EXCISION LEFT BREAST WIDE LOCAL EXCISION OF LESION OF BREAST Wide local excision of lesion of breast</td>
+      <td>473cfab1-3ce6-4050-bf04-ab1728152f0f</td>
+      <td>10866.45</td>
+      <td>15699.278060</td>
+      <td>7568.426384</td>
+      <td>True</td>
+      <td>0.94</td>
+      <td>Lumpectomy/Partial Mastectomy</td>
     </tr>
     <tr>
       <th>66</th>
-      <td>4e364b3d34fd18d59c031f9d62b9516b</td>
-      <td>A15.7</td>
-      <td>PRIMARY RESPIRATORY TUBERCULOSIS, CONFIRMEDBACTERIOLOGICALLY AND HISTOLOGICALLY</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
+      <td>4d1594a5-b5d3-577c-93fc-fc40780759d0</td>
+      <td>Recurrent retroareolar ductitis with early abcess right breast as above Wide local excision right breast WIDE LOCAL EXCISION RIGHT BREAST WIDE LOCAL EXCISION OF LESION OF BREAST Wide local excision of lesion of breast</td>
+      <td>473cfab1-3ce6-4050-bf04-ab1728152f0f</td>
+      <td>9693.25</td>
+      <td>15699.278060</td>
+      <td>7568.426384</td>
+      <td>True</td>
+      <td>0.79</td>
+      <td>Lumpectomy/Partial Mastectomy</td>
     </tr>
     <tr>
-      <th>67</th>
-      <td>c6773cde8fb4b50647721acdba9ed829</td>
-      <td>A15.8</td>
-      <td>OTHER RESPIRATORY TUBERCULOSIS, CONFIRMED BACTERIOLOGICALLY AND HISTOLOGICALLY</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
+      <th>129</th>
+      <td>20588a10-5de3-523b-aea3-65ee7c1aef4b</td>
+      <td>Infected maxillary cyst Surgical enucleation of cyst under general anaesthesia IV antibiotic DENTAL CLEARANCE UNDER GA OTHER PROCEDURES NEC - DENTAL Enucleation of cyst of jaw, Suture of mouth, Venupuncture</td>
+      <td>9d865d77-0bbc-472d-b3ed-1e8f876858ee</td>
+      <td>7381.60</td>
+      <td>9441.685088</td>
+      <td>5551.264912</td>
+      <td>True</td>
+      <td>1.00</td>
+      <td>Dental Extraction</td>
     </tr>
     <tr>
-      <th>68</th>
-      <td>eb34a0e3a8c341379ce5ae8cefe764c6</td>
-      <td>A15.9</td>
-      <td>RESPIRATORY TUBERCULOSIS UNSPECIFIED, CONFIRMED BACTERIOLOGICALLY AND HISTOLOGICALLY</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
+      <th>178</th>
+      <td>df5c0aa7-3d46-5a24-a490-17a33b880387</td>
+      <td>R KNEE ACL TEAR WITH MMT SAME ARTHROSOCPIC R KNEE ACL AUGMENTATION WITH MEDIAL MENISCUS REPAIR R KNEE ACL RECON +MENISCAL REPAIR  Therapeutic arthroscopic operations of semi lunar cartilage, Autograft reconstruction of cruciate ligament incl arthroscopic, Therapeutic arthroscopic operations on cavity of knee</td>
+      <td>ea2aca85-0236-47a5-9549-e484723b3a50</td>
+      <td>35763.75</td>
+      <td>44948.042065</td>
+      <td>28578.940914</td>
+      <td>True</td>
+      <td>0.79</td>
+      <td>Anterior Cruciate Ligament (ACL) Reconstruction</td>
     </tr>
     <tr>
-      <th>69</th>
-      <td>e31fe3228bd20dd2158a39c8e6a31d45</td>
-      <td>A16.0</td>
-      <td>TUBERCULOSIS OF LUNG, BACTERIOLOGICALLY ANDHISTOLOGICALLY NEGATIVE</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
+      <th>245</th>
+      <td>2868d928-8c70-59c2-8721-6fc23c47130e</td>
+      <td>R KNEE ACL TEAR WITH MENISUCS TEAR SANME R KNEE ARTHROSOCPIC ACL RECON HAMSTRING GRAFT SYNOVECTOMY R KNEE ACLR WITH MENISCAL REPAIR  Autograft reconstruction of cruciate ligament incl arthroscopic, Therapeutic arthroscopic operations on cavity of knee, Therapeutic arthroscopic operations of semi lunar cartilage</td>
+      <td>ea2aca85-0236-47a5-9549-e484723b3a50</td>
+      <td>33256.65</td>
+      <td>44948.042065</td>
+      <td>28578.940914</td>
+      <td>True</td>
+      <td>0.85</td>
+      <td>Anterior Cruciate Ligament (ACL) Reconstruction</td>
     </tr>
     <tr>
-      <th>70</th>
-      <td>ffb43345a6752dccd37e32f1ff1ec9e2</td>
-      <td>A16.1</td>
-      <td>TUBERCULOSIS OF LUNG, BACTERIOLOGICAL AND HISTOLOGICAL EXAMINATION NOT DONE</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
+      <th>316</th>
+      <td>21f6a379-b701-51d6-95b5-83135a1b9213</td>
+      <td>ADENOTONSILLITIS eua ear done and ear toilet done eUA nose done adenoidectomy done with cold instruments tonsillectomy done with bizact ADENOTONSILLECTOMY+.EUA NOSE/ EUA EAR ADENOTONSILLECTOMY (AND BILATERAL) Diagnostic endoscopy of sinus, Ear examination and suction clearance with microscopic, Adenotonsillectomy, Venupuncture</td>
+      <td>289c60cb-5919-4d56-a3b2-021295c56823</td>
+      <td>16545.50</td>
+      <td>17853.384820</td>
+      <td>9526.595736</td>
+      <td>True</td>
+      <td>0.77</td>
+      <td>Adenoid/Tonsillectomy</td>
     </tr>
     <tr>
-      <th>71</th>
-      <td>a3ddded3c1af548bd453bc4f0b8f2deb</td>
-      <td>A16.2</td>
-      <td>TUBERCULOSIS OF LUNG, WITHOUT MENTION OF BACTERIOLOGICAL OR HISTOLOGICAL CONFIRMATION</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
+      <th>321</th>
+      <td>4b651940-515d-5002-b729-acce2fc0e018</td>
+      <td>adeno tonsillitis as above adeno tonsillectomy ADENOTONSILLECTOMY ADENOTONSILLECTOMY (AND BILATERAL) Adenotonsillectomy, Venupuncture</td>
+      <td>289c60cb-5919-4d56-a3b2-021295c56823</td>
+      <td>11681.85</td>
+      <td>17853.384820</td>
+      <td>9526.595736</td>
+      <td>True</td>
+      <td>1.00</td>
+      <td>Adenoid/Tonsillectomy</td>
     </tr>
     <tr>
-      <th>72</th>
-      <td>7bcfa533dd7ec3469f9eb371ed4c433f</td>
-      <td>A16.3</td>
-      <td>TUBERCULOSIS OF INTRATHORACIC LYMPH NODES, WITHOUT MENTION OF BACTERIOLOGICAL OR HISTOLOGICALCONFIRMATION</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
+      <th>324</th>
+      <td>64b9df5b-dbd1-541d-aae8-6ef4ad8f32b5</td>
+      <td>adenotonsillits epistaxis eua nose done left septal cautery done adenoidectomy done with cold instruments tonsillectomy done with bizact EUA nose + nasal cautery + adenotonsillectomy under GA ADENOTONSILLECTOMY (AND BILATERAL) Nasal septum cauterisation, Adenotonsillectomy, Venesection</td>
+      <td>289c60cb-5919-4d56-a3b2-021295c56823</td>
+      <td>14262.65</td>
+      <td>17853.384820</td>
+      <td>9526.595736</td>
+      <td>True</td>
+      <td>0.90</td>
+      <td>Adenoid/Tonsillectomy</td>
     </tr>
     <tr>
-      <th>73</th>
-      <td>9262e0bc45acc4186db0df70146a9228</td>
-      <td>A16.4</td>
-      <td>TUBERCULOSIS OF LARYNX, TRACHEA AND BRONCHUS, WITHOUT MENTION OF BACTERIOLOGICAL OR HISTOLOGICAL CONFIRMATION</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
+      <th>326</th>
+      <td>365ae07c-02a3-5ce3-8c9f-1458c764dd65</td>
+      <td>adeno tonsillitis as above adeno tonsillectomy ADENOTONSILLECTOMY UNDER GA ADENOTONSILLECTOMY (AND BILATERAL) Adenotonsillectomy, Venupuncture</td>
+      <td>289c60cb-5919-4d56-a3b2-021295c56823</td>
+      <td>11357.30</td>
+      <td>17853.384820</td>
+      <td>9526.595736</td>
+      <td>True</td>
+      <td>1.00</td>
+      <td>Adenoid/Tonsillectomy</td>
     </tr>
     <tr>
-      <th>74</th>
-      <td>d9747a97c897d70de868a4912539cb3a</td>
-      <td>A16.5</td>
-      <td>TUBERCULOUS PLEURISY, WITHOUT MENTION OF BACTERIOLOGICAL OR HISTOLOGICAL CONFIRMATION</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
+      <th>334</th>
+      <td>0c9bc383-675a-5985-b6b8-8d975a4d6777</td>
+      <td>tonsillitis tonsillectomy done with bizact TONSILLECTOMY TONSILLECTOMY - ADULT (AND BILATERAL) Diagnostic endoscopic examination of pharynx, Tonsillectomy - adult</td>
+      <td>289c60cb-5919-4d56-a3b2-021295c56823</td>
+      <td>13580.35</td>
+      <td>17853.384820</td>
+      <td>9526.595736</td>
+      <td>True</td>
+      <td>0.98</td>
+      <td>Adenoid/Tonsillectomy</td>
     </tr>
     <tr>
-      <th>75</th>
-      <td>7d077a94581bf30eab8d7ef91cde94f0</td>
-      <td>A16.7</td>
-      <td>PRIMARY RESPIRATORY TUBERCULOSIS WITHOUT MENTION OF BACTERIOLOGICAL OR HISTOLOGICAL CONFIRMATION</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
+      <th>339</th>
+      <td>cb021853-3ee5-536c-824f-58cf1afd4e1d</td>
+      <td>adeno tonsillitis as above adeno tonsillectomy ADENOTONSILLECTOMY ADENOTONSILLECTOMY (AND BILATERAL) Venupuncture, Adenotonsillectomy</td>
+      <td>289c60cb-5919-4d56-a3b2-021295c56823</td>
+      <td>10762.35</td>
+      <td>17853.384820</td>
+      <td>9526.595736</td>
+      <td>True</td>
+      <td>1.00</td>
+      <td>Adenoid/Tonsillectomy</td>
     </tr>
     <tr>
-      <th>76</th>
-      <td>356d6c033b27920bd64de1c6bdfc8785</td>
-      <td>A16.8</td>
-      <td>OTHER RESPIRATORY TUBERCULOSIS, WITHOUT MENTION OF BACTERIOLOGICAL OR HISTOLOGICAL CONFIRMATION</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
+      <th>477</th>
+      <td>26fcc292-81e8-5f3e-868a-330ed03e02e3</td>
+      <td>SECONDARY SUBFERTILITY REDUCED FETAL MOVEMENT ELECTIVE LOWER SEGMENT CAESAREAN SECTION UNDER SPINAL SITE CLEANED AND DRAPED PFANNENSTEIL INCISION ABD OPEN IN LAYERS UV FOLD IDENTIFIED, CUT AND BLADDER RETRACTED CAUDALLY LS INCISED, BABY DELIVERED PLACENTA, MEMBRANE COMPLETE UTERINE CAVITY CLEANED AND CHECKED UTERUS CLOSED IN 2 LAYERS RECTUS CLOSED WITH SAFIL 1 SKIN CLOSED WITH SUBCUT VICRYL 2/0 DERMATIX ULTRA APPLIED TO SKIN G3 P2 @39WEEKS FOR EL LSCS (PREVIOUS SCAR) / CONSENT DONE CAESAREAN DELIVERY Newborn Screening</td>
+      <td>15aa6334-6667-44a4-ad55-81299d332fcc</td>
+      <td>11482.55</td>
+      <td>17908.554062</td>
+      <td>10832.780484</td>
+      <td>True</td>
+      <td>0.91</td>
+      <td>Caesarean Section</td>
     </tr>
     <tr>
-      <th>77</th>
-      <td>20ba2c04de9244b7f59dc771ad70f2b1</td>
-      <td>A16.9</td>
-      <td>RESPIRATORY TUBERCULOSIS UNSPECIFIED, WITHOUT MENTION OF BACTERIOLOGICAL OR HISTOLOGICAL CONFIRMATION</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
+      <th>480</th>
+      <td>c3efd322-e98b-52e9-b2c1-0f420ed31b5d</td>
+      <td>G1PO AT 36/52+4/7. FOR EM LSCS DUE TO FAILED IOL.BOTH CONSENT REQ.NBM 1100H.YAYA NOTED CAESAREAN DELIVERY Caesarean delivery, MOH87A6-01SInduction of labour or augmentation of labour, inclusive of but not exhaustive of artificial rupture of membrane, oxytoxin infusion, prostaglandin insertion; one single cahrge per labour, Venupuncture</td>
+      <td>15aa6334-6667-44a4-ad55-81299d332fcc</td>
+      <td>16207.75</td>
+      <td>17908.554062</td>
+      <td>10832.780484</td>
+      <td>True</td>
+      <td>0.78</td>
+      <td>Caesarean Section</td>
     </tr>
     <tr>
-      <th>78</th>
-      <td>f0924e33862657d33b56e839affd4c9c</td>
-      <td>A17.0</td>
-      <td>TUBERCULOUS MENINGITIS (G01*)</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
+      <th>494</th>
+      <td>6a5e6cd3-21a9-5009-9a6f-83acdda8c93b</td>
+      <td>PLAN KIV EL LSCS FOR PREVIOUS SCAR PAEDS DR TAN NOTED ANAEST DR RAVEEN NOTED. CAESAREAN DELIVERY Caesarean delivery with complications, Venupuncture, MOH87A6-01SInduction of labour or augmentation of labour, inclusive of but not exhaustive of artificial rupture of membrane, oxytoxin infusion, prostaglandin insertion; one single cahrge per labour</td>
+      <td>15aa6334-6667-44a4-ad55-81299d332fcc</td>
+      <td>13986.25</td>
+      <td>17908.554062</td>
+      <td>10832.780484</td>
+      <td>True</td>
+      <td>0.96</td>
+      <td>Caesarean Section</td>
     </tr>
     <tr>
-      <th>79</th>
-      <td>898c83d79f38aa6227d36115762ed79f</td>
-      <td>A17.1</td>
-      <td>MENINGEAL TUBERCULOMA (G07*)</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
+      <th>512</th>
+      <td>fdc0ee8d-0b90-5538-b817-20ea7a21a035</td>
+      <td>SUBFERTILTY, IVF PREGNANCY ELECTIVE LOWER SEGMENT CAESAREAN SECTION UNDER SPINAL SITE CLEANED AND DRAPED PFANNENSTEIL INCISION ABD OPEN IN LAYERS UV FOLD IDENTIFIED, CUT AND BLADDER RETRACTED CAUDALLY LS INCISED, BABY DELIVERED - BREECH EXTRACTION PLACENTA, MEMBRANE COMPLETE UTERINE CAVITY CLEANED AND CHECKED UTERUS CLOSED IN 2 LAYERS RECTUS CLOSED WITH SAFIL 1 SKIN CLOSED WITH SUBCUT VICRYL 2/0 DERMATIX ULTRA APPLIED TO SKIN G1 P0 @ 38 WEEKS FOR EL LSCS (FET / IVF PREGNANCY) / CONENT IN WARD CAESAREAN DELIVERY</td>
+      <td>15aa6334-6667-44a4-ad55-81299d332fcc</td>
+      <td>12940.10</td>
+      <td>17908.554062</td>
+      <td>10832.780484</td>
+      <td>True</td>
+      <td>0.93</td>
+      <td>Caesarean Section</td>
     </tr>
     <tr>
-      <th>80</th>
-      <td>d941d28641687cd363880c7ac4a356db</td>
-      <td>A17.8</td>
-      <td>OTHER TUBERCULOSIS OF NERVOUS SYSTEM</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
+      <th>726</th>
+      <td>dd5cd53e-0bc0-53d2-80d4-a2fe1a65665b</td>
+      <td>LUMBAR PID L4L5 AND L5S1 1. LUMBAR LASER DISCECTOMY L4L5 AND L5S1 2. BILATERAL L4L5S1 FACET STEROID INJECTION 3. LEFT L4L5S1 DRG STEROID INJECTION 4. EPIDURAL STEROID INJECTION L4L5 400J L5S1 300J plan LUMBAR LASER DISCECTOMY L4L5 AND L5S1 BILATERAL L4L5S1 FACET STEROID INJECTION LEFT L4L5S1 DRG STEROID INJECTION EPIDURAL STEROID INJECTION OP AT 12PM ot booking with sn ida  Percutaneousdiscectomy, Facet joint injection6 joints</td>
+      <td>65436fbe-ac39-49f9-94fb-ea3c63abdfc6</td>
+      <td>32605.70</td>
+      <td>38399.460307</td>
+      <td>23704.826112</td>
+      <td>True</td>
+      <td>0.82</td>
+      <td>Laser Discectomy/Rhizolysis, Lumbar</td>
     </tr>
     <tr>
-      <th>81</th>
-      <td>889d734aa37bf714041fc4497ea05428</td>
-      <td>A17.9</td>
-      <td>TUBERCULOSIS OF NERVOUS SYSTEM, UNSPECIFIED(G99.8*)</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
+      <th>755</th>
+      <td>2f8d721a-7859-5d0e-ae7e-8c7669940e0a</td>
+      <td>L4/5,L5/S1 PID 1.LASER DISCECTOMY L4/5,L5/S1 A 500 JOULES 2. BILATERAL L3/4,L4/5,L5/S1 FACETS RFA AT 80 CELSIUS FOR 4 MINS FOR LASER DISCECTOMY L4/5L5/S1 AND RFA FACETS (BOTH)  Facet or sacroiliac jointradio frequency thermocoagulation incl rhizolysis [under x-ray control w/sedation/GA]-6 joints, Percutaneousdiscectomy</td>
+      <td>65436fbe-ac39-49f9-94fb-ea3c63abdfc6</td>
+      <td>35745.25</td>
+      <td>38399.460307</td>
+      <td>23704.826112</td>
+      <td>True</td>
+      <td>0.96</td>
+      <td>Laser Discectomy/Rhizolysis, Lumbar</td>
     </tr>
     <tr>
-      <th>82</th>
-      <td>4efc1c090ca1c4f8ba3f91bab1499bde</td>
-      <td>A18.0</td>
-      <td>TUBERCULOSIS OF BONES AND JOINTS</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
+      <th>759</th>
+      <td>016ee358-0613-5f91-850d-e94cbed70f6e</td>
+      <td>lumbar spondylosis sacroiliitis coccydynia ditto L4-S1 facet RF, L4/5 and L5/S1 DRG RF, bilateral sacroiliac joint RF, and ganglion impar RF L4-S1 FACET RF L4-5 AND L5-S1 DRG RFBILATERAL SACROILIACJOINT RF AND GANGLION IMPAR RF  Facet or sacroiliac joint radio frequency thermocoagulation incl rhizolysis [under x-ray control w/sedation/GA]-6 joints, Facet or sacroiliac joint radio frequency thermo-coagulation incl rhizolysis [under x-ray control w/sedation/GA]</td>
+      <td>65436fbe-ac39-49f9-94fb-ea3c63abdfc6</td>
+      <td>26389.75</td>
+      <td>38399.460307</td>
+      <td>23704.826112</td>
+      <td>True</td>
+      <td>0.94</td>
+      <td>Laser Discectomy/Rhizolysis, Lumbar</td>
     </tr>
     <tr>
-      <th>83</th>
-      <td>37d4b3d788f7c7361d9bfa896101f61a</td>
-      <td>A18.1</td>
-      <td>TUBERCULOSIS OF GENITOURINARY SYSTEM</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
+      <th>767</th>
+      <td>e37919e1-024b-5932-99a7-ccd5cebc29da</td>
+      <td>LUMBAR PID L4L5 AND L5S1 LUMBAR RF INJ -BILATERAL FACET L4L5S1 -BILATERAL L4 AND L5 DRG -CAUDAL RF WITH EPIDURALSTEROID KROMAX rf injection inj on 15 march 230pm combined with dr raffiz ot booking with siva by dr Zubair  Dorsal root ganglion block, Facet or sacroiliac jointradio frequency thermocoagulation incl rhizolysis [under x-ray control w/sedation/GA]-6 joints, Epidural injection</td>
+      <td>65436fbe-ac39-49f9-94fb-ea3c63abdfc6</td>
+      <td>37055.15</td>
+      <td>38399.460307</td>
+      <td>23704.826112</td>
+      <td>True</td>
+      <td>0.80</td>
+      <td>Laser Discectomy/Rhizolysis, Lumbar</td>
     </tr>
     <tr>
-      <th>84</th>
-      <td>b39d3e169e3da12fa176c02cb2991307</td>
-      <td>A18.2</td>
-      <td>TUBERCULOUS PERIPHERAL LYMPHADENOPATHY</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
+      <th>770</th>
+      <td>499a164a-1ed7-5550-88a4-b107cee17ec5</td>
+      <td>L4/5 and L5/S1 PID L4/5 L5/S1 lumbar laser discectomy, L4/5 L5/S1 DRG RF, L3-S1 facet RFA and caudal RF 12/03/2025 @0800H : LUMBAR LASER DISCECTOMY +RF UNDER GA CONSENT REQD ANAEST REQD NBM 0200H CF 0600H TRAKCARE BOOKED FROM WARD OT SN SIVA NOTED INSURANCE ADDITIONAL TO FOLLOW  Facet or sacroiliac jointradio frequency thermocoagulation incl rhizolysis [under x-ray control w/sedation/GA]-6 joints, Percutaneousdiscectomy</td>
+      <td>65436fbe-ac39-49f9-94fb-ea3c63abdfc6</td>
+      <td>37023.05</td>
+      <td>38399.460307</td>
+      <td>23704.826112</td>
+      <td>True</td>
+      <td>0.88</td>
+      <td>Laser Discectomy/Rhizolysis, Lumbar</td>
     </tr>
     <tr>
-      <th>85</th>
-      <td>f036d837c2c7d06df2f6115a13f54dcf</td>
-      <td>A18.3</td>
-      <td>TUBERCULOSIS OF INTESTINES, PERITONEUM AND MESENTERIC GLANDS</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
+      <th>794</th>
+      <td>0f90b337-cd44-5dd6-aca0-97e041539fb2</td>
+      <td>LUMBAR PID L4L5 1. BILATERAL L4L5S1 FACET RADIOFREQUENCY ABLATION 2. BILATERAL L4L5S1 DRG RADIOFREQUENCY ABLATION 3 EPIDURAL STEROID INJECTION KROMAX RF plan injection on 13 March 2025 1pm -LUMBAR L4L5S1 FACET RF INJECTION -BILATERAL DRG L4L5 RF ABLATION -EPIDURAL STEROID IUNJECTION ot booking with syukriah  Epidural injection, Dorsal root ganglion block, Facet or sacroiliac jointradio frequency thermocoagulation incl rhizolysis [under x-ray control w/sedation/GA]-6 joints</td>
+      <td>65436fbe-ac39-49f9-94fb-ea3c63abdfc6</td>
+      <td>24148.00</td>
+      <td>38399.460307</td>
+      <td>23704.826112</td>
+      <td>True</td>
+      <td>0.95</td>
+      <td>Laser Discectomy/Rhizolysis, Lumbar</td>
     </tr>
     <tr>
-      <th>86</th>
-      <td>465c0ca988e84c042ca983e767669646</td>
-      <td>A18.4</td>
-      <td>TUBERCULOSIS OF SKIN AND SUBCUTANEOUS TISSUE</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
+      <th>798</th>
+      <td>1ddb3773-27d3-5e5a-82a0-b03e5460234f</td>
+      <td>L3/4,L4/5,L5S1 PID 1. LASER DISCECTOMY L3/4,L4/5,L5/S1 AT 500JOULE 2. BILATERAL L3/,L4/5,L5/S1 FACETS RFA AT 80 CELSIUS FOR 4MINS FOR LASER DISCECTOMY L3/4L4/5L5/S1 AND RFA FACETS (LEFT)  Percutaneous disc ectomy, Facet or sacroiliac joint radio frequency thermocoagulation incl rhizolysis [under x-ray control w/sedation/GA]-6 joints</td>
+      <td>65436fbe-ac39-49f9-94fb-ea3c63abdfc6</td>
+      <td>37468.35</td>
+      <td>38399.460307</td>
+      <td>23704.826112</td>
+      <td>True</td>
+      <td>0.91</td>
+      <td>Laser Discectomy/Rhizolysis, Lumbar</td>
     </tr>
     <tr>
-      <th>87</th>
-      <td>d8582a479c469ba45da752b5e73698b5</td>
-      <td>A18.5</td>
-      <td>TUBERCULOSIS OF EYE</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
+      <th>805</th>
+      <td>eb3d320c-f8b5-5a37-8b9a-60c98f0900e6</td>
+      <td>POST LUMBAR FUSION PAIN SYDNROME L2/3 UNTIL L5/S1 EPIDUROFIBROSIS RIGHT SACROILITIS 1. RACZ LUMBAR EPIDUROLYSIS L5/S1 L4/5 2. BILATERAL L2/3 UNTIL L5/S1 FACETS RFA 3. RIGHT SIJ STEROID INJECITON 4. BILATERAL L4/5,L5/S1 DRG PULSED RF FOR RACZ LUMBAR EPIDUROYSIS AND RFA FACETS AND DRGS ( RIGHT) LUMBAR  WITH BILATERAL SIJ AND PIRIFORMIS  Epidural adhesiolysis, complex or cervical, Facet or sacroiliac joint radio frequency thermocoagulation incl rhizolysis [under x-ray control w/sedation/GA]-6 joints, Injection into large joint under x-ray control</td>
+      <td>65436fbe-ac39-49f9-94fb-ea3c63abdfc6</td>
+      <td>28682.85</td>
+      <td>38399.460307</td>
+      <td>23704.826112</td>
+      <td>True</td>
+      <td>0.80</td>
+      <td>Laser Discectomy/Rhizolysis, Lumbar</td>
     </tr>
     <tr>
-      <th>88</th>
-      <td>455cb133c5493dcaf0ddf933978ab92f</td>
-      <td>A18.6</td>
-      <td>TUBERCULOSIS OF EAR</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
+      <th>1120</th>
+      <td>56c17d6a-106c-55fc-8cc5-c3cef1585441</td>
+      <td>Phimosis circumcision GA CIRCUMCISON UNDER GA CIRCUMCISION (NEW) Circumcision</td>
+      <td>811b62ea-73e8-489b-bfba-026e5250c1dc</td>
+      <td>2814.50</td>
+      <td>6102.327069</td>
+      <td>1000.403259</td>
+      <td>True</td>
+      <td>0.99</td>
+      <td>Circumcision</td>
     </tr>
     <tr>
-      <th>89</th>
-      <td>adfb0799ecf25e281d69ade674091cca</td>
-      <td>A18.7</td>
-      <td>TUBERCULOSIS OF ADRENAL GLANDS (E35.1*)</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
+      <th>1146</th>
+      <td>54de8db1-7e8c-5602-be64-c2361a8794b5</td>
+      <td>Gross Right HN Circumcision GA CIRCUMCISION UNDER LA + MCUG CIRCUMCISION (NEW) Circumcision</td>
+      <td>811b62ea-73e8-489b-bfba-026e5250c1dc</td>
+      <td>3500.60</td>
+      <td>6102.327069</td>
+      <td>1000.403259</td>
+      <td>True</td>
+      <td>0.97</td>
+      <td>Circumcision</td>
     </tr>
     <tr>
-      <th>90</th>
-      <td>4fb54fb1733bea08ffe20bb6aa3c7b59</td>
-      <td>A18.8</td>
-      <td>TUBERCULOSIS OF OTHER SPECIFIED ORGANS</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
+      <th>1148</th>
+      <td>c5429285-1552-51b8-b1e0-37628698a38e</td>
+      <td>Sutureless circumcision LA CIRCUMCISION UNER LA CIRCUMCISION (NEW)</td>
+      <td>811b62ea-73e8-489b-bfba-026e5250c1dc</td>
+      <td>1538.00</td>
+      <td>6102.327069</td>
+      <td>1000.403259</td>
+      <td>True</td>
+      <td>1.00</td>
+      <td>Circumcision</td>
     </tr>
     <tr>
-      <th>91</th>
-      <td>a47faaa54aeddf19853b65e0cc318f7b</td>
-      <td>A19.0</td>
-      <td>ACUTE MILIARY TUBERCULOSIS OF A SINGLE SPECIFIED SITE</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
+      <th>1149</th>
+      <td>fc196d9f-2e29-5d71-a75b-bc6406f62324</td>
+      <td>Sutureless circumcision LA CIRCUMCISION UNDER LA CIRCUMCISION (NEW)</td>
+      <td>811b62ea-73e8-489b-bfba-026e5250c1dc</td>
+      <td>1525.20</td>
+      <td>6102.327069</td>
+      <td>1000.403259</td>
+      <td>True</td>
+      <td>1.00</td>
+      <td>Circumcision</td>
     </tr>
     <tr>
-      <th>92</th>
-      <td>144eb4548f5303328dae81dceadda9c8</td>
-      <td>A19.1</td>
-      <td>ACUTE MILIARY TUBERCULOSIS OF MULTIPLE SITES</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
+      <th>1151</th>
+      <td>e0819ce6-e312-5c9d-9be6-47dbcc3fb198</td>
+      <td>Sutureless circumcision LA CIRCUMCISION UNDER LA CIRCUMCISION (NEW)</td>
+      <td>811b62ea-73e8-489b-bfba-026e5250c1dc</td>
+      <td>1543.30</td>
+      <td>6102.327069</td>
+      <td>1000.403259</td>
+      <td>True</td>
+      <td>1.00</td>
+      <td>Circumcision</td>
     </tr>
     <tr>
-      <th>93</th>
-      <td>d4d576650ed2eb54b3da21c7785f9049</td>
-      <td>A19.2</td>
-      <td>ACUTE MILIARY TUBERCULOSIS, UNSPECIFIED</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
+      <th>1255</th>
+      <td>dce76c9f-92a9-5916-8675-15a943bed7f4</td>
+      <td>acute appendicitis perforated appendix laparoscopic appendicectomy - FOR LAPAROSCOPIC APPENDICECTOMY KIV OPEN 14/03/2025 @ 2200H -CONSENT REQ -ANAEST REQ -TRACKCARE DONE -OT BOOKED WITH SN SIVA -NBM 1600HCF 2000H -INSURANCE CLEAR  Appendicectomy, Freeing of adhesions of peritoneum</td>
+      <td>d70911c1-0dde-4e63-98de-c345fe816d10</td>
+      <td>23955.60</td>
+      <td>25583.357345</td>
+      <td>14461.616219</td>
+      <td>True</td>
+      <td>0.86</td>
+      <td>Appendicectomy</td>
     </tr>
     <tr>
-      <th>94</th>
-      <td>f62cbdabcf763255713dfb64d92a89de</td>
-      <td>A19.8</td>
-      <td>OTHER MILIARY TUBERCULOSIS</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
+      <th>1258</th>
+      <td>4905d253-db1c-5607-9ee8-9423c0f35349</td>
+      <td>Acute Appendicitis as above Laparoscopic Appendicectomy/ adhesiolysis Pt supine under GA Area cleaned and draped 10mm supraumbilical port inserted-open method x2 5mm ports inserted Diagnostic lap done Appendix identified Adhesiolysis done Mesoappendix dissected Appendicular artery secured Appendix base ligated x2 Appendix tramsected and removed Rectus closure with j polysorb Skin closure with Nylon 5-0 FOR LAP APPENDICECTOMY UNDER GA - CONSENTED - TRAKCARE BOOKED - OT SN IKIN NOTED - PRE MED RQD - NBM 0400H - INS CLEAR  Laparoscopic appendicectomy, Freeing of adhesions of peritoneum</td>
+      <td>d70911c1-0dde-4e63-98de-c345fe816d10</td>
+      <td>17331.50</td>
+      <td>25583.357345</td>
+      <td>14461.616219</td>
+      <td>True</td>
+      <td>0.97</td>
+      <td>Appendicectomy</td>
     </tr>
     <tr>
-      <th>95</th>
-      <td>cb72ed659476e187fcb4a3e365c36dda</td>
-      <td>A19.9</td>
-      <td>MILIARY TUBERCULOSIS, UNSPECIFIED</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
+      <th>1259</th>
+      <td>2d8ab67d-afe8-5e83-b248-7f8fba7bbad0</td>
+      <td>Acute Appendicitis as above Laparoscopic Appendicectomy/ adhesiolysis Pt supine under GA Area cleaned and draped 10mm supraumbilical port inserted-open method x2 5mm ports inserted Diagnostic lap done Appendix identified Adhesiolysis done Mesoappendix dissected Appendicular artery secured Appendix base ligated x2- alphaloop Appendix transected and removed Rectus closure with J polysorb Skin closure with Monosyn 4-0 FOR LAP APPENDICECTOMY UNDER GA @ 2000H - CONSENT SURGEON REQD - CONSENT ANAEST REQD - OT SN SIVA NOTED - TRACKCARE BOOKED - NBM 0600H - INSURANCE CLEAR  Laparoscopic appendicectomy, Freeing of adhesions of peritoneum</td>
+      <td>d70911c1-0dde-4e63-98de-c345fe816d10</td>
+      <td>16323.60</td>
+      <td>25583.357345</td>
+      <td>14461.616219</td>
+      <td>True</td>
+      <td>0.99</td>
+      <td>Appendicectomy</td>
     </tr>
     <tr>
-      <th>96</th>
-      <td>980aae7e7d76ad997b8ace0b637afdaa</td>
-      <td>A20.0</td>
-      <td>BUBONIC PLAGUE</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
+      <th>1260</th>
+      <td>6f7bba78-aa18-522d-af5c-0e531779a812</td>
+      <td>acute appendicitis perforated appendix with abcess appendicectomy - For Lap appendicectomy KIV open -Insurance Selcare approved -NBM (last meal 0800hr) -Bed 327 -Spoken with OT TL Sn Syukriah LAPAROSCOPIC APPENDICECTOMY Freeing of adhesions of peritoneum, Laparoscopic appendicectomy, Appendicectomy</td>
+      <td>d70911c1-0dde-4e63-98de-c345fe816d10</td>
+      <td>22055.20</td>
+      <td>25583.357345</td>
+      <td>14461.616219</td>
+      <td>True</td>
+      <td>0.88</td>
+      <td>Appendicectomy</td>
     </tr>
     <tr>
-      <th>97</th>
-      <td>9fe214f7aff4e5faa29b38e33acb9f09</td>
-      <td>A20.1</td>
-      <td>CELLULOCUTANEOUS PLAGUE</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
+      <th>1262</th>
+      <td>74dd0c8d-9f3b-506f-87df-77fde2cacbc2</td>
+      <td>Acute appendicitis Torsion appendices epiploicae Retrocaecal appendix Lap appendicectomy Op on omentum Adhesiolysis 20/03/2025 @ 1800H : FOR LAPAROSCOPC APPENDICECTOMY UNDER GA - CONSENT DONE - ANAES REQ - NBM 0600H CF 0500H - TRACK CARE BOOKED - OT SN SIVA - INSURANCE CLEAR  Laparoscopy including biopsy and adhesiolysis, Laparoscopic appendicectomy, Operations on omentum</td>
+      <td>d70911c1-0dde-4e63-98de-c345fe816d10</td>
+      <td>20834.00</td>
+      <td>25583.357345</td>
+      <td>14461.616219</td>
+      <td>True</td>
+      <td>0.78</td>
+      <td>Appendicectomy</td>
     </tr>
     <tr>
-      <th>98</th>
-      <td>c5d95de154cd3af432de056262db5ddf</td>
-      <td>A20.2</td>
-      <td>PNEUMONIC PLAGUE</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
+      <th>1266</th>
+      <td>13ca0cad-6134-5bd4-8745-247116d53732</td>
+      <td>Acute Appendicitis Acute Suppurative Appendicitis Laparoscopic Appendicectomy/ adhesiolysis Pt supine under GA Area cleaned and draped 10mm supraumbilical port inserted-open method x2 5mm ports inserted Diagnostic lap done Appendix identified Mesoappendix dissected Appendicular artery secured Appendix base ligated x2 with surgietie Appendix transected and removed Rectus closure with J polysorb Skin closure with monsyn 4-0 -FOR LAP APPENDICECTOMY UNDER ANESTHESIA 19/03/2025@2000H -CONSENT REQUIRED -ANAEST CONSENT REQUIRED -NBM 1330H -TRAKCARE BOOKED -OT INFORM SN SYUKRIYAH -INSURANCE CLEAR-SPOKEN TO AKMA  Laparoscopic appendicectomy, Freeing of adhesions of peritoneum</td>
+      <td>d70911c1-0dde-4e63-98de-c345fe816d10</td>
+      <td>16869.45</td>
+      <td>25583.357345</td>
+      <td>14461.616219</td>
+      <td>True</td>
+      <td>0.92</td>
+      <td>Appendicectomy</td>
     </tr>
     <tr>
-      <th>99</th>
-      <td>2830307639513e2ef2efb40d225266dc</td>
-      <td>A20.3</td>
-      <td>PLAGUE MENINGITIS</td>
-      <td>2023-07-21 08:08</td>
-      <td>2023-07-21 08:08</td>
+      <th>1267</th>
+      <td>0c28f7f9-a5eb-541b-849b-78727f20d6ec</td>
+      <td>Acute Appendicitis As above + torted appendices epiploicae Laparoscopic Appendicectomy/ Adhesiolysis Pt supine under GA Area cleaned and draped 10mm supraumbilical port inserted-open method x2 5mm ports inserted Diagnostic lap done Appendix identified Mesoappendix dissected Appendicular artery secured Appendix base ligated x2 with surgietie Appendix transected and removed Torted appendices excised Rectus closure with J polysorb Skin closure with Nylon 5-0 -INSURANCE CLEAR -OT NOTED SN SIVA NBM Sahur time  Freeing of adhesions of peritoneum, Laparoscopic appendicectomy</td>
+      <td>d70911c1-0dde-4e63-98de-c345fe816d10</td>
+      <td>21870.35</td>
+      <td>25583.357345</td>
+      <td>14461.616219</td>
+      <td>True</td>
+      <td>0.97</td>
+      <td>Appendicectomy</td>
+    </tr>
+    <tr>
+      <th>1270</th>
+      <td>cc2a49af-fd6d-5efa-9985-0aabddd4a87f</td>
+      <td>Acute Appendicitis As above Laparoscopic Appendicectomy/ adhesiolysis Pt supine under GA Area cleaned and draped 10mm supraumbilical port inserted-open method x2 5mm ports inserted Diagnostic lap done Adhesions released Appendix identified Mesoappendix dissected Appendicular artery secured Appendix base ligated x2- endoloop Appendix transected and removed Rectus closure with J polysorb Skin closure with Nylon 5-0 13/03/2025 @ 1800H: FOR LAP APPENDICECTOMY UNDER GA - CONSENT REQ - ANAES REQ - NBM 0500H - TRACK CARE BOOKED - OT SN SIVA - INSURANCE CLEAR  Laparoscopic appendicectomy, Freeing of adhesions of peritoneum</td>
+      <td>d70911c1-0dde-4e63-98de-c345fe816d10</td>
+      <td>19911.95</td>
+      <td>25583.357345</td>
+      <td>14461.616219</td>
+      <td>True</td>
+      <td>0.98</td>
+      <td>Appendicectomy</td>
+    </tr>
+    <tr>
+      <th>1272</th>
+      <td>1e238de0-3a9e-5fc5-bfd1-179077d9b615</td>
+      <td>Acute Appendicitis Periappendicitis Right tubo ovarian abscess Laparoscopic Appendicectomy / adhesiolysis/ washout Pt supine under GA Area cleaned and draped 10mm supraumbilical port inserted-open method x2 5mm ports inserted Diagnostic lap done Seropurulent fluid aspirated from pelvis Appendix identified Adhesiolysis done Mesoappendix dissected Appendicular artery secured Appendix base ligated x2 with surgie tie Appendix transected and removed Washout of pelvis with warm saline Rectus closure with J polysorb Skin closure with Nylon 5-0 20/03/2025@1500H: LAPAROSCOPY APENDICECTOMY UNDER GA - CONSENT REQ - ANEST REQ - TRAK CARE REQ - OT SN SIVA NOTED - NBM 0800H CF 1200H - INSURANCE CLEAR  Freeing of adhesions of peritoneum, Laparoscopic appendicectomy</td>
+      <td>d70911c1-0dde-4e63-98de-c345fe816d10</td>
+      <td>22280.85</td>
+      <td>25583.357345</td>
+      <td>14461.616219</td>
+      <td>True</td>
+      <td>0.76</td>
+      <td>Appendicectomy</td>
+    </tr>
+    <tr>
+      <th>1295</th>
+      <td>f5bce8aa-735f-5126-bee2-0a5ec35e208c</td>
+      <td>OGDS + COLONOSCOPY UNDER PROPOFOL DR AIZAN OGDS + COLONOSCOPY Therapeutic-oesophago-duodenoscopy including removal of foreign body/polypectomy, Fibreoptic colonoscopy, plus/minus excision biopsy/destruction of lesion</td>
+      <td>bac8b507-b1c9-48da-a691-943795177d44</td>
+      <td>6759.50</td>
+      <td>13864.222242</td>
+      <td>4621.402134</td>
+      <td>True</td>
+      <td>0.99</td>
+      <td>OGDS/Colonoscopy</td>
+    </tr>
+    <tr>
+      <th>1300</th>
+      <td>d3c8bb17-3fe3-5e08-88e6-ace07da13f66</td>
+      <td>COLONOSCOPY UNDER PROPOFOL DR AIZAN DIAGNOSTIC COLONOSCOPY Fibreoptic colonoscopy, plus/minus excision biopsy/destruction of lesion, Venupuncture</td>
+      <td>bac8b507-b1c9-48da-a691-943795177d44</td>
+      <td>7407.30</td>
+      <td>13864.222242</td>
+      <td>4621.402134</td>
+      <td>True</td>
+      <td>0.85</td>
+      <td>OGDS/Colonoscopy</td>
+    </tr>
+    <tr>
+      <th>1301</th>
+      <td>7d27c6a9-cb06-5f53-b950-17666cfa6e36</td>
+      <td>ogds and colonoscopy OGDS + COLONOSCOPY Fibreoptic colonoscopy, plus/minus excision biopsy/destruction of lesion, Diagnostic oesophago-gastro-duodenoscopy incl biopsy</td>
+      <td>bac8b507-b1c9-48da-a691-943795177d44</td>
+      <td>5380.40</td>
+      <td>13864.222242</td>
+      <td>4621.402134</td>
+      <td>True</td>
+      <td>1.00</td>
+      <td>OGDS/Colonoscopy</td>
+    </tr>
+    <tr>
+      <th>1305</th>
+      <td>bbf34e52-e930-5470-ad6f-8865b39c9b41</td>
+      <td>ogds + colonoscopy OGDS + COLONOSCOPY Diagnostic oesophago-gastro-duodenoscopy incl biopsy, Fibreoptic colonoscopy, plus/minus excision biopsy/destruction of lesion</td>
+      <td>bac8b507-b1c9-48da-a691-943795177d44</td>
+      <td>7271.90</td>
+      <td>13864.222242</td>
+      <td>4621.402134</td>
+      <td>True</td>
+      <td>1.00</td>
+      <td>OGDS/Colonoscopy</td>
+    </tr>
+    <tr>
+      <th>1306</th>
+      <td>05a0b823-5b07-5b09-b59a-ead10292b13a</td>
+      <td>OGDS + COLONOSCOPY under PROPOFOL / SEDATION OGDS + COLONOSCOPY Diagnostic oesophago-gastro-duodenoscopy incl biopsy, Colonic Polypectomy</td>
+      <td>bac8b507-b1c9-48da-a691-943795177d44</td>
+      <td>7731.60</td>
+      <td>13864.222242</td>
+      <td>4621.402134</td>
+      <td>True</td>
+      <td>1.00</td>
+      <td>OGDS/Colonoscopy</td>
+    </tr>
+    <tr>
+      <th>1309</th>
+      <td>fd07395c-7e01-533f-aed6-c76ee9a0aee2</td>
+      <td>OGDS &amp; COLONOSCOPY OGDS + COLONOSCOPY Diagnostic oesophago-gastro-duodenoscopy incl biopsy, Fibreoptic colonoscopy, plus/minus excision biopsy/destruction of lesion</td>
+      <td>bac8b507-b1c9-48da-a691-943795177d44</td>
+      <td>5319.30</td>
+      <td>13864.222242</td>
+      <td>4621.402134</td>
+      <td>True</td>
+      <td>1.00</td>
+      <td>OGDS/Colonoscopy</td>
+    </tr>
+    <tr>
+      <th>1312</th>
+      <td>9d93d810-fa9a-5464-b2a2-57eff784ebb7</td>
+      <td>ADMIT 13/3/25@0830AM OT 13/3/25@1030AM INSURSANS DAYCARE NOTED SN AISYAH OT NOTED SN SHUK OGDS COLONO UNDER POPOFOL Diagnostic oesophago-gastro-duodenoscopy incl biopsy, Fibreoptic colonoscopy, plus/minus excision biopsy/destruction of lesion</td>
+      <td>bac8b507-b1c9-48da-a691-943795177d44</td>
+      <td>8294.70</td>
+      <td>13864.222242</td>
+      <td>4621.402134</td>
+      <td>True</td>
+      <td>0.98</td>
+      <td>OGDS/Colonoscopy</td>
+    </tr>
+    <tr>
+      <th>1315</th>
+      <td>c3731c1e-4b30-58bd-8049-2cdfc0db23dd</td>
+      <td>ADMIT 13/3/25@0830AM OT 13/3/25@1600PM INSURANS DAYCARE NOTED SN FARA OT NOTED OGDS UNDER PROPOFOL Diagnostic oesophago-gastro-duodenoscopy incl biopsy</td>
+      <td>bac8b507-b1c9-48da-a691-943795177d44</td>
+      <td>5750.70</td>
+      <td>13864.222242</td>
+      <td>4621.402134</td>
+      <td>True</td>
+      <td>0.98</td>
+      <td>OGDS/Colonoscopy</td>
+    </tr>
+    <tr>
+      <th>1335</th>
+      <td>c4a792c3-c7ff-5878-a51e-acb6baa72985</td>
+      <td>ogds Diagnostic oesophago-gastro-duodenoscopy incl biopsy</td>
+      <td>bac8b507-b1c9-48da-a691-943795177d44</td>
+      <td>8014.70</td>
+      <td>13864.222242</td>
+      <td>4621.402134</td>
+      <td>True</td>
+      <td>0.99</td>
+      <td>OGDS/Colonoscopy</td>
+    </tr>
+    <tr>
+      <th>1336</th>
+      <td>ea25bf0f-5199-5760-9eef-9d3fce241210</td>
+      <td>ADMIT 13/3/25@0830AM OT 13/3/25@1400PM INSURANS DAYCARE NOTED SN ILA OT NOTED OGDS UNDER PROPOFOL Diagnostic oesophago-gastro-duodenoscopy incl biopsy</td>
+      <td>bac8b507-b1c9-48da-a691-943795177d44</td>
+      <td>8794.40</td>
+      <td>13864.222242</td>
+      <td>4621.402134</td>
+      <td>True</td>
+      <td>1.00</td>
+      <td>OGDS/Colonoscopy</td>
+    </tr>
+    <tr>
+      <th>1342</th>
+      <td>c8c1aab9-1998-5e06-bae2-5188bac28e50</td>
+      <td>COLONOSCOPY DIAGNOSTIC COLONOSCOPY Fibreoptic colonoscopy, plus/minus excision biopsy/destruction of lesion</td>
+      <td>bac8b507-b1c9-48da-a691-943795177d44</td>
+      <td>6960.10</td>
+      <td>13864.222242</td>
+      <td>4621.402134</td>
+      <td>True</td>
+      <td>1.00</td>
+      <td>OGDS/Colonoscopy</td>
+    </tr>
+    <tr>
+      <th>1344</th>
+      <td>00ad6c78-d3bb-550e-8a12-bc3d4099ad12</td>
+      <td>OGDS 16/3/2025 AT 0830H Consent surgical done Consent anaest required OT TL Rahmah noted. Insurance approved OGDS + COLONOSCOPY Therapeutic-oesophago-duodenoscopy including removal of foreign body/polypectomy</td>
+      <td>bac8b507-b1c9-48da-a691-943795177d44</td>
+      <td>8390.20</td>
+      <td>13864.222242</td>
+      <td>4621.402134</td>
+      <td>True</td>
+      <td>0.78</td>
+      <td>OGDS/Colonoscopy</td>
+    </tr>
+    <tr>
+      <th>1345</th>
+      <td>4217fa1f-a206-59ab-80aa-431aab9f8176</td>
+      <td>For OGDS NBM req insurance done OT TL Shida noted OGDS + COLONOSCOPY Therapeutic-oesophago-duodenoscopy including removal of foreign body/polypectomy, Venupuncture</td>
+      <td>bac8b507-b1c9-48da-a691-943795177d44</td>
+      <td>7482.70</td>
+      <td>13864.222242</td>
+      <td>4621.402134</td>
+      <td>True</td>
+      <td>0.89</td>
+      <td>OGDS/Colonoscopy</td>
+    </tr>
+    <tr>
+      <th>1348</th>
+      <td>c242d706-e1db-5e84-9b66-be8c063becc0</td>
+      <td>OGDS UNDER PROPOFOL DR AIZAN DIAGNOSTIC OESOPHAGO-GASTRO-DUODENOSCOPY INCLUDING BIOPSY Diagnostic oesophago-gastro-duodenoscopy incl biopsy</td>
+      <td>bac8b507-b1c9-48da-a691-943795177d44</td>
+      <td>5139.50</td>
+      <td>13864.222242</td>
+      <td>4621.402134</td>
+      <td>True</td>
+      <td>1.00</td>
+      <td>OGDS/Colonoscopy</td>
+    </tr>
+    <tr>
+      <th>1350</th>
+      <td>9906ef01-8e03-5d46-962b-4971cf0ee768</td>
+      <td>ADMIT 14/03/25@1500PM OT 15/03/25@1000AM INSURANCE DAYCARE NOTED SN FARAH OT NOTED SN SHUK OGDS COLONO UNDER PROPOFOL Diagnostic oesophago-gastro-duodenoscopy incl biopsy, Fibreoptic colonoscopy, plus/minus excision biopsy/destruction of lesion</td>
+      <td>bac8b507-b1c9-48da-a691-943795177d44</td>
+      <td>8250.70</td>
+      <td>13864.222242</td>
+      <td>4621.402134</td>
+      <td>True</td>
+      <td>1.00</td>
+      <td>OGDS/Colonoscopy</td>
+    </tr>
+    <tr>
+      <th>1351</th>
+      <td>e3af15f0-9c48-52f6-b662-5bc885b5ef69</td>
+      <td>OGDS + COLONOSCOPY UNDER PROPOFOL OGDS + COLONOSCOPY Colonic Polypectomy, Diagnostic oesophago-gastro-duodenoscopy incl biopsy, Banding of haemorrhoids</td>
+      <td>bac8b507-b1c9-48da-a691-943795177d44</td>
+      <td>10304.90</td>
+      <td>13864.222242</td>
+      <td>4621.402134</td>
+      <td>True</td>
+      <td>1.00</td>
+      <td>OGDS/Colonoscopy</td>
+    </tr>
+    <tr>
+      <th>1352</th>
+      <td>4761eef7-b7ee-5896-a776-5766538406ab</td>
+      <td>ADMIT 20/03/25@0800 OT 20/03/25@1130AM INSURANCE DAYCARE NOTED SN NISA OT NOTED SN SHAHROM OGDS COLONO UNDER PROPOFOL Diagnostic oesophago-gastro-duodenoscopy incl biopsy, Fibreoptic colonoscopy, plus/minus excision biopsy/destruction of lesion</td>
+      <td>bac8b507-b1c9-48da-a691-943795177d44</td>
+      <td>7916.20</td>
+      <td>13864.222242</td>
+      <td>4621.402134</td>
+      <td>True</td>
+      <td>1.00</td>
+      <td>OGDS/Colonoscopy</td>
+    </tr>
+    <tr>
+      <th>1355</th>
+      <td>0c751f43-cbcd-5d3a-a11d-8a50cfe891d6</td>
+      <td>ADMIT 20/03/25@0800AM OT 20/03/25@1330PM INSURANCE DAYCARE NOTED SN AISYAH OT NOTED SN SHUK OGDS COLONO UNDER PROPOFOL Diagnostic oesophago-gastro-duodenoscopy incl biopsy, Intubation for investigation of GIT +/- manometry, pH measurement, pancreatic function and jejunal biopsy</td>
+      <td>bac8b507-b1c9-48da-a691-943795177d44</td>
+      <td>13772.40</td>
+      <td>13864.222242</td>
+      <td>4621.402134</td>
+      <td>True</td>
+      <td>0.79</td>
+      <td>OGDS/Colonoscopy</td>
+    </tr>
+    <tr>
+      <th>1358</th>
+      <td>b464ce45-ef8d-5a6f-b995-1f1d85687b2c</td>
+      <td>ADMIT 20/03/25@0800AM OT 20/03/25@1030AM INSURANCE DAYCARE NOTED SN AIN OT NOTED SN SIVE OGDS UNDER PROPOFOL Diagnostic oesophago-gastro-duodenoscopy incl biopsy</td>
+      <td>bac8b507-b1c9-48da-a691-943795177d44</td>
+      <td>8639.00</td>
+      <td>13864.222242</td>
+      <td>4621.402134</td>
+      <td>True</td>
+      <td>1.00</td>
+      <td>OGDS/Colonoscopy</td>
+    </tr>
+    <tr>
+      <th>1359</th>
+      <td>57bc09f8-0d57-59bb-943c-bf84cbc608e7</td>
+      <td>ogds + colonoscopy OGDS + COLONOSCOPY Fibreoptic colonoscopy, plus/minus excision biopsy/destruction of lesion, Diagnostic oesophago-gastro-duodenoscopy incl biopsy</td>
+      <td>bac8b507-b1c9-48da-a691-943795177d44</td>
+      <td>5376.20</td>
+      <td>13864.222242</td>
+      <td>4621.402134</td>
+      <td>True</td>
+      <td>1.00</td>
+      <td>OGDS/Colonoscopy</td>
+    </tr>
+    <tr>
+      <th>1363</th>
+      <td>a924ee69-6637-5b70-867d-066d629a1331</td>
+      <td>For OGDS and Colonoscopy under Propofol. SN Aisyah daycare and OT SN Syukriah. Under Dr Aizan. Insurance approved. Room 425. Consent anaest required. Diagnostic oesophago-gastro-duodenoscopy incl biopsy, Fibreoptic colonoscopy, plus/minus excision biopsy/destruction of lesion</td>
+      <td>bac8b507-b1c9-48da-a691-943795177d44</td>
+      <td>9588.70</td>
+      <td>13864.222242</td>
+      <td>4621.402134</td>
+      <td>True</td>
+      <td>0.90</td>
+      <td>OGDS/Colonoscopy</td>
+    </tr>
+    <tr>
+      <th>1527</th>
+      <td>ffec2303-e019-5770-a5b0-7a13ed2801c7</td>
+      <td>HYSTEROSCOPY DD+C HYSTEROSCOPY WITH/WITHOUT D&amp;C, BIOPSY INCLUDING POLYPECTOMY Therapeutic endoscopic operation on uterus including endometrial ablation, Venupuncture, Venesection</td>
+      <td>7166860f-6e28-4ce8-962c-3f1548e9baca</td>
+      <td>9213.55</td>
+      <td>16158.132952</td>
+      <td>7028.319548</td>
+      <td>True</td>
+      <td>0.99</td>
+      <td>Hysteroscopy with Possible D&amp;C/Polypectomy</td>
+    </tr>
+    <tr>
+      <th>1528</th>
+      <td>6cf54eae-735b-59a5-b3c6-0afa3bda5f2d</td>
+      <td>for bigatti shaving HYSTEROSCOPY WITH/WITHOUT D&amp;C, BIOPSY INCLUDING POLYPECTOMY Therapeutic endoscopic operation on uterus including endometrial ablation, Venupuncture</td>
+      <td>7166860f-6e28-4ce8-962c-3f1548e9baca</td>
+      <td>14947.35</td>
+      <td>16158.132952</td>
+      <td>7028.319548</td>
+      <td>True</td>
+      <td>0.78</td>
+      <td>Hysteroscopy with Possible D&amp;C/Polypectomy</td>
+    </tr>
+    <tr>
+      <th>1531</th>
+      <td>01a38b43-9738-5246-8de8-11e86822a9ff</td>
+      <td>HYSTEROSCOPY ENDOMETRIAL BIOPSY KIV RESECTION OT SN LIANA NOTED CONSENT IN WARD HYSTEROSCOPY WITH/WITHOUT D&amp;C, BIOPSY INCLUDING POLYPECTOMY Venupuncture, Therapeutic endoscopic operation on uterus including endometrial ablation</td>
+      <td>7166860f-6e28-4ce8-962c-3f1548e9baca</td>
+      <td>12048.35</td>
+      <td>16158.132952</td>
+      <td>7028.319548</td>
+      <td>True</td>
+      <td>0.99</td>
+      <td>Hysteroscopy with Possible D&amp;C/Polypectomy</td>
+    </tr>
+    <tr>
+      <th>1547</th>
+      <td>246c5efe-a0ff-527c-ad75-91c82ad12e71</td>
+      <td>hysteroscope biggatti shaving HYSTEROSCOPY WITH/WITHOUT D&amp;C, BIOPSY INCLUDING POLYPECTOMY Venupuncture, Therapeutic endoscopic operation on uterus including endometrial ablation</td>
+      <td>7166860f-6e28-4ce8-962c-3f1548e9baca</td>
+      <td>15706.15</td>
+      <td>16158.132952</td>
+      <td>7028.319548</td>
+      <td>True</td>
+      <td>0.88</td>
+      <td>Hysteroscopy with Possible D&amp;C/Polypectomy</td>
+    </tr>
+    <tr>
+      <th>1592</th>
+      <td>e9c92c24-bebb-560f-9c2c-91bb85e68d93</td>
+      <td>Sinusitis, Adenotonsillitis ESS, Septoturbinoplasty, AsTs ESS SEPTOTURBINOPLASTY  ASTS  Adenotonsillectomy, Excision of turbinate of nose, Septoplasty of nose, Anterior and posterior opening into FESS, Diagnostic endoscopy of sinus</td>
+      <td>4f3d232f-7667-4ecc-a657-35a421d30655</td>
+      <td>24757.35</td>
+      <td>28302.154635</td>
+      <td>18259.416397</td>
+      <td>True</td>
+      <td>1.00</td>
+      <td>FESS/Septo/Turbinoplasty</td>
+    </tr>
+    <tr>
+      <th>1593</th>
+      <td>1f5e14db-c58e-5ad7-af15-9b9084c148ac</td>
+      <td>Sinusitis, Neck lesion ESS, Septoturbinoplasty, E/O Neck lesion ESS  SEPTOTURBINOPLASTY  E/O ANTERIOR NECK CYST  Diagnostic endoscopy of sinus, Anterior and posterior opening into FESS, Septoplasty of nose, Excision of turbinate of nose, Lesion requiring wide excision</td>
+      <td>4f3d232f-7667-4ecc-a657-35a421d30655</td>
+      <td>23448.90</td>
+      <td>28302.154635</td>
+      <td>18259.416397</td>
+      <td>True</td>
+      <td>0.87</td>
+      <td>FESS/Septo/Turbinoplasty</td>
+    </tr>
+    <tr>
+      <th>1596</th>
+      <td>8d0e8c6b-62ee-50cc-ae97-1e45e590162b</td>
+      <td>sinusitis BHITs DNS septoplasty done FESS done except sphenoids turbinoplasty done FOR FESS SEPTOTURBINOPLASTY ON 13/03/2025 @ 0830H CONSENT UP BUT NO SIGN TRAK CARE BOOKED SN HAFIZUDDIN OT SN SYUKRIAH ANEST PRE MEDS (RQD)  Excision of turbinate of nose, Septoplasty of nose, Anterior and posterior opening into FESS, Diagnostic endoscopy of sinus</td>
+      <td>4f3d232f-7667-4ecc-a657-35a421d30655</td>
+      <td>22452.35</td>
+      <td>28302.154635</td>
+      <td>18259.416397</td>
+      <td>True</td>
+      <td>0.97</td>
+      <td>FESS/Septo/Turbinoplasty</td>
+    </tr>
+    <tr>
+      <th>1601</th>
+      <td>6d0b41ef-d1e5-548e-8a28-521474815afb</td>
+      <td>L Sinusitis Lt DNS Turbinate hypertrophy  Under GA , Parts cleaned and draped Endoscopic septoturbinoplasty done Vicryl 4-0 suture BL MMA and flushing done hemostasis secured BL M Pocicep 13/03/2025 @ 0930H : for bil fess septoturbinoplasty Anterior and posterior opening into FESS, Septoplasty of nose, Excision of turbinate of nose, Diagnostic endoscopy of sinus</td>
+      <td>4f3d232f-7667-4ecc-a657-35a421d30655</td>
+      <td>24453.15</td>
+      <td>28302.154635</td>
+      <td>18259.416397</td>
+      <td>True</td>
+      <td>0.94</td>
+      <td>FESS/Septo/Turbinoplasty</td>
+    </tr>
+    <tr>
+      <th>1604</th>
+      <td>17677d66-da21-5943-9f3c-5d34eaa8901b</td>
+      <td>Sinusitis, OM ESS, Septoturbinoplasty, EUM ear and Grommet L ear ESS Septoturbinoplasty RF EUM ears kiv L M&amp;G  Myringotomy and insertion of tube through tympanic membrane, Excision of turbinate of nose, Septoplasty of nose, Anterior and posterior opening into FESS, Diagnostic endoscopy of sinus</td>
+      <td>4f3d232f-7667-4ecc-a657-35a421d30655</td>
+      <td>23925.85</td>
+      <td>28302.154635</td>
+      <td>18259.416397</td>
+      <td>True</td>
+      <td>0.76</td>
+      <td>FESS/Septo/Turbinoplasty</td>
+    </tr>
+    <tr>
+      <th>1632</th>
+      <td>f30f4ed2-b8b5-581a-8b22-fd362bbb8d4d</td>
+      <td>Sinusitis, OM ESS, Septoturbinoplasty, EUM ears and proceed ESS  SEPTOTURBINOPLASTY EUM EARS &amp; PROCEED  Excision of turbinate of nose, Ear examination and suction clearance with microscopic, Septoplasty of nose, Anterior and posterior opening into FESS, Diagnostic endoscopy of sinus</td>
+      <td>4f3d232f-7667-4ecc-a657-35a421d30655</td>
+      <td>23455.90</td>
+      <td>28302.154635</td>
+      <td>18259.416397</td>
+      <td>True</td>
+      <td>0.99</td>
+      <td>FESS/Septo/Turbinoplasty</td>
+    </tr>
+    <tr>
+      <th>1641</th>
+      <td>7c82464d-eb01-5417-8c6c-241e62a5ef04</td>
+      <td>Rhinosinusitis DNS (L) BHIT / polypoidal MT L&gt;R  Bil ESS Septoturbinectomy ( PTR Arthro) FESS / SEPTOTURBINECTOMY Anterior and posterior opening into FESS, Septoplasty of nose, Excision of turbinate of nose</td>
+      <td>4f3d232f-7667-4ecc-a657-35a421d30655</td>
+      <td>23117.85</td>
+      <td>28302.154635</td>
+      <td>18259.416397</td>
+      <td>True</td>
+      <td>0.98</td>
+      <td>FESS/Septo/Turbinoplasty</td>
+    </tr>
+    <tr>
+      <th>1642</th>
+      <td>c531590f-b64c-5636-b41d-db3cc1abb9dc</td>
+      <td>Sinusitis, Epistaxis, Adenotonsillitis Sinus opening surgery, Turbinoplasty, Cauterization septum, AsTs SINUS OPENING SURGERY  TURBINOPLASTY RF  CAUTERIZATION SEPTUM  ASTS OPERATION ON NASAL SINUS (UNSPECIFIED) Anterior and posterior opening into FESS, Excision of turbinate of nose, Nasal septum cauterisation, Adenotonsillectomy, Venupuncture, Diagnostic endoscopy of sinus</td>
+      <td>4f3d232f-7667-4ecc-a657-35a421d30655</td>
+      <td>23469.40</td>
+      <td>28302.154635</td>
+      <td>18259.416397</td>
+      <td>True</td>
+      <td>0.91</td>
+      <td>FESS/Septo/Turbinoplasty</td>
+    </tr>
+    <tr>
+      <th>1648</th>
+      <td>6aa442dc-fef4-53f8-bef4-c8309918eb32</td>
+      <td>Sinusitis, OM ESS, Septoturbinoplasty, EUM ear and proceed ESS  SEPTOTURBINOPLASTY EUM EARS  E/O KELOID R EAR COMBINE WITH DR WAN SYAZLI  Septoplasty of nose, Excision of turbinate of nose, Myringoplasty, Diagnostic endoscopy of sinus, Anterior and posterior opening into FESS, Lesion requiring wide excision</td>
+      <td>4f3d232f-7667-4ecc-a657-35a421d30655</td>
+      <td>28104.00</td>
+      <td>28302.154635</td>
+      <td>18259.416397</td>
+      <td>True</td>
+      <td>0.78</td>
+      <td>FESS/Septo/Turbinoplasty</td>
+    </tr>
+    <tr>
+      <th>1652</th>
+      <td>6c1f08a4-33ea-52d4-b4a5-0fa2f10c0c78</td>
+      <td>Rhinosinusitis DNS Hypertrophic turbinates / L CB  R FESS/ R FR , L MMA, Septoturbinectomy / excision L CB FESS / SEPTOTURBINECTOMY Anterior and posterior opening into FESS, Septoplasty of nose, Excision of turbinate of nose</td>
+      <td>4f3d232f-7667-4ecc-a657-35a421d30655</td>
+      <td>20561.55</td>
+      <td>28302.154635</td>
+      <td>18259.416397</td>
+      <td>True</td>
+      <td>0.94</td>
+      <td>FESS/Septo/Turbinoplasty</td>
+    </tr>
+    <tr>
+      <th>1653</th>
+      <td>c08c1b03-42be-5813-b0b1-fb262703c274</td>
+      <td>Sinusitis, Adenotonsillitis, OSA ESS, Septoturbinoplasty, AsTs, UPPP ESS  SEPTOTURBINOPLASTY  ASTS  UPPP  Anterior and posterior opening into FESS, Septoplasty of nose, Excision of turbinate of nose, Adenotonsillectomy, Diagnostic endoscopy of sinus</td>
+      <td>4f3d232f-7667-4ecc-a657-35a421d30655</td>
+      <td>26307.45</td>
+      <td>28302.154635</td>
+      <td>18259.416397</td>
+      <td>True</td>
+      <td>1.00</td>
+      <td>FESS/Septo/Turbinoplasty</td>
+    </tr>
+    <tr>
+      <th>1654</th>
+      <td>da5ea7ff-4e29-5fb2-9bdd-8776c2520855</td>
+      <td>Rhinosinusitis L&gt;R L DNS CB Right  L FESS / R MMA Excision R CB Biopsy L maxillary &amp; Ethmoid mucosa FESS / SEPTOTURBINECTOMY Anterior and posterior opening into FESS, Septoplasty of nose, Excision of turbinate of nose, Diagnostic endoscopic examination of pharynx</td>
+      <td>4f3d232f-7667-4ecc-a657-35a421d30655</td>
+      <td>22832.75</td>
+      <td>28302.154635</td>
+      <td>18259.416397</td>
+      <td>True</td>
+      <td>0.81</td>
+      <td>FESS/Septo/Turbinoplasty</td>
+    </tr>
+    <tr>
+      <th>1855</th>
+      <td>85cc29aa-bc6f-5b31-a3e7-fc631d808136</td>
+      <td>gerd with hitus hernia metabolic syndrome with obesity dense adhesions with liver to stomach and stomach to anterolateral wall and omentum incidental finding supraumbilical hernia - primary repair done fatty liver thick visceral fat lap antireflux patient in supine lithotomy under ga skin cleaned and drapped 15mm trocar optical inserted at one hands breath below the xiphoifor camera and another 12mm trocar inserted one hands breath to the left of the first 12mm trocar for working port ( and camera when neded) 5mm trocar inserted at subxiphoid for liver retraction and below right subcostal margin as working port 12mm trocar also inserted one hands breath to the right of the first 15mm trocar that was inserted pars flacida dissected and the right crux identified. dissection continued on the left and left crux identified. hiatal dissection done using sharp dissection, blunt tissue separation and also energy device for hemostatic control . dense adhesion around the hiatal hernia defect. adhesiolysis done. posterior vagus dissected to release the lower esophagus from the dense fibrosis surrounding it the lower intrathoracic esophagus released from surrounding adhesion and pulled into the abdominal cavity as much as 2-3cm . cruropexy then done using ethibond 2-0 26mm needle. the cruropexy was done with 36fr bougie inside the sophagus as a calibration tube. each stich was done in interrupted fashion and knots done 5-7 times to ensure it is secured. tissue appeared oozy most likely due to the large visceral fat and grade 2-3 fatty liver. hemostasis controlled. lap ventral hernia repair noted incidental finding paraumbilical hernia with omental content adhesiolysis and minimal omentectomy done due to incarceration. hernia defect closed primarily under vision lap sleeve gastrectomy stomach released from greater omentum using ligasure from 4cm from pylorus distally to 2cm from angle of his proximally stapler signia used 1xblack 60mm, and 5x60mm purple fired 4cm from pylorus and 1.5cm away from angle of his vlock suture used to oversew the entire stapler line. methylene blue test negative resected stomach removed. hemostasis secured 15mm working port and 12 mm working port closed with VICRYL 1(x3) undner direct vision. skin closure with vicryl 3-0, monosyn 3-0 and dermabond glue ADMIT 10/3/25@0830AM OT 11/3/25@0830AM INSURANS OT NOTED SN SHUK LAP SLEEVE GASTRECTOMY  Laparoscopic repair of hiatus hernia, Transabdominal anti-reflux operations, Operations on omentum, Repair of umbilical hernia, Freeing of adhesions of peritoneum, Partial gastrectomy</td>
+      <td>27ecfddf-ba30-43e2-aa50-4aa2eca5d84b</td>
+      <td>42120.10</td>
+      <td>42455.071874</td>
+      <td>34680.047823</td>
+      <td>True</td>
+      <td>1.00</td>
+      <td>Hernia Repair, Hiatal</td>
+    </tr>
+    <tr>
+      <th>1859</th>
+      <td>760e35ec-9e8b-5bb6-8f7e-994d0ce3cd0b</td>
+      <td>gerd with hiatus hernia metabolic syndrome with obesity dense ahdesions liver to stomach and liver to anterior abdominal wall incidental finding supraumbilical hernia - primary reair one incacerated omentum sent for hpe large hiatus hernia thick visceral fat fatty liver grade 3 lap antireflux patient in supine lithotomy under ga skin cleaned and drapped 15mm trocar optical inserted at one hands breath below the xiphoifor camera and another 12mm trocar inserted one hands breath to the left of the first 12mm trocar for working port ( and camera when neded) 5mm trocar inserted at subxiphoid for liver retraction and below right subcostal margin as working port 12mm trocar also inserted one hands breath to the right of the first 15mm trocar that was inserted pars flacida dissected and the right crux identified. dissection continued on the left and left crux identified. hiatal dissection done using sharp dissection, blunt tissue separation and also energy device for hemostatic control . dense adhesion around the hiatal hernia defect. adhesiolysis done. posterior vagus dissected to release the lower esophagus from the dense fibrosis surrounding it the lower intrathoracic esophagus released from surrounding adhesion and pulled into the abdominal cavity as much as 2-3cm . cruropexy then done using ethibond 2-0 26mm needle. the cruropexy was done with 36fr bougie inside the sophagus as a calibration tube. each stich was done in interrupted fashion and knots done 5-7 times to ensure it is secured. tissue appeared oozy most likely due to the large visceral fat and grade 2-3 fatty liver. hemostasis controlled. lap ventral hernia repair noted incidental finding paraumbilical hernia with omental content adhesiolysis and minimal omentectomy done due to incarceration. hernia defect closed primarily under vision lap sleeve gastrectomy stomach released from greater omentum using ligasure from 4cm from pylorus distally to 2cm from angle of his proximally stapler signia used 1xblack 60mm, and 5x60mm purple fired 4cm from pylorus and 1.5cm away from angle of his vlock suture used to oversew the entire stapler line. methylene blue test negative resected stomach removed. hemostasis secured 15mm working port and 12 mm working port closed with VICRYL 1(x3) undner direct vision. skin closure with vicryl 3-0, monosyn 3-0 and dermabond glue ADMIT 19/03/25@0830AM OT 20/0325@0830AM INSURANCE OT NOTED SN SIVA LAP SLEEVE GASTRECTOMY  Transabdominal anti-reflux operations, Laparoscopic repair of hiatus hernia, Freeing of adhesions of peritoneum, Operations on omentum, Repair of umbilical hernia, Partial gastrectomy</td>
+      <td>27ecfddf-ba30-43e2-aa50-4aa2eca5d84b</td>
+      <td>41813.25</td>
+      <td>42455.071874</td>
+      <td>34680.047823</td>
+      <td>True</td>
+      <td>1.00</td>
+      <td>Hernia Repair, Hiatal</td>
+    </tr>
+    <tr>
+      <th>1861</th>
+      <td>b66a4d35-6a2a-504e-a1d7-a3fc11e3987c</td>
+      <td>gerd with hiatus metabolic syndrome with obesity incidental finding umbilical heria incadcretaed omentum large hiatus dense adhesions ++ lap antireflux patient in supine lithotomy under ga skin cleaned and drapped 15mm trocar optical inserted at one hands breath below the xiphoifor camera and another 12mm trocar inserted one hands breath to the left of the first 12mm trocar for working port ( and camera when neded) 5mm trocar inserted at subxiphoid for liver retraction and below right subcostal margin as working port 12mm trocar also inserted one hands breath to the right of the first 15mm trocar that was inserted pars flacida dissected and the right crux identified. dissection continued on the left and left crux identified. hiatal dissection done using sharp dissection, blunt tissue separation and also energy device for hemostatic control . dense adhesion around the hiatal hernia defect. adhesiolysis done. posterior vagus dissected to release the lower esophagus from the dense fibrosis surrounding it the lower intrathoracic esophagus released from surrounding adhesion and pulled into the abdominal cavity as much as 2-3cm . cruropexy then done using ethibond 2-0 26mm needle. the cruropexy was done with 36fr bougie inside the sophagus as a calibration tube. each stich was done in interrupted fashion and knots done 5-7 times to ensure it is secured. tissue appeared oozy most likely due to the large visceral fat and grade 2-3 fatty liver. hemostasis controlled. lap ventral hernia repair noted incidental finding paraumbilical hernia with omental content adhesiolysis and minimal omentectomy done due to incarceration. hernia defect closed primarily under vision lap sleeve gastrectomy stomach released from greater omentum using ligasure from 4cm from pylorus distally to 2cm from angle of his proximally stapler signia used 1xblack 60mm, and 5x60mm purple fired 4cm from pylorus and 1.5cm away from angle of his vlock suture used to oversew the entire stapler line. methylene blue test negative resected stomach removed. hemostasis secured 15mm working port and 12 mm working port closed with VICRYL 1(x3) undner direct vision. skin closure with vicryl 3-0, monosyn 3-0 and dermabond glue ADMIT 11/3/25@0830AM OT 12/3/25@1100AM INSURANS OT NOTED SN SIVA LAP SLEEVE GASTRECTOMY  Transabdominal anti-reflux operations, Laparoscopic repair of hiatus hernia, Operations on omentum, Repair of umbilical hernia, Freeing of adhesions of peritoneum, Partial gastrectomy</td>
+      <td>27ecfddf-ba30-43e2-aa50-4aa2eca5d84b</td>
+      <td>41506.90</td>
+      <td>42455.071874</td>
+      <td>34680.047823</td>
+      <td>True</td>
+      <td>1.00</td>
+      <td>Hernia Repair, Hiatal</td>
+    </tr>
+    <tr>
+      <th>1925</th>
+      <td>a7d8ec97-4a83-51df-845d-c9a5510043f7</td>
+      <td>LACERATION OF CHIN SAME WOUND DEBRIDEMENT AND REMOVAL OF SUTURES laceration of chin op : wound debridement and removal of sutures under GA DAY CARE : SN MARHAMAH NOTED WOUND DEBRIDEMENT Debridement of wound</td>
+      <td>21459a5c-048a-4681-85b5-7816cc1fe2fb</td>
+      <td>3447.80</td>
+      <td>7346.120839</td>
+      <td>3216.038965</td>
+      <td>True</td>
+      <td>0.95</td>
+      <td>Debridement/Suture of Head or Face Wound</td>
+    </tr>
+    <tr>
+      <th>1930</th>
+      <td>88b87ca5-1542-51d7-9cfd-3adc3dde1963</td>
+      <td>LACERATION OF RIGHT EYEBROW SAME WOUND DEBRIDEMENT AND REMOVAL OF SUTURES laceration of right eyebrow op : wound debridement and removal of sutures sn biha noted consent done WOUND DEBRIDEMENT Debridement of wound</td>
+      <td>21459a5c-048a-4681-85b5-7816cc1fe2fb</td>
+      <td>3794.30</td>
+      <td>7346.120839</td>
+      <td>3216.038965</td>
+      <td>True</td>
+      <td>0.95</td>
+      <td>Debridement/Suture of Head or Face Wound</td>
+    </tr>
+    <tr>
+      <th>1932</th>
+      <td>5da7f9aa-f91e-5b9b-b744-1a3aec7358d2</td>
+      <td>LACERATION OF FOREHEAD SAME WOUND DEBRIDEMENT AND REMOVAL OF SUTURES laceration of forehead op:/ wound debridement and removal of suture under GA WOUND DEBRIDEMENT Debridement of wound</td>
+      <td>21459a5c-048a-4681-85b5-7816cc1fe2fb</td>
+      <td>3493.50</td>
+      <td>7346.120839</td>
+      <td>3216.038965</td>
+      <td>True</td>
+      <td>0.97</td>
+      <td>Debridement/Suture of Head or Face Wound</td>
+    </tr>
+    <tr>
+      <th>1935</th>
+      <td>dd71f8de-5a26-5b84-9958-2c3e9faaaed6</td>
+      <td>LACERATION OF LEFT EYEBROW SAME WOUND DEBRIDEMENT AND REMOVAL OF SUTURES left eyebrow laceration op : wound debridement and removal of sutures under GA WOUND DEBRIDEMENT Debridement of wound</td>
+      <td>21459a5c-048a-4681-85b5-7816cc1fe2fb</td>
+      <td>3817.20</td>
+      <td>7346.120839</td>
+      <td>3216.038965</td>
+      <td>True</td>
+      <td>0.96</td>
+      <td>Debridement/Suture of Head or Face Wound</td>
+    </tr>
+    <tr>
+      <th>1976</th>
+      <td>3459241a-71f9-5042-889c-60da17b9b665</td>
+      <td>LACERATION OF LEFT PARIETAL REGION SAME DEEP TISSUE SUTURING UNDER GA -T&amp;S under GA @ 1300hr cm -NBM 0700hr  CF 1100hr -Anaest: Dr Raveen noted -OT TL : SN Azida noted via call -Consent required TOILET AND SUTURING (T&amp;S) PER STITCH Primary suture of wound with involvement of deeper tissue</td>
+      <td>21459a5c-048a-4681-85b5-7816cc1fe2fb</td>
+      <td>7051.20</td>
+      <td>7346.120839</td>
+      <td>3216.038965</td>
+      <td>True</td>
+      <td>0.77</td>
+      <td>Debridement/Suture of Head or Face Wound</td>
+    </tr>
+    <tr>
+      <th>2059</th>
+      <td>6ed50b26-09b8-5eb1-a35b-d6ac893f5871</td>
+      <td>STO right eyebrow WOUND DEBRIDEMENT Debridement of wound</td>
+      <td>21459a5c-048a-4681-85b5-7816cc1fe2fb</td>
+      <td>3802.70</td>
+      <td>7346.120839</td>
+      <td>3216.038965</td>
+      <td>True</td>
+      <td>0.76</td>
+      <td>Debridement/Suture of Head or Face Wound</td>
+    </tr>
+    <tr>
+      <th>2069</th>
+      <td>25f79aab-23bf-515f-855e-b64eeff11281</td>
+      <td>LACERATION OF RIGHT UPPER EYELID SAME DEEP TISSUE SUTURING Admit under Dr Wan Syazli. Diagnosis : Laceration wound over upper right eyelid Using GL AIA For T&amp;S under GA @ 9am (2/12/2024) Anaest Dr Wan Afaf noted OT TL SN Rahmah noted OT team alert by operator Anis NBM : 3am CF :7am TOILET AND SUTURING (T&amp;S) PER STITCH Primary suture of wound with involvement of deeper tissue, Venupuncture</td>
+      <td>21459a5c-048a-4681-85b5-7816cc1fe2fb</td>
+      <td>5915.60</td>
+      <td>7346.120839</td>
+      <td>3216.038965</td>
+      <td>True</td>
+      <td>0.78</td>
+      <td>Debridement/Suture of Head or Face Wound</td>
+    </tr>
+    <tr>
+      <th>2259</th>
+      <td>5287a5b0-c631-5e04-8859-ce3689c501e8</td>
+      <td>C5/6,C6/7 PID WITH RADICULOPATHY LEFT UPPER LIMB WEAKNESS 1.GA WAS GIVEN 2. IV ROCEPHIN 2GM 3. LASER DISCECTOMY C5/6,C6/7 AT 250 JOULES 4. LEFT C5/6/7/8 DRG RF INJECTION 5. LEFT C2/3 UUNTIL C6/7 FACETS RF INJECTION LASER DISCECTOMY C5/6C6/7 AND RF FACETS LEFT C2/3 UNTIL C6/7 AT 5PM. Under GA by Dr. Shahir.  Percutaneousdiscectomy, Facet or sacroiliac jointradio frequency thermocoagulation incl rhizolysis [under x-ray control w/sedation/GA]-6 joints</td>
+      <td>df91f849-75ab-44e7-ae6a-2841358e9b33</td>
+      <td>37192.95</td>
+      <td>46291.370157</td>
+      <td>29058.135965</td>
+      <td>True</td>
+      <td>0.88</td>
+      <td>Laser Discectomy/Rhizolysis, Cervical</td>
+    </tr>
+    <tr>
+      <th>2266</th>
+      <td>b435a65c-9a23-5def-b802-0f7451be8b07</td>
+      <td>C5/6,C6/7 PID RIGHT FROZEN SHOULDER cervical laser discectomy c5/6,c6/7 and rfa facets and drgs c2/3 until c6/ and right HA gel injection shoulder ADMIT : 19/3/25 OT : 20/3/25@830AM OT : cervical laser discectomy c5/6c6/7 and rfa facets and drgs c2/3 until c6/ and right HA gel injection shoulder  Percutaneousdiscectomy, Facet or sacroiliac jointradio frequency thermocoagulation incl rhizolysis [under x-ray control w/sedation/GA]-6 joints</td>
+      <td>df91f849-75ab-44e7-ae6a-2841358e9b33</td>
+      <td>33210.70</td>
+      <td>46291.370157</td>
+      <td>29058.135965</td>
+      <td>True</td>
+      <td>0.86</td>
+      <td>Laser Discectomy/Rhizolysis, Cervical</td>
+    </tr>
+    <tr>
+      <th>2332</th>
+      <td>73b7b81a-3e8f-5eeb-92b2-40be7b37fc5b</td>
+      <td>LAPAROSCOPY MYOMECTOMY  CYSTECTOMY &amp; ADHESIOLYSIS UNDER DR SITI MAISARAH 4.3.25@1100H // ADMITTED (MICARE) / SN JUMA NOTED MYOMECTOMY INCLUDING LAPAROSCOPICALLY Myomectomy including laparoscopically, Laparoscopic Ovarian cystectomy, Laparoscopy including biopsy and adhesiolysis, Venupuncture</td>
+      <td>70ec13f7-9207-47c8-b732-cfd40bb4e8f0</td>
+      <td>34703.70</td>
+      <td>45524.956035</td>
+      <td>30847.483095</td>
+      <td>True</td>
+      <td>0.76</td>
+      <td>Myomectomy</td>
     </tr>
   </tbody>
 </table>

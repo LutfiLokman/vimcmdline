@@ -97,25 +97,6 @@ function! VimCmdLinePrintHeadFullScreen()
     call VimCmdLineSendCmd("")
 endfunction
 
-
-function! VimCmdLinePlot()
-    call VimCmdLineSendCmd("sns.displot(" . expand('<cWORD>') . ")")
-    call VimCmdLineSendCmd("plt.show()")
-    sleep 50m
-    call VimCmdLineSendCmd("")
-endfunction
-
-
-function! VimCmdLinePlotOutlier()
-    call VimCmdLineSendCmd("x = " . expand('<cWORD>'))
-    call VimCmdLineSendCmd("x = x[x.between(x.quantile(.10), x.quantile(.90))]")
-    call VimCmdLineSendCmd("sns.displot(x, bins=30)")
-    call VimCmdLineSendCmd("plt.show()")
-    sleep 50m
-    call VimCmdLineSendCmd("")
-endfunction
-
-
 function! VimCmdLinePrintLength()
     call VimCmdLineSendCmd("len(" . expand('<cword>') . ")")
     sleep 50m
@@ -203,23 +184,8 @@ function! VimCmdLineShowVariables()
     call VimCmdLineSendCmd("")
 endfunction
 
-
 function! VimCmdLineResetSize()
     :resize +100
-    sleep 100m
-    :resize -17
-endfunction
-
-
-function! VimCmdLineDeleteVariables()
-    :resize +100
-    call VimCmdLineSendCmd('%reset -f')
-    call VimCmdLineSendCmd("import pandas as pd")
-    call VimCmdLineSendCmd("import matplotlib.pyplot as plt")
-    call VimCmdLineSendCmd("import seaborn as sns")
-    call VimCmdLineSendCmd("import webbrowser")
-    call VimCmdLineSendCmd("import time")
-    call VimCmdLineSendCmd("")
     sleep 100m
     :resize -17
 endfunction
@@ -271,14 +237,11 @@ nmap<LocalLeader>rI :call VimCmdLinePrintInfo()<CR>
 nmap<LocalLeader>rs :call VimCmdLinePrintSummary()<CR>
 nmap<LocalLeader>rS :call VimCmdLinePrintSUMMARY()<CR>
 nmap<LocalLeader>rt :call VimCmdLinePrintTable()<CR>
-nmap<LocalLeader>rg :call VimCmdLinePlot()<CR>
-nmap<LocalLeader>rG :call VimCmdLinePlotOutlier()<CR>
 nmap<LocalLeader>rb :call VimCmdLinePrintBrowser()<CR>
 nmap<LocalLeader>rB :call VimCmdLinePrintBrowserLimit()<CR>
 nmap<LocalLeader>rc :call VimCmdLineToCSV()<CR>
 nmap<LocalLeader>rC :call VimCmdLineToExcel()<CR>
 nmap<LocalLeader>rw :call VimCmdLineShowVariables()<CR>
-nmap<LocalLeader>rW :call VimCmdLineDeleteVariables()<CR>
 nmap<LocalLeader>pq :call VimCmdLinePdbQuit()<CR>
 nmap<LocalLeader>pc :call VimCmdLinePdbContinue()<CR>
 nmap<LocalLeader>ps :call VimCmdLinePdbStept()<CR>
